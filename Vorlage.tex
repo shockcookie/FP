@@ -1,0 +1,61 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[titlepage,11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{tcolorbox}
+\usepackage{subcaption}
+\usepackage[margin=1in]{geometry}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{wasysym}
+\usepackage{url}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathreplacing}
+\hbadness=99999
+
+%New Environments
+
+\newenvironment{Dtabular}[2][1] {\def\arraystretch{#1}\tabular{#2}}
+{\endtabular}
+\begin{document}
+	\title{
+		\large Advanced physics lab\\
+		summer semester 2019 \\[4mm]
+		\textbf{\LARGE 
+			Experiment: \emph{TODO}
+		} \\[3mm]
+		(Dates of the Experiment: \emph{TODO 09.2019} with supervisor \emph{\textsl{TODO}}) \\}
+	\author{Erik Bode, Damian Lanzenstiel \\ (Group 103)}
+	\maketitle
+	\begin{abstract}
+		Short summary, 200-300 words
+	\end{abstract}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+
+\section{Introduction of theories and methodologies (about 3-4 pages)}
+Introduction of topic / important theories, definitions, formulas, and concepts
+Description of used methodologies
+\section{Main Part / Results}
+\section{Data Analysis}
+\section{Discussion}
+
+\end{document}
