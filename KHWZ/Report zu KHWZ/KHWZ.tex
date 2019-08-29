@@ -93,13 +93,37 @@
 	\subsection{Interaction between Matter and $\gamma-$Photons}	
  	When $\gamma-$photons and matter interact this happens mostly in 3 different ways depending on the atomic number of the atoms in the matter, as well as the Energy $E_\gamma$ of the photons.
  	\begin{enumerate}
- 		\item Photoeffect:\\
- 		The photeffect happens when a photon is absorbed by an electron inside the matter. The energy carried by the photon is turned into kinetic energy and frees the electron. The vacancy is filled by electrons from higher shells and the energy is emitted by an Auger-electron or X-ray.\\
+ 		\item Photoelectric effect:\\
+ 		The photoelectric effect happens when a photon is absorbed by an electron inside the matter. The energy carried by the photon is turned into kinetic energy and frees the electron. The vacancy is filled by electrons from higher shells and the energy is emitted by an Auger-electron or X-ray.\\
  		This effect appears mostly by $E_\gamma<200$\,keV and an atomic number around 50.
- 		\item Comptoneffect:\\
- 		Unlike the photoeffect the photons are not absorbed by the electrons in the matter. They give up a part of their energy and scatter at the electron.\\
- 		The comptoneffect happens by Energies in the range of $200$\,keV$<E_\gamma<5$\,MeV and a atomic number similar to the photoeffect.
+ 		\item Compton scattering:\\
+ 		Unlike the photoelectric effect the photons are not absorbed by the electrons in the matter. They give up a part of their energy and scatter at the electron.\\
+ 		The Compton scattering happens by Energies in the range of $200$\,keV$<E_\gamma<5$\,MeV and a atomic number similar to the photoelectric effect.
  		\item Pair Production:\\
- 		Pair production is an effect that appears by an energy $E_\gamma$ over the critical one of $1.022$\,MeV. When a $\gamma$-quant gets into the electromagnetic field of a nucleus or electron it gets absorbed and creates an electron positron pair. To create this pair the energy of $1.022$\,MeV is needed this is also the reason the pair production can't happen if the photon has less energy. The remaining energy is given to the nucleus. The positron annihilates with an electron shortly after it's creation into two $\gamma$-rays with each half 
+ 		Pair production is an effect that appears by an energy $E_\gamma$ over the critical one of $1.022$\,MeV. When a $\gamma$-quantum gets into the electromagnetic field of a nucleus or electron it can be converted into an electron positron pair. 
+ 		$$\gamma \rightarrow e^- + e^+$$
+ 		To create this pair the energy of $1.022$\,MeV is needed this is also the reason the pair production can't happen if the photon has less energy. The remaining energy is given to the nucleus. The positron annihilates with an electron shortly after it's creation into two $\gamma$-rays with each half $0.511$\,MeV.
  	\end{enumerate}
+ 	\subsection{Methodology}
+ 	\ \\ 
+ 	\begin{wrapfigure}{l}{8cm}
+ 		\begin{tikzpicture}[scale=1.2]
+ 		\draw (1,1.5) -- (1.8,1.5) node[above]{$^{57}$Co} -- (3,1.5);
+ 		\draw[->] (2,1.4) -- (0.5,0.1);
+ 		\node at (2.4,0.8) {EC $99.8\%$};
+ 		\draw (-1,0) -- (-0.3,0) node[above]{$^{57}$Fe} -- (1,0) node[right]{\quad$E=136.5$\,keV, $T_\frac{1}{2}=9$\,ns};
+ 		\draw (-0.9,-1.5) -- (1,-1.5) node[right]{\quad $E=14.4$\,keV, $T_\frac{1}{2}=98$\,ns};
+ 		\draw (-1,-3) -- (1,-3) node[right]{\quad$E=0$\,keV};
+	 	\draw[->] (-0.8,-0.1) -- node[rotate=90,above]{$\gamma$ 	$12\%$} (-0.8,-2.9);
+ 		\draw[->] (0.2,-1.6) -- node[rotate=90,above]{$\gamma$ $10\%$}(0.2,-2.9);
+ 		\draw[->] (-0.3,-0.1) -- node[rotate=90,below]{$\gamma$ $88\%$} (-0.3,-1.4);
+ 		\draw[->] (0.8,-1.6) -- node[rotate=90,below]{IC $90\%$} (0.8,-2.9);
+ 		\end{tikzpicture}
+ 		\caption{\small Decay scheme for the cobalt isotope $^{57}$Co into $^{57}$Fe used into the experiment to measure the half-life of the $14.4$\,keV state of the Iron isotope.}
+ 		\label{CoDecay}
+ 	\end{wrapfigure}
+ 	\ \\ 
+ 	To measure the half-life of $^{57}$Fe we use the decay of the $^{57}$Co Isotope (see figure \ref{CoDecay}) $^{57}$Co decays by EC into an exited state of $^{57}$Fe. At this point it can either decay directly to the ground state emitting a $\gamma$-photon.\\
+ 	The more likely case with $88\%$ is, that it first goes to the wanted state of $14.4$\,keV by emitting a $\gamma-$ray. From this state it again has two options.\\ With a $90\%$ probability we have an IC which we can't detect but there is also a $10\%$ chance that a $\gamma-$decay takes place.\\
+ 	The $\gamma$-decay to the $14.4$\,keV state and the and the one with $10\%$ probability can be used to measure the half-life of the named state by using the method of delayed coincidence.\\
 \end{document}
