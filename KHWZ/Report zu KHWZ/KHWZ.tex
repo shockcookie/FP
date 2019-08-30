@@ -90,6 +90,7 @@
 	The captured electron is mostly from the K-shell while the resulting hole in the shell is filled by electrons from the L-shell. The remaining energy is either emitted through a X-ray photon or a Auger-electron. An Auger-electron is an electron that got the energy of an electron filling the vacancy left by electron in a lower state. The Auger-electron is therefore ejected. \\
 	These decays are often accompanied by a $\gamma-$decays. When a decay occurs the daughter nucleus is mostly left in an exited state. It then decays into the ground state emitting $\gamma$-rays.\\
 	Another Process similar to the $\gamma$-decay is the internal conversion (IC). Here the energy of a decay into a lower state is transmitted without radiation. That means no real photon is created to transport the energy. The energy is directly absorbed by another electron from the shell and ejected. The hole is filled similar to the one of EC by X-ray or Auger-electrons. 
+	\subsection{}
 	\subsection{Interaction between Matter and $\gamma-$Photons}	
  	When $\gamma-$photons and matter interact this happens mostly in 3 different ways depending on the atomic number of the atoms in the matter, as well as the Energy $E_\gamma$ of the photons.
  	\begin{enumerate}
@@ -124,6 +125,23 @@
  	\end{wrapfigure}
  	\ \\ 
  	To measure the half-life of $^{57}$Fe we use the decay of the $^{57}$Co Isotope (see figure \ref{CoDecay}) $^{57}$Co decays by EC into an exited state of $^{57}$Fe. At this point it can either decay directly to the ground state emitting a $\gamma$-photon.\\
- 	The more likely case with $88\%$ is, that it first goes to the wanted state of $14.4$\,keV by emitting a $\gamma-$ray. From this state it again has two options.\\ With a $90\%$ probability we have an IC which we can't detect but there is also a $10\%$ chance that a $\gamma-$decay takes place.\\
- 	The $\gamma$-decay to the $14.4$\,keV state and the and the one with $10\%$ probability can be used to measure the half-life of the named state by using the method of delayed coincidence.\\
+ 	The more likely case with $88\%$ is, that it first goes to the wanted state of $14.4$\,keV by emitting a $\gamma-$ray. From this state it again has two options. With a $90\%$ probability we have an IC which we can't detect but there is also a $10\%$ chance that a $\gamma-$decay takes place.\\
+ 	\ \\
+ 	To measure the half-life it makes sense to use the method of delayed coincidence. For this kind of measurement we need to measure the time $\Delta t$ it takes for the $14.4$\,keV state to decay. The $\gamma$-photons connected to this state can be used to track the creation and the decay of the measured state and with that our time $\Delta  t$. This time is of interest since like the radioactive decay which is a stochastic process, it follows the equation \ref{eq1}.
+ 	\begin{equation}
+ 		N(t)=N(0) e^{\frac{t}{\tau}}=N(0) *2^{\nicefrac{t}{T_\frac{1}{2}}}
+ 		\label{eq1}
+ 	\end{equation}
+ 	\begin{enumerate}
+ 		\item[•] $N(t)$: Number of existing nucleus at a given time.
+ 		\item[•] $N(0)$: Number of nucleus at the time zero.
+ 		\item[•] $\tau$: Mean life time of the decaying quantity.
+ 		\item[•] $T_\frac{1}{2}$: Half-life of the decaying quantity.
+ 	\end{enumerate}
+ 	With that the amount of measured decays at certain times $\Delta t$ the half-life can be calculated. A problem that appears for the used decay is the rarity of the $\gamma$-ray with $14.4$\.keV. This one has only a $10\%$ chance of appearing and stopping our measurement. That would lead to a long dead time in which no new measurement can be taken. The problem is easily solved by using the rarer signal as the start of the measurement and stopping it with the $122$\,keV photon. Since there are also random coincidences which will distort the measurement a background measurement has to be made. This one can be subtracted from the real measurement.
+ 	
+ 	\subsection{$\gamma$-Ray Detection}
+ 	To detect the $\gamma$-rays two scintillators which react to the $\gamma$-photons exhibiting scintillation will be used. This again can be detected by a photomultiplier tube (PMT) and converts them into an electric pulse.\\
+ 	As scintillators organic and inorganic ones can be used. The main difference being the decay time of the emission centers and the luminous efficiency. If the half-life is bigger than $10^{-9}$\,s inorganic Naj(Tl)-scintillators are the choice since they have the higher luminous efficiency. For shorter times organic ones have to be used because of the shorter decay time.\\ For this experiment inorganic ones can still be utilized. The light from emitted can by light transmission bars to the PMTs. That way the loss will be minimized. \\ The PMT is used to generate an electric signal by using the photoelectric effect. The pulse is increased by using increasing the velocity of the electrons freed by the photons and using them to free even more electrons at the dynode. This process will be repeated till a useful signal is produced.
+ 	
 \end{document}
