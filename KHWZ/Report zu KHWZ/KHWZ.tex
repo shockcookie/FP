@@ -90,7 +90,6 @@
 	The captured electron is mostly from the K-shell while the resulting hole in the shell is filled by electrons from the L-shell. The remaining energy is either emitted through a X-ray photon or a Auger-electron. An Auger-electron is an electron that got the energy of an electron filling the vacancy left by electron in a lower state. The Auger-electron is therefore ejected. \\
 	These decays are often accompanied by a $\gamma-$decays. When a decay occurs the daughter nucleus is mostly left in an exited state. It then decays into the ground state emitting $\gamma$-rays.\\
 	Another Process similar to the $\gamma$-decay is the internal conversion (IC). Here the energy of a decay into a lower state is transmitted without radiation. That means no real photon is created to transport the energy. The energy is directly absorbed by another electron from the shell and ejected. The hole is filled similar to the one of EC by X-ray or Auger-electrons. 
-	\subsection{}
 	\subsection{Interaction between Matter and $\gamma-$Photons}	
  	When $\gamma-$photons and matter interact this happens mostly in 3 different ways depending on the atomic number of the atoms in the matter, as well as the Energy $E_\gamma$ of the photons.
  	\begin{enumerate}
@@ -105,6 +104,12 @@
  		$$\gamma \rightarrow e^- + e^+$$
  		To create this pair the energy of $1.022$\,MeV is needed this is also the reason the pair production can't happen if the photon has less energy. The remaining energy is given to the nucleus. The positron annihilates with an electron shortly after it's creation into two $\gamma$-rays with each half $0.511$\,MeV.
  	\end{enumerate}
+ 	\subsection{Energy Spectrum}
+ 	In the energy spectrum are a few areas of interest. \\
+ 	First of all their are the Photo-peaks. These are peaks which come into being when a photon gives its whole energy to the detector. This will happen during a photoelectric effect if the emitted x-Ray or auger electron also gets absorbed.\\
+ 	Another region of interest (ROI) could be the Escape-peak. Here the x-Ray emitted by an exited state dropping to back to the ground state leaves the detector without interaction. That means the Escape-peak will be shifted by the amount of energy that left the detector.\\
+ 	The next point is the Compton edge and spectrum. If the emitted photon only interacts with the detector only by Compton scattering, and leaves the detector only a part of the energy will be deposed. This energy will form the Compton-spectrum. For a scattering angle of $180$ the maximum amount of energy will be absorbed. This energy symbols the abrupt end of this spectrum and is called the Compton-edge.\\
+ 	Last but not least there is the Backscatter-peak happens through photons that get scattered at material outside of the detector and find their way back in where they get absorbed. That way they lose some energy depending on the material. This is way the peak is shifted by this amount from the position of the Photo-peak. 
  	\subsection{Methodology}
  	\ \\ 
  	\begin{wrapfigure}{l}{8cm}
@@ -138,10 +143,17 @@
  		\item[•] $\tau$: Mean life time of the decaying quantity.
  		\item[•] $T_\frac{1}{2}$: Half-life of the decaying quantity.
  	\end{enumerate}
- 	With that the amount of measured decays at certain times $\Delta t$ the half-life can be calculated. A problem that appears for the used decay is the rarity of the $\gamma$-ray with $14.4$\.keV. This one has only a $10\%$ chance of appearing and stopping our measurement. That would lead to a long dead time in which no new measurement can be taken. The problem is easily solved by using the rarer signal as the start of the measurement and stopping it with the $122$\,keV photon. Since there are also random coincidences which will distort the measurement a background measurement has to be made. This one can be subtracted from the real measurement.
+	With that the amount of measured decays at certain times $\Delta t$ the half-life can be calculated. A problem that appears for the used decay is the rarity of the $\gamma$-ray with $14.4$\.keV. This one has only a $10\%$ chance of appearing and stopping our measurement. That would lead to a long dead time in which no new measurement can be taken. The problem is easily solved by using the rarer signal as the start of the measurement and stopping it with the $122$\,keV photon. Since there are also random coincidences which will distort the measurement a background measurement has to be made. This one can be subtracted from the real measurement.
  	
  	\subsection{$\gamma$-Ray Detection}
  	To detect the $\gamma$-rays two scintillators which react to the $\gamma$-photons exhibiting scintillation will be used. This again can be detected by a photomultiplier tube (PMT) and converts them into an electric pulse.\\
  	As scintillators organic and inorganic ones can be used. The main difference being the decay time of the emission centers and the luminous efficiency. If the half-life is bigger than $10^{-9}$\,s inorganic Naj(Tl)-scintillators are the choice since they have the higher luminous efficiency. For shorter times organic ones have to be used because of the shorter decay time.\\ For this experiment inorganic ones can still be utilized. The light from emitted can by light transmission bars to the PMTs. That way the loss will be minimized. \\ The PMT is used to generate an electric signal by using the photoelectric effect. The pulse is increased by using increasing the velocity of the electrons freed by the photons and using them to free even more electrons at the dynode. This process will be repeated till a useful signal is produced.
+ 	\section{Experimental Setup}
+ 	In the first part of the experiment the energy spectrum of $^57$Co and $^241$Am are measured. For this the setup in figure \ref{setup_ES} is used.
+ 	\begin{figure}
+ 		\includegraphics{Bilder/Circuit_ES}
+ 	\end{figure}
+ 
+ 	
  	
 \end{document}
