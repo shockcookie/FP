@@ -149,11 +149,62 @@
  	To detect the $\gamma$-rays two scintillators which react to the $\gamma$-photons exhibiting scintillation will be used. This again can be detected by a photomultiplier tube (PMT) and converts them into an electric pulse.\\
  	As scintillators organic and inorganic ones can be used. The main difference being the decay time of the emission centers and the luminous efficiency. If the half-life is bigger than $10^{-9}$\,s inorganic Naj(Tl)-scintillators are the choice since they have the higher luminous efficiency. For shorter times organic ones have to be used because of the shorter decay time.\\ For this experiment inorganic ones can still be utilized. The light from emitted can by light transmission bars to the PMTs. That way the loss will be minimized. \\ The PMT is used to generate an electric signal by using the photoelectric effect. The pulse is increased by using increasing the velocity of the electrons freed by the photons and using them to free even more electrons at the dynode. This process will be repeated till a useful signal is produced.
  	\section{Experimental Setup}
- 	In the first part of the experiment the energy spectrum of $^57$Co and $^241$Am are measured. For this the setup in figure \ref{setup_ES} is used.
- 	\begin{figure}
- 		\includegraphics{Bilder/Circuit_ES}
+ 	\subsection{Energy Spectra}
+ 	In the first part of the experiment the energy spectrum of $^{57}$Co and $^{241}$Am are measured. For this the setup in figure \ref{setup_ES} is used. Here the signals from the scintillator gets converted into an electric pulse and the Preamplifier (PA) provides a measurable signal. In the Main Amplifier (MA) the signal gets further amplified with low-noise. After this the pulse gets to the Multichannel Amplifier were it gets registered depending on the amplitude of the signal into a channel. This way a histogram can be formed. The output of the MA is for this measurement unipolar because only the amplitude of the signal is of importance. The spectra are needed to calibrate the MCA since a connection between known energies and the channel number can be made.
+ 	\begin{figure}[h]
+ 		\includegraphics[scale=0.92]{Bilder/Circuit_ES}
+ 		\centering
+ 		\caption{\small Setup for the measurement of energy spectra with the MCA.}
+ 		\label{setup_ES}
  	\end{figure}
- 
- 	
- 	
+ 	\subsection{SCA Thresholds}
+ 	In the next part of the experiment the energy windows for the Single Channel Analyser (SCA) have to be set. One have to be set to filter out $122.1$\,keV photons and the other one to filter the $14.4$\,keV ones out. For this the setup in figure \ref{setup_EW} is used. The Linear Gate in the setup only lets through a signal only when two signals one at the input and on at the enabler arrive at the same time. That way we can precisely set the energy window at the SCA. By moving the upper and lower threshold of the window, pulses with amplitudes outside of the thresholds are stopped and with that the other signal is stopped at the gate as well. By watching the histogram created by the MCA the thresholds can be set to the correct energy levels. 
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/Circuit_ES_calib}
+ 		\centering
+ 		\caption{\small Setup for the calibration of the energy windows to filter out the photons with correct energies.}
+ 		\label{setup_EW}
+ 	\end{figure}\\
+ 	\FloatBarrier
+ 	\subsection{Delayed Coincidences}
+ 	The setup in figure \ref{setup_DC} is used to make the measurement of delayed coincidences. In this setup the two sides of the detectors are connected to the calibrated SCAs. The TAC takes a start and a stop signal and creates a signal with an amplitude proportional to the time between the input signals. Since the measurement is started with the later $14.4$\,keV photon the earlier photon needs to be delayed so that it can stop the measurement.\\
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/Circuit_DC}
+ 		\centering
+ 		\caption{\small Setup for the measurement with the method of delayed coincidences.}
+ 		\label{setup_DC}
+ 	\end{figure}\\
+ 	\subsection{TAC Calibration}
+ 	Last but not least the TAC needs to be calibrated. For this the setup in figure \ref{setup_TC} will be used. With this the constant of proportionality between the delay and the channel number of the MCA can be calculated. 
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/Circuit_DC_calib}
+ 		\centering
+ 		\caption{\small Setup for the calibration of the TAC.}
+ 		\label{setup_TC}
+ 	\end{figure}\\
+ 	\section{Conduction of the Experiment}
+ 	First of all the $^{141}Am$ isotope was put into the detector. Directly after the PA and the MA were connected to an oscilloscope. Here the signals of both could be compared like in figure \ref{Ossi-lloscope}.\\
+ 	After this the MCA was connected like in figure \ref{setup_ES}. The MCA was also connected to the interface from which the measurement of the energy spectra can be started. With the $^{141}Am$ source one measurement with each scintillator was made. These can be used to make the energy calibration of the MCA.\\
+ 	After this measurement the  $^{141}Am$ source was switched with the $^{57}$Co source. Here four different spectra were taken, two for both detectors with different sides of the sample. With these information the best combination of side of the sample and scintillator was chosen for the different energies. With this set the calibration of the energy windows could be started. For this the layout in figure \ref{setup_EW} was used. First the window was opened completely so the whole spectrum, which was measured before could be seen. Than the thresholds at the SCA were slowly adjusted so that only one peak of the needed energy could be seen on the computer. After both SCAs were configured the actual measurement seen in figure \ref{setup_DC} was set up. For the delay we choose the highest of $\color{red} ??$\,ns to get as much of the exponential curve as possible. After running a test the main measurement was started with a timer of 15 hours. Since the measured spectrum had a big part with only random coincidences this can be used instead of another measurement for the random coincidences. At last the calibration for the TAC was done by using the setup of figure \ref{setup_TC}. Here different delays were set and the corresponding channel were noted.
+ 	\section{Analysis}
+ 	\subsection{Oscilloscope}
+ 	\begin{figure}
+ 		\includegraphics[scale=0.42]{Bilder/OsziPA}
+ 		\centering
+ 		\caption[PA]{Signal of the PA measured with an oscilloscope.}
+ 		\label{PA}
+ 	\end{figure}
+ 	\begin{figure}
+ 		\includegraphics[scale=0.42]{Bilder/OsziBipolar}
+ 		\centering
+ 		\caption[Bipolar]{Bipolar signal output of the MA compared to the signal coming from the PA. Measured with an oscilloscope. In yellow the signal of the PA. In Blue the signal of the MA.}
+ 		\label{Bi}
+ 	\end{figure}
+ 	\begin{figure}
+ 		\includegraphics[scale=0.42]{Bilder/OsziUnipolar}
+ 		\centering
+ 		\caption[Unipolar]{Unipolar signal output of the MA compared to the signal coming from the PA. Measured with an oscilloscope. In yellow the signal of the PA. In Blue the signal of the MA.}
+ 		\label{Uni}
+ 	\end{figure}
+ 	In figure \ref{PA} we see the signal coming from the PA output of the detector. The signal reaches almost instantaneously its peak and than drops slowly down to the ground level. If we compare this signals with the one coming from the MA we can see that they are more Gaussian like and the beginning of the signal is a bit shifted to the left. In figure \ref{Bi} the maximum of the blue signal is only a bit higher than the signal of the PA but its obvious that we have a bipolar signal. It is also notable that the ground level of the MA is higher than the one of the PA. In figure \ref{Uni} this is the same but we see that the maximum amplitude of the MA signal is much higher than the one of the PA and we have a bell shaped signal. Comparing right and left slope of the MA curves with each other we notice that here the left side has a bit sharper increase than the right side of the signal.
 \end{document}
