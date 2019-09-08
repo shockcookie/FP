@@ -1,0 +1,12 @@
+% Encoding: UTF-8
+
+@InProceedings{Am_Decay,
+  author    = {Khatry, Jivan and Nieminen, Juha and Smith, Joshua and Slotten, Kari},
+  title     = {10 We Radioisotope Thermophotovoltaic (RTPV) Power Source Demonstration},
+  year      = {2017},
+  month     = {02},
+  url       = {https://www.researchgate.net/publication/331332981_10_We_Radioisotope_Thermophotovoltaic_RTPV_Power_Source_Demonstration/citation/download},
+  timestamp = {2019-09-06},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}
