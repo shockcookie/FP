@@ -279,6 +279,22 @@
 		\label{bckgnd_fit}
 	\end{figure}
 
+	\FloatBarrier
+	After subtracting the background coincidences, a exponential function of the form
+	\ref{exp_style} was used to approximate the value of the decay constant $\lambda$, $b$ in the fit. As seen in figure \ref{exp_fit}, the parameter  $b$ is 
+	\begin{equation}
+		y\left(x,a,b,c,d\right) = a \cdot \exp\left(b\cdot\left(x+d\right)\right) + c
+		\label{exp_style}
+	\end{equation}
+	
+	\begin{figure}[h]
+		\includegraphics{Bilder/lin_fit_exp}
+		\centering
+		\caption{\small Plot of the datapoints in the roi with the fitted exponential curve. The determined parameters are given in the picture.}
+		\label{exp_fit}
+	\end{figure}
+	
+	\FloatBarrier
  	\section{Appendix}
  	\bibliographystyle{plain}
  	\bibliography{Quellen}
