@@ -51,7 +51,8 @@
 \hbadness=99999 
 % Löst ein Problem mit \hbox
 
-
+\newenvironment{Dtabular}[2][1] {\def\arraystretch{#1}\tabular{#2}}
+{\endtabular}
 
 \title{
 	\large Advanced Physics Lab	SS19 \\[4mm]
@@ -185,6 +186,37 @@
  	After this the MCA was connected like in figure \ref{setup_ES}. The MCA was also connected to the interface from which the measurement of the energy spectra can be started. With the $^{141}Am$ source one measurement with each scintillator was made. These can be used to make the energy calibration of the MCA.\\
  	After this measurement the  $^{141}Am$ source was switched with the $^{57}$Co source. Here four different spectra were taken, two for both detectors with different sides of the sample. With these information the best combination of side of the sample and scintillator was chosen for the different energies. With this set the calibration of the energy windows could be started. For this the layout in figure \ref{setup_EW} was used. First the window was opened completely so the whole spectrum, which was measured before could be seen. Than the thresholds at the SCA were slowly adjusted so that only one peak of the needed energy could be seen on the computer. After both SCAs were configured the actual measurement seen in figure \ref{setup_DC} was set up. For the delay we choose the highest of $\color{red} ??$\,ns to get as much of the exponential curve as possible. After running a test the main measurement was started with a timer of 15 hours. Since the measured spectrum had a big part with only random coincidences this can be used instead of another measurement for the random coincidences. At last the calibration for the TAC was done by using the setup of figure \ref{setup_TC}. Here different delays were set and the corresponding channel were noted.
  	\section{Analysis}
+ 	\subsection{Energy Calibration}
+ 	To calibrate the MCA the decay of the Americium is used since it has clear visible Photo-peaks with known energies. To get the position of the peaks three Gaussian peaks are fitted on the curves. For the fits the python package \verb|scipy.optimize.curve_fit| was used. For the $59.5$\,keV peak the equation \ref{eq6} was used. 
+ 	\begin{equation}
+ 	f(x)=Ae^{-\frac{x-\mu}{2\sigma^2}}+C \label{eq6}
+ 	\end{equation}
+ 	In figure \ref{Am3peak} the two peaks can be seen. For the other two peaks which are pushed together, two added Gaussian curves in the form of equation \ref{Am12peak} are used.
+ 	\begin{equation}
+ 	f(x)=Ae^{-\frac{x-\mu}{2\sigma^2}}+A_2e^{-\frac{x-\mu_2}{2\sigma_2^2}}+C \label{Am12peak} 
+ 	\end{equation}
+ 	These fits are given in figure \ref{DoublePeakL} and \ref{CoublePeakR}. With the value of the three different $\mu$ we get the position of the maximums.\\
+ 	\begin{figure}[h]
+ 	\begin{Dtabular}[1.1]{|c|c|c|c|}
+ 		\hline
+ 		&$59.5\,$keV&$33.2\,$keV&$26.3\,$keV \\
+ 		\hline
+ 		Right Scintillator $\mu$&$120.61\pm0.23$&$191.25\pm0.29$& $419.53\pm0.023$\\
+ 		\hline
+ 		Left Scintillator $\mu$&$123.92\pm0.30$&$179.91\pm0.28$ &$372.83\pm0.022$\\
+ 		\hline
+ 	\end{Dtabular}
+ 	\centering
+ 	\caption{Positions of the different energy peaks of the right and left scintillator.}
+ 	\label{EnCalib}
+ 	\end{figure}\\
+ 	These values can be plotted as a line which gives for every channel the corresponding energy. $R^2$ is the coefficient of determinate and n the channel number. 
+ 	\begin{equation}
+	f(x)_{Right}=(0.1120\pm 0.0033)\,\nicefrac{\text{keV}}{n}*x+ (12.3\pm0.9)\,\text{keV} \qquad R^2=0.9991 \label{eqRC}
+ 	\end{equation}
+	\begin{equation}
+	f(x)_{Left}=(0.1341\pm 0.0023)\,\nicefrac{\text{keV}}{n}*x+ (9.4\pm0.5)\,\text{keV} \qquad R^2=0.9996 \label{eqLC}
+	\end{equation}
  	\subsection{Analysis of the Signal Shapes}
  	\begin{figure}
  		\includegraphics[scale=0.42]{Bilder/OsziPA}
@@ -207,7 +239,51 @@
  	In figure \ref{PA} we see the signal coming from the PA output of the detector. The signal reaches almost instantaneously its peak and than drops slowly down to the ground level. If we compare this signals with the one coming from the MA we can see that they are more Gaussian like and the beginning of the signal is a bit shifted to the left. In figure \ref{Bi} the maximum of the blue signal is only a bit higher than the signal of the PA but its obvious that we have a bipolar signal. It is also notable that the ground level of the MA is higher than the one of the PA. In figure \ref{Uni} this is the same but we see that the maximum amplitude of the MA signal is much higher than the one of the PA and we have a bell shaped signal. Comparing right and left slope of the MA curves with each other we notice that here the left side has a bit sharper increase than the right side of the signal.
  	\subsection{Analysis of the Energy Spectra}
  	\subsubsection{Americium Spectra}
- 	For the Americium Isotope
+ 	Looking at figure \ref{AS} we see that the two spectra are shifted against each other. It is likely that the scintillators have a different amplification which causes this shift. Because of this two different energy calibrations are needed. \par
+	Looking at the spectra we see mainly the three Photo-peaks of the decays we expect. The positions of other regions of interest (ROI) are noted in the table \ref{AmSpectrum}
+	\begin{figure}[h]
+		\begin{Dtabular}[1.1]{|c|c|c|c|}
+			ROI&Expected Energy [keV]&Right Channel&Left Channel\\
+			\hline
+			Escape Peak of $59.5$\,keV&$31.5$&&\\
+			\hline
+			Escape Peak of $26.3$\,keV&-&-&-\\
+			\hline
+			Escape Peak of $33.2$\,keV&-&-&-\\
+			\hline
+			Compton Edge of $59.5$\,keV&$11.23$&&\\
+			\hline
+			Compton Edge of $26.3$\,keV&$2.45$&&\\
+			\hline
+			Compton Edge of $33.2$\,keV&$3.82$&&\\
+			\hline
+		\end{Dtabular}
+		\centering
+		\caption{Points of interest for the scintillators. To calculate the channel equation \ref{eqRC} for the right side and equation \ref{eqLC} for the left side is used. - means that the peak ether cant exist in the spectrum.}
+	\end{figure}
+	To calculate the Escape Peak $28$\,keV were deducted from the Photo-peaks energy since this is the energy between the K and L shall in this experiment. To calculate the energy of the Compton edge equation \ref{comtonedge} was used.\par
+	\begin{equation}
+		E_{Compton}=E_{Photon}-\frac{E_{Photon}}{1+\frac{2E_{Photon}}{E_{Electron}}} \label{comtonedge}
+	\end{equation}
+	Looking at these we see that we expect to see the Escape Peak of the $59.5$\,keV peak and its Compton Edge. The Reason we don't see them is that our Escape Peak is overshadowed by the Photo Peak of our $33.2\,$keV Photon. For the Compton Edge its possible that our energies are to low for it to happen often enough that it would get visible since the Compton scattering happens mostly in the range of $200\,$keV to $5\,$MeV.
+ 	\begin{figure}[h]
+ 		\includegraphics[scale=0.5]{Bilder/Americium_Energy_Spectra}
+ 		\centering
+ 		\caption[Americium Spectra]{Measured Americium Energy Spectra. The green curve is the measurement with the left scintillator while the red one is the scintillator of the right detector side.}
+ 		\label{AS}
+ 	\end{figure}
+ 	\begin{figure}[h]
+ 		\includegraphics[scale=0.5]{Bilder/kleine_Peaks2}
+ 		\centering
+ 		\caption[Americium Spectra Double Peak Left Detector Side]{Measured Americium Energy Spectra of the $26.3$\,keV and $33.2$\,keV double peak with fits of the split peaks. Spectrum of the left scintillator.}
+ 		\label{ASL}
+ 	\end{figure}
+ 	\begin{figure}[h]
+ 		\includegraphics[scale=0.5]{Bilder/kleine_Peaks1}
+ 		\centering
+ 		\caption[Americium Spectra Double Peak Right Detector Side]{Measured Americium Energy Spectra of the $26.3$\,keV and $33.2$\,keV double peak with fits of the split peaks. Spectrum of the right scintillator.}
+ 		\label{ASR}
+ 	\end{figure}
  	\bibliographystyle{plain}
  	\bibliography{Quellen}
  	\addcontentsline{toc}{section}{Literatur}
