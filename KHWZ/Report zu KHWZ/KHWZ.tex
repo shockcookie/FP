@@ -212,8 +212,8 @@
  	\subsubsection{Time calibration}
  	To correctly compute the half-live of the $14.4$\,keV state of $^{57}$Fe, the conversion of time difference to the channels in the MCA is determined.
  	The data collected for this purpose is found in the appendix. 
- 	The channel and delay pairs were plotted and a linear model of first order was
- 	fitted to the data. The plot is shown in Figure \ref{time_cal_plot}.
+ 	The channel and delay pairs were plotted and a unweighted linear model of first
+ 	order was fitted to the data. The plot is shown in figure \ref{time_cal_plot}.
  	The fitted linear model had the form of $n(\Delta t) = m \cdot \Delta t + c$.
  	The fitted parameters were:
 	\begin{eqnarray}
@@ -238,9 +238,48 @@
  		\label{time_cal_plot}
  	\end{figure}
  	
+ 	\subsubsection{Analysis on linear scale}
+ 	For the analysis in the linear scale, two ranges of the data set were chosen.
+ 	One	was used for the background compensation, the other one for the exponential fit.
+ 	For a visual representation and the exact value ranges, see figure \ref{raw_plot}.
+ 	The error on the counts is, because a poisson distribution was assumed, computed by
+ 	equation \ref{poisson_error}. $s_{counts}$ is the error for the counts of a channel, $n$  the actual counts of the same channel. All errors were calculated for each channel individually.
+ 	\begin{equation}
+ 	s_{counts}=\sqrt{n}
+ 	\label{poisson_error}
+ 	\end{equation}
  	
  	
+	\begin{figure}[h]
+ 		\includegraphics{Bilder/raw_ranges}
+ 		\centering
+ 		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+ 		\label{raw_plot}
+ 	\end{figure}
  	
+	As the next step a curve, analog to the one used for the time calibration, was
+	fitted to the range designated for the background compensation. A visual
+	representation of this fit is given in figure \ref{bckgnd_fit}. This fitted curve
+	was then subtracted from all the datapoints, as a mean to reduce the influence of
+	random background coincidences. This simplistic approach was chosen, because the 
+	background data was a part of the main measurement. The parameters for this curve
+	are:
+	
+	\begin{eqnarray}
+	m = (-0.015 \pm 0.020)\frac{1}{\textrm{ns}} \\
+	c = (92 \pm 7)
+	\end{eqnarray}
+	
+	
+	
+	\begin{figure}[h]
+		\includegraphics{Bilder/lin_bkgnd}
+		\centering
+		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+		\label{bckgnd_fit}
+	\end{figure}
+
+ 	\section{Appendix}
  	\bibliographystyle{plain}
  	\bibliography{Quellen}
  	\addcontentsline{toc}{section}{Literatur}
