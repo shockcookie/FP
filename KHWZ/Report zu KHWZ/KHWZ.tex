@@ -208,6 +208,39 @@
  	\subsection{Analysis of the Energy Spectra}
  	\subsubsection{Americium Spectra}
  	For the Americium Isotope
+ 	\subsection{Analysis of the delayed coincidences measurement}
+ 	\subsubsection{Time calibration}
+ 	To correctly compute the half-live of the $14.4$\,keV state of $^{57}$Fe, the conversion of time difference to the channels in the MCA is determined.
+ 	The data collected for this purpose is found in the appendix. 
+ 	The channel and delay pairs were plotted and a linear model of first order was
+ 	fitted to the data. The plot is shown in Figure \ref{time_cal_plot}.
+ 	The fitted linear model had the form of $n(\Delta t) = m \cdot \Delta t + c$.
+ 	The fitted parameters were:
+	\begin{eqnarray}
+ 	m = (1.2 \pm 0.007)\frac{1}{\textrm{ns}} \\
+ 	c = (-21.5 \pm 0.7)
+ 	\end{eqnarray}
+ 	The error for the time as estimated to be $\pm 0.5\,\textrm{ns}$, which is too small
+ 	to be visible in the graphic.
+ 	This parameters were used to compute the time corresponding to each channel using 
+ 	formula \ref{chn_to_time}. $x_{cal}$ represents the calibrated value, $x_{norm}$ the
+ 	original value.
+ 	
+ 	\begin{equation}
+ 	x_{cal} = \frac{x_{norm}-c}{m}
+ 	\label{chn_to_time}
+ 	\end{equation}
+ 	
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/time_cal}
+ 		\centering
+ 		\caption{\small Plot of the datapoints of the time calibration and the linear fit of them. The errors are too small to be visible in the graphic.}
+ 		\label{time_cal_plot}
+ 	\end{figure}
+ 	
+ 	
+ 	
+ 	
  	\bibliographystyle{plain}
  	\bibliography{Quellen}
  	\addcontentsline{toc}{section}{Literatur}
