@@ -105,8 +105,8 @@
  	\end{enumerate}
  	\subsection{Energy Spectrum}
  	In the energy spectrum are a few areas of interest. \\
- 	First of all their are the Photo-peaks. These are peaks which come into being when a photon gives its whole energy to the detector. This will happen during a photoelectric effect if the emitted x-Ray or auger electron also gets absorbed.\\
- 	Another region of interest (ROI) could be the Escape-peak. Here the x-Ray emitted by an exited state dropping to back to the ground state leaves the detector without interaction. That means the Escape-peak will be shifted by the amount of energy that left the detector.\\
+ 	First of all their are the Photo-peaks. These are peaks which come into being when a photon gives its whole energy to the detector. This will happen during a photoelectric effect if the emitted x-Ray or auger electron also gets absorbed.\par
+ 	Another region of interest (ROI) could be the Escape-peak. Here the x-Ray emitted by an exited state dropping to back to the ground state leaves the detector without interaction. That means the Escape-peak will be shifted by the amount of energy that left the detector.\par
  	The next point is the Compton edge and spectrum. If the emitted photon only interacts with the detector only by Compton scattering, and leaves the detector only a part of the energy will be deposed. This energy will form the Compton-spectrum. For a scattering angle of $180$ the maximum amount of energy will be absorbed. This energy symbols the abrupt end of this spectrum and is called the Compton-edge.\\
  	Last but not least there is the Backscatter-peak happens through photons that get scattered at material outside of the detector and find their way back in where they get absorbed. That way they lose some energy depending on the material. This is way the peak is shifted by this amount from the position of the Photo-peak. 
  	\subsection{Methodology}
@@ -217,6 +217,7 @@
 	\begin{equation}
 	f(x)_{Left}=(0.1341\pm 0.0023)\,\nicefrac{\text{keV}}{n}*x+ (9.4\pm0.5)\,\text{keV} \qquad R^2=0.9996 \label{eqLC}
 	\end{equation}
+	The fits can be seen in figure \ref{fitCalbTime}.
  	\subsection{Analysis of the Signal Shapes}
  	\begin{figure}
  		\includegraphics[scale=0.42]{Bilder/OsziPA}
@@ -246,30 +247,34 @@
 			\hline
 			ROI&Expected Energy [keV]&Right Channel&Left Channel\\
 			\hline
-			Escape Peak of $59.5$\,keV&$31.5$&&\\
+			Escape Peak of $59.5$\,keV&$31.5$&$171\pm10$&$165\pm5$\\
 			\hline
 			Escape Peak of $26.3$\,keV&-&-&-\\
 			\hline
 			Escape Peak of $33.2$\,keV&-&-&-\\
 			\hline
-			Compton Edge of $59.5$\,keV&$11.23$&&\\
+			Compton Edge of $59.5$\,keV&$11.23$&$-10\pm8$&$14\pm4$\\
 			\hline
-			Compton Edge of $26.3$\,keV&$2.45$&&\\
+			Compton Edge of $26.3$\,keV&$2.45$&$-88\pm9$&$-52\pm4$\\
 			\hline
-			Compton Edge of $33.2$\,keV&$3.82$&&\\
+			Compton Edge of $33.2$\,keV&$3.82$&$-76\pm9$&$-42\pm4$\\
 			\hline
 		\end{Dtabular}
 		\centering
-		\caption{Points of interest for the scintillators. To calculate the channel equation \ref{eqRC} for the right side and equation \ref{eqLC} for the left side is used. - means that the peak ether cant exist in the spectrum.}
+		\caption{Points of interest for the scintillators. To calculate the channel equation \ref{eqRC} for the right side and equation \ref{eqLC} for the left side is used. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator. The - means that the peak ether cant exist in the spectrum.}
 		\label{ROIs1}
 	\end{table}
+$171\pm10$
+$-10\pm8$
+$-88\pm9$
+$-76\pm9$
 	To calculate the Escape Peak $28$\,keV were deducted from the Photo-peaks energy since this is the energy between the K and L shall in this experiment. To calculate the energy of the Compton edge equation \ref{comtonedge} was used.\par
 	\begin{equation}
 		E_{Compton}=E_{Photon}-\frac{E_{Photon}}{1+\frac{2E_{Photon}}{E_{Electron}}} \label{comtonedge}
 	\end{equation}
 	Looking at these it can be expected to see an Escape Peak of the $59.5$\,keV peak and its Compton Edge. The Reason we don't see them is that our Escape Peak is overshadowed by the Photo Peak of our $33.2\,$keV Photon. For the Compton Edge its possible that our energies are to low for it to happen often enough that it would get visible since the Compton scattering happens mostly in the range of $200\,$keV to $5\,$MeV.
 	\subsubsection{Cobalt Spectra}
-	The cobalt spectra was measured four times and all four spectra can be seen in figure \ref{4cobaltspectra}. Since the two spectra where the screw of the source was turned to the scintillator are much lower, these are separate in figure \ref{2cobaltspectra}. Looking at the figures we can clearly see the $122.1\,$keV peaks. But in this peak there is also hidden the in theory smaller, duo to its lower probability, $136.5$\,keV peak. These are similar to the $26.3\,$keV and $33.2$\,keV peaks very close to each other. That's why the $136.5$\,keV Photo-peak is hidden in the big peak at the right side of the spectrum. In the table \ref{ROIs2} the positions of certain expected regions are listed. The Compton Edge was calculated like in the Americium Spectrum before with equation \ref{comtonedge}.\par
+	The cobalt spectra was measured four times and all four spectra can be seen in figure \ref{4cobaltspectra}. Since the two spectra where the screw of the source was turned to the scintillator are much lower, these are separate in figure \ref{2cobaltspectra}. Looking at the figures we can clearly see the $122.1\,$keV peaks. But in this peak there is also hidden the in theory smaller, duo to its lower probability, $136.5$\,keV peak. These are similar to the $26.3\,$keV and $33.2$\,keV peaks very close to each other. That's why the $136.5$\,keV Photo-peak is hidden in the big peak at the right side of the spectrum. It is also visible that depending on which sides of detector are here also shifted against each other. Notable as well is that there is a smaller shift depending on the side of the source. So the spectra measured with the screw side are a bit sifted to the left. In the table \ref{ROIs2} the positions of certain expected regions are listed. The Compton Edge was calculated like in the Americium Spectrum before with equation \ref{comtonedge}.\par
 	\begin{table}[h]
 		\begin{Dtabular}[1.1]{|c|c|c|c|}
 			\hline
@@ -295,7 +300,7 @@
 			\hline
 		\end{Dtabular}
 		\centering
-		\caption{Expected positions of certain regions of interest in the cobalt spectrum. The channels were calculated out of the expected energies with the equations \ref{eqLC} and \ref{eqRC}. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator.}
+		\caption{Expected positions of certain regions of interest in the cobalt spectrum. The channels were calculated out of the expected energies with the equations \ref{eqLC} and \ref{eqRC}. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator. The - means that the peak ether cant exist in the spectrum.}
 		\label{ROIs2}
 	\end{table}
 	\begin{figure}[h]
@@ -304,7 +309,7 @@
 		\caption{Energy Spectra of Cobalt with both sides of the detector and sides of the source.}
 		\label{4cobaltspectra}
 	\end{figure}
-	Comparing the expected positions to the measured ones we see 
+	Comparing the expected positions to the measured ones we see that these don't align to well. For example is the expected position of the $136\,$keV Photo Peak outside of our measured spectrum for the right scintillator while left one is at the position were we see the right peak in figure \ref{4cobaltspectra}. Since it is unlikely that those peaks in the figure aren't the $122.1$\,keV peaks its possible that our calibration isn't very precise. The reason for this may be that there is a systematic error that wasn't considered which shifted the cobalt spectra or the americium spectra into one direction. If we consider this its very likely that the peaks closest to the $122.1$\,keV peaks are the $108.5\,$keV and $94.1\,$keV Escape Peaks because they are expected to be quite close to the main peaks. The Compton Edge is very likely not visible since the chance for Compton scattering is to low because of the low energy levels. At channel number 200 we see a peak which might be a backscatter peak which originates from photon that lost energy outside of the scintillator can got back were they were absorbed. The little increase after this is what we expected to be the  area of the $14.4\,$keV peak. Since the calibration isn't reliable we can't be sure of it. The low count rates at this part of the spectrum might come from the increase in the lower level discriminator (LLD) value during the experiment. Since there was an unrealistic high count rate at the lower energy level it was increased and it also affects the count rate of the region were the $14.4$\,keV photon is expected to be. The high count rate probably comes from electronics. 
 	\begin{figure}[h]
 		\includegraphics[scale=0.5]{Bilder/Cobalt_Energy_Spectra2}
 		\centering
