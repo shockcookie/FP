@@ -196,7 +196,7 @@
  	f(x)=Ae^{-\frac{x-\mu}{2\sigma^2}}+A_2e^{-\frac{x-\mu_2}{2\sigma_2^2}}+C \label{Am12peak} 
  	\end{equation}
  	These fits are given in figure \ref{DoublePeakL} and \ref{CoublePeakR}. With the value of the three different $\mu$ we get the position of the maximums.\\
- 	\begin{figure}[h]
+ 	\begin{table}[h]
  	\begin{Dtabular}[1.1]{|c|c|c|c|}
  		\hline
  		&$59.5\,$keV&$33.2\,$keV&$26.3\,$keV \\
@@ -209,7 +209,7 @@
  	\centering
  	\caption{Positions of the different energy peaks of the right and left scintillator.}
  	\label{EnCalib}
- 	\end{figure}\\
+ 	\end{table}\\
  	These values can be plotted as a line which gives for every channel the corresponding energy. $R^2$ is the coefficient of determinate and n the channel number. 
  	\begin{equation}
 	f(x)_{Right}=(0.1120\pm 0.0033)\,\nicefrac{\text{keV}}{n}*x+ (12.3\pm0.9)\,\text{keV} \qquad R^2=0.9991 \label{eqRC}
@@ -240,9 +240,10 @@
  	\subsection{Analysis of the Energy Spectra}
  	\subsubsection{Americium Spectra}
  	Looking at figure \ref{AS} we see that the two spectra are shifted against each other. It is likely that the scintillators have a different amplification which causes this shift. Because of this two different energy calibrations are needed. \par
-	Looking at the spectra we see mainly the three Photo-peaks of the decays we expect. The positions of other regions of interest (ROI) are noted in the table \ref{AmSpectrum}
-	\begin{figure}[h]
+	Looking at the spectra we see mainly the three Photo-peaks of the decays we expect. The positions of other regions of interest (ROI) are noted in the table \ref{ROIs1}
+	\begin{table}[h]
 		\begin{Dtabular}[1.1]{|c|c|c|c|}
+			\hline
 			ROI&Expected Energy [keV]&Right Channel&Left Channel\\
 			\hline
 			Escape Peak of $59.5$\,keV&$31.5$&&\\
@@ -260,12 +261,56 @@
 		\end{Dtabular}
 		\centering
 		\caption{Points of interest for the scintillators. To calculate the channel equation \ref{eqRC} for the right side and equation \ref{eqLC} for the left side is used. - means that the peak ether cant exist in the spectrum.}
-	\end{figure}
+		\label{ROIs1}
+	\end{table}
 	To calculate the Escape Peak $28$\,keV were deducted from the Photo-peaks energy since this is the energy between the K and L shall in this experiment. To calculate the energy of the Compton edge equation \ref{comtonedge} was used.\par
 	\begin{equation}
 		E_{Compton}=E_{Photon}-\frac{E_{Photon}}{1+\frac{2E_{Photon}}{E_{Electron}}} \label{comtonedge}
 	\end{equation}
-	Looking at these we see that we expect to see the Escape Peak of the $59.5$\,keV peak and its Compton Edge. The Reason we don't see them is that our Escape Peak is overshadowed by the Photo Peak of our $33.2\,$keV Photon. For the Compton Edge its possible that our energies are to low for it to happen often enough that it would get visible since the Compton scattering happens mostly in the range of $200\,$keV to $5\,$MeV.
+	Looking at these it can be expected to see an Escape Peak of the $59.5$\,keV peak and its Compton Edge. The Reason we don't see them is that our Escape Peak is overshadowed by the Photo Peak of our $33.2\,$keV Photon. For the Compton Edge its possible that our energies are to low for it to happen often enough that it would get visible since the Compton scattering happens mostly in the range of $200\,$keV to $5\,$MeV.
+	\subsubsection{Cobalt Spectra}
+	The cobalt spectra was measured four times and all four spectra can be seen in figure \ref{4cobaltspectra}. Since the two spectra where the screw of the source was turned to the scintillator are much lower, these are separate in figure \ref{2cobaltspectra}. Looking at the figures we can clearly see the $122.1\,$keV peaks. But in this peak there is also hidden the in theory smaller, duo to its lower probability, $136.5$\,keV peak. These are similar to the $26.3\,$keV and $33.2$\,keV peaks very close to each other. That's why the $136.5$\,keV Photo-peak is hidden in the big peak at the right side of the spectrum. In the table \ref{ROIs2} the positions of certain expected regions are listed. The Compton Edge was calculated like in the Americium Spectrum before with equation \ref{comtonedge}.\par
+	\begin{table}[h]
+		\begin{Dtabular}[1.1]{|c|c|c|c|}
+			\hline
+			ROIs&Expected Energy [keV]&Right Channel&Left Channel\\
+			\hline
+			Photo Peak of $136.5$\,keV&$136.5$&$1107\pm34$&$947\pm17$\\
+			\hline
+			Photo Peak of $122.1$\,keV&$122.1$&$979\pm30$&$840\pm15$\\
+			\hline
+			Photo Peak of $14.4$\,keV&$14.4$&$18\pm8$&$37\pm4$\\
+			\hline
+			Escape Peak of $136.5$\,keV&$108.5$&$857\pm26$&$738\pm13$\\
+			\hline
+			Escape Peak of $122.1$\,keV&$94.1$&$729\pm23$&$631\pm12$\\
+			\hline
+			Escape Peak of $14.4$\,keV&-&-&-\\
+			\hline
+			Compton Edge of $136.5$\,keV&$11.23$&$313\pm12$&$284\pm6$\\
+			\hline
+			Compton Edge of $122.1$\,keV&$2.45$&$242\pm11$&$224\pm6$\\
+			\hline
+			Compton Edge of $14.4$\,keV&$3.82$&$-103\pm9$&$-64\pm5$\\
+			\hline
+		\end{Dtabular}
+		\centering
+		\caption{Expected positions of certain regions of interest in the cobalt spectrum. The channels were calculated out of the expected energies with the equations \ref{eqLC} and \ref{eqRC}. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator.}
+		\label{ROIs2}
+	\end{table}
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/Cobalt_Energy_Spectra1}
+		\centering
+		\caption{Energy Spectra of Cobalt with both sides of the detector and sides of the source.}
+		\label{4cobaltspectra}
+	\end{figure}
+	Comparing the expected positions to the measured ones we see 
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/Cobalt_Energy_Spectra2}
+		\centering
+		\caption{Energy Spectra of Cobalt of the two less visible peaks duo to lower radiation from the side of the screw.}
+		\label{2cobaltspectra}
+	\end{figure}
  	\begin{figure}[h]
  		\includegraphics[scale=0.5]{Bilder/Americium_Energy_Spectra}
  		\centering
