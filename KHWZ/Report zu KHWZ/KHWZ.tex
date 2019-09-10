@@ -131,7 +131,7 @@
  	To measure the half-life of $^{57}$Fe we use the decay of the $^{57}$Co Isotope (see figure \ref{CoDecay}) $^{57}$Co decays by EC into an exited state of $^{57}$Fe. At this point it can either decay directly to the ground state emitting a $\gamma$-photon.\\
  	The more likely case with $88\%$ is, that it first goes to the wanted state of $14.4$\,keV by emitting a $\gamma-$ray. From this state it again has two options. With a $90\%$ probability we have an IC which we can't detect but there is also a $10\%$ chance that a $\gamma-$decay takes place.\\
  	\ \\
- 	To measure the half-life it makes sense to use the method of delayed coincidence. For this kind of measurement we need to measure the time $\Delta t$ it takes for the $14.4$\,keV state to decay. The $\gamma$-photons connected to this state can be used to track the creation and the decay of the measured state and with that our time $\Delta  t$. This time is of interest since like the radioactive decay which is a stochastic process, it follows the equation \ref{eq1}.
+ 	To measure the half-life it makes sense to use the method of delayed coincidence. For this kind of measurement we need to measure the time $\Delta t$ it takes for the $14.4$\,keV state to decay. The $\gamma$-photons connected to this state can be used to track the creation and the decay of the measured state and with that our time $\Delta  t$. This time is of interest since like the radioactive decay which is a stochastic process, it follows the eq.\ref{eq1}. \cite{delayC}
  	\begin{equation}
  		N(t)=N(0) e^{\frac{t}{\tau}}=N(0) *2^{\nicefrac{t}{T_\frac{1}{2}}}
  		\label{eq1}
@@ -149,45 +149,45 @@
  	As scintillators organic and inorganic ones can be used. The main difference being the decay time of the emission centers and the luminous efficiency. If the half-life is bigger than $10^{-9}$\,s inorganic Naj(Tl)-scintillators are the choice since they have the higher luminous efficiency. For shorter times organic ones have to be used because of the shorter decay time.\\ For this experiment inorganic ones can still be utilized. The light from emitted can by light transmission bars to the PMTs. That way the loss will be minimized. \\ The PMT is used to generate an electric signal by using the photoelectric effect. The pulse is increased by using increasing the velocity of the electrons freed by the photons and using them to free even more electrons at the dynode. This process will be repeated till a useful signal is produced.
  	\section{Experimental Setup}
  	\subsection{Energy Spectra}
- 	In the first part of the experiment the energy spectrum of $^{57}$Co and $^{241}$Am are measured. For this the setup in figure \ref{setup_ES} is used. Here the signals from the scintillator gets converted into an electric pulse and the Preamplifier (PA) provides a measurable signal. In the Main Amplifier (MA) the signal gets further amplified with low-noise. After this the pulse gets to the Multichannel Amplifier were it gets registered depending on the amplitude of the signal into a channel. This way a histogram can be formed. The output of the MA is for this measurement unipolar because only the amplitude of the signal is of importance. The spectra are needed to calibrate the MCA since a connection between known energies and the channel number can be made.
+ 	In the first part of the experiment the energy spectrum of $^{57}$Co and $^{241}$Am are measured. For this the setup in figure \ref{setup_ES} is used. Here the signals from the scintillator gets converted into an electric pulse and the Preamplifier (PA) provides a measurable signal. In the Main Amplifier (MA) the signal gets further amplified with low-noise. After this the pulse gets to the Multichannel Amplifier were it gets registered depending on the amplitude of the signal into a channel. This way a histogram can be formed. The output of the MA is for this measurement unipolar because only the amplitude of the signal is of importance. The spectra are needed to calibrate the MCA since a connection between known energies and the channel number can be made.\cite{Anleitung}
  	\begin{figure}[h]
  		\includegraphics[scale=0.92]{Bilder/Circuit_ES}
  		\centering
- 		\caption{\small Setup for the measurement of energy spectra with the MCA.}
+ 		\caption{\small Setup for the measurement of energy spectra with the MCA. \cite{Anleitung}}
  		\label{setup_ES}
  	\end{figure}
  	\subsection{SCA Thresholds}
- 	In the next part of the experiment the energy windows for the Single Channel Analyser (SCA) have to be set. One have to be set to filter out $122.1$\,keV photons and the other one to filter the $14.4$\,keV ones out. For this the setup in figure \ref{setup_EW} is used. The Linear Gate in the setup only lets through a signal only when two signals one at the input and on at the enabler arrive at the same time. That way we can precisely set the energy window at the SCA. By moving the upper and lower threshold of the window, pulses with amplitudes outside of the thresholds are stopped and with that the other signal is stopped at the gate as well. By watching the histogram created by the MCA the thresholds can be set to the correct energy levels. 
+ 	In the next part of the experiment the energy windows for the Single Channel Analyser (SCA) have to be set. One have to be set to filter out $122.1$\,keV photons and the other one to filter the $14.4$\,keV ones out. For this the setup in figure \ref{setup_EW} is used. The Linear Gate in the setup only lets through a signal only when two signals one at the input and on at the enabler arrive at the same time. That way we can precisely set the energy window at the SCA. By moving the upper and lower threshold of the window, pulses with amplitudes outside of the thresholds are stopped and with that the other signal is stopped at the gate as well. By watching the histogram created by the MCA the thresholds can be set to the correct energy levels. \cite{Anleitung}
  	\begin{figure}[h]
  		\includegraphics{Bilder/Circuit_ES_calib}
  		\centering
- 		\caption{\small Setup for the calibration of the energy windows to filter out the photons with correct energies.}
+ 		\caption{\small Setup for the calibration of the energy windows to filter out the photons with correct energies. \cite{Anleitung}}
  		\label{setup_EW}
  	\end{figure}\\
  	\FloatBarrier
  	\subsection{Delayed Coincidences}
- 	The setup in figure \ref{setup_DC} is used to make the measurement of delayed coincidences. In this setup the two sides of the detectors are connected to the calibrated SCAs. The TAC takes a start and a stop signal and creates a signal with an amplitude proportional to the time between the input signals. Since the measurement is started with the later $14.4$\,keV photon the earlier photon needs to be delayed so that it can stop the measurement.\\
+ 	The setup in figure \ref{setup_DC} is used to make the measurement of delayed coincidences. In this setup the two sides of the detectors are connected to the calibrated SCAs. The TAC takes a start and a stop signal and creates a signal with an amplitude proportional to the time between the input signals. Since the measurement is started with the later $14.4$\,keV photon the earlier photon needs to be delayed so that it can stop the measurement.\cite{Anleitung}
  	\begin{figure}[h]
  		\includegraphics{Bilder/Circuit_DC}
  		\centering
- 		\caption{\small Setup for the measurement with the method of delayed coincidences.}
+ 		\caption{\small Setup for the measurement with the method of delayed coincidences. \cite{Anleitung}}
  		\label{setup_DC}
  	\end{figure}\\
  	\subsection{TAC Calibration}
- 	Last but not least the TAC needs to be calibrated. For this the setup in figure \ref{setup_TC} will be used. With this the constant of proportionality between the delay and the channel number of the MCA can be calculated. 
+ 	Last but not least the TAC needs to be calibrated. For this the setup in figure \ref{setup_TC} will be used. With this the constant of proportionality between the delay and the channel number of the MCA can be calculated. \cite{Anleitung}
  	\begin{figure}[h]
  		\includegraphics{Bilder/Circuit_DC_calib}
  		\centering
- 		\caption{\small Setup for the calibration of the TAC.}
+ 		\caption{\small Setup for the calibration of the TAC. \cite{Anleitung}}
  		\label{setup_TC}
  	\end{figure}\\
  	\section{Conduction of the Experiment}
  	First of all the $^{141}Am$ isotope was put into the detector. Directly after the PA and the MA were connected to an oscilloscope. Here the signals of both could be compared like in figure \ref{Ossi-lloscope}.\\
  	After this the MCA was connected like in figure \ref{setup_ES}. The MCA was also connected to the interface from which the measurement of the energy spectra can be started. With the $^{141}Am$ source one measurement with each scintillator was made. These can be used to make the energy calibration of the MCA.\\
- 	After this measurement the  $^{141}Am$ source was switched with the $^{57}$Co source. Here four different spectra were taken, two for both detectors with different sides of the sample. With these information the best combination of side of the sample and scintillator was chosen for the different energies. With this set the calibration of the energy windows could be started. For this the layout in figure \ref{setup_EW} was used. First the window was opened completely so the whole spectrum, which was measured before could be seen. Than the thresholds at the SCA were slowly adjusted so that only one peak of the needed energy could be seen on the computer. After both SCAs were configured the actual measurement seen in figure \ref{setup_DC} was set up. For the delay we choose the highest of $\color{red} ??$\,ns to get as much of the exponential curve as possible. After running a test the main measurement was started with a timer of 15 hours. Since the measured spectrum had a big part with only random coincidences this can be used instead of another measurement for the random coincidences. At last the calibration for the TAC was done by using the setup of figure \ref{setup_TC}. Here different delays were set and the corresponding channel were noted.
+ 	After this measurement the  $^{141}Am$ source was switched with the $^{57}$Co source. Here four different spectra were taken, two for both detectors with different sides of the sample. With these information the best combination of side of the sample and scintillator was chosen for the different energies. With this set the calibration of the energy windows could be started. For this the layout in figure \ref{setup_EW} was used. First the window was opened completely so the whole spectrum, which was measured before could be seen. Than the thresholds at the SCA were slowly adjusted so that only one peak of the needed energy could be seen on the computer. After both SCAs were configured the actual measurement seen in figure \ref{setup_DC} was set up. For the delay we choose the highest of $196$\,ns to get as much of the exponential curve as possible. After running a test the main measurement was started with a timer of 15 hours. Since the measured spectrum had a big part with only random coincidences this can be used instead of another measurement for the random coincidences. At last the calibration for the TAC was done by using the setup of figure \ref{setup_TC}. Here different delays were set and the corresponding channel were noted.
  	\section{Analysis}
  	\subsection{Energy Calibration}
- 	To calibrate the MCA the decay of the Americium is used since it has clear visible Photo-peaks with known energies. To get the position of the peaks three Gaussian peaks are fitted on the curves. For the fits the python package \verb|scipy.optimize.curve_fit| was used. For the $59.5$\,keV peak the equation \ref{eq6} was used. 
+ 	To calibrate the MCA the decay of the Americium is used since it has clear visible Photo-peaks with known energies. To get the position of the peaks three Gaussian peaks are fitted on the curves. For the fits the python package \verb|scipy.optimize.curve_fit|\cite{SciPy_Opti} was used. For the $59.5$\,keV peak the equation \ref{eq6} was used. 
  	\begin{equation}
  	f(x)=Ae^{-\frac{x-\mu}{2\sigma^2}}+C \label{eq6}
  	\end{equation}
@@ -195,7 +195,7 @@
  	\begin{equation}
  	f(x)=Ae^{-\frac{x-\mu}{2\sigma^2}}+A_2e^{-\frac{x-\mu_2}{2\sigma_2^2}}+C \label{Am12peak} 
  	\end{equation}
- 	These fits are given in figure \ref{DoublePeakL} and \ref{CoublePeakR}. With the value of the three different $\mu$ we get the position of the maximums.\\
+ 	These fits are given in figure \ref{ASL} and \ref{ASR}. With the value of the three different $\mu$ we get the position of the maximums.\\
  	\begin{table}[h]
  	\begin{Dtabular}[1.1]{|c|c|c|c|}
  		\hline
@@ -217,7 +217,7 @@
 	\begin{equation}
 	f(x)_{Left}=(0.1341\pm 0.0023)\,\nicefrac{\text{keV}}{n}*x+ (9.4\pm0.5)\,\text{keV} \qquad R^2=0.9996 \label{eqLC}
 	\end{equation}
-	The fits can be seen in figure \ref{fitCalbTime}.
+	The fits can be seen in figure \ref{EnergieCalib}.
  	\subsection{Analysis of the Signal Shapes}
  	\begin{figure}
  		\includegraphics[scale=0.42]{Bilder/OsziPA}
@@ -264,13 +264,9 @@
 		\caption{Points of interest for the scintillators. To calculate the channel equation \ref{eqRC} for the right side and equation \ref{eqLC} for the left side is used. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator. The - means that the peak ether cant exist in the spectrum.}
 		\label{ROIs1}
 	\end{table}
-$171\pm10$
-$-10\pm8$
-$-88\pm9$
-$-76\pm9$
 	To calculate the Escape Peak $28$\,keV were deducted from the Photo-peaks energy since this is the energy between the K and L shall in this experiment. To calculate the energy of the Compton edge equation \ref{comtonedge} was used.\par
 	\begin{equation}
-		E_{Compton}=E_{Photon}-\frac{E_{Photon}}{1+\frac{2E_{Photon}}{E_{Electron}}} \label{comtonedge}
+		E_{Compton}=E_{\text{Photon}}-\frac{E_{\text{Photon}}}{1+\frac{2E_{\text{Photon}}}{E_{\text{Electron}}}} \label{comtonedge}
 	\end{equation}
 	Looking at these it can be expected to see an Escape Peak of the $59.5$\,keV peak and its Compton Edge. The Reason we don't see them is that our Escape Peak is overshadowed by the Photo Peak of our $33.2\,$keV Photon. For the Compton Edge its possible that our energies are to low for it to happen often enough that it would get visible since the Compton scattering happens mostly in the range of $200\,$keV to $5\,$MeV.
 	\subsubsection{Cobalt Spectra}
@@ -316,6 +312,12 @@ $-76\pm9$
 		\caption{Energy Spectra of Cobalt of the two less visible peaks duo to lower radiation from the side of the screw.}
 		\label{2cobaltspectra}
 	\end{figure}
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/EnergyCalib}
+		\centering
+		\caption{Calibration curves for the energy calibrations.}
+		\label{EnergieCalib}
+	\end{figure}
  	\begin{figure}[h]
  		\includegraphics[scale=0.5]{Bilder/Americium_Energy_Spectra}
  		\centering
@@ -334,6 +336,100 @@ $-76\pm9$
  		\caption[Americium Spectra Double Peak Right Detector Side]{Measured Americium Energy Spectra of the $26.3$\,keV and $33.2$\,keV double peak with fits of the split peaks. Spectrum of the right scintillator.}
  		\label{ASR}
  	\end{figure}
+ 	\FloatBarrier
+ 	\subsection{Analysis of the delayed coincidences measurement}
+ 	\subsubsection{Time calibration}
+ 	To correctly compute the half-live of the $14.4$\,keV state of $^{57}$Fe, the conversion of time difference to the channels in the MCA is determined. 
+ 	The data collected for this purpose is found in the appendix. 
+ 	The channel and delay pairs were plotted and a unweighted linear model of first
+ 	order was fitted to the data. The plot is shown in figure \ref{time_cal_plot}.
+ 	The fitted linear model had the form of $n(\Delta t) = m \cdot \Delta t + c$. To calculate the parameters of the fit the python package \verb|scipy.optimize.curve_fit|\cite{SciPy_Opti} was used.	The fitted parameters were:
+ 	\begin{eqnarray}
+ 	m = (1.2 \pm 0.007)\frac{1}{\textrm{ns}} \\
+ 	c = (-21.5 \pm 0.7)
+ 	\end{eqnarray}
+ 	The error for the time was estimated to be $\pm 0.5\,\textrm{ns}$, which is too small
+ 	to be visible in the graphic.
+ 	This parameters were used to compute the time corresponding to each channel using 
+ 	formula \ref{chn_to_time}. $x_{\text{cal}}$ represents the calibrated value, $x_{\text{norm}}$ the original value.
+ 	
+ 	\begin{equation}
+ 	x_{\text{cal}} = \frac{x_{\text{norm}}-c}{m}
+ 	\label{chn_to_time}
+ 	\end{equation}
+ 	
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/time_cal}
+ 		\centering
+ 		\caption{\small Plot of the datapoints of the time calibration and the linear fit of them. The errors are too small to be visible in the graphic.}
+ 		\label{time_cal_plot}
+ 	\end{figure}
+ 	
+ 	\subsubsection{Analysis on linear scale}
+ 	For the analysis in the linear scale, two ranges of the data set were chosen.
+ 	One	was used for the background compensation, the other one for the exponential fit.
+ 	For a visual representation and the exact value ranges, see figure \ref{raw_plot}.
+ 	The error on the counts is, because a poisson distribution was assumed, computed by
+ 	equation \ref{poisson_error}. $s_{\text{counts}}$ is the error for the counts of a channel, $n$  the actual counts of the same channel. All errors were calculated for each channel individually.
+ 	\begin{equation}
+ 	s_{\text{counts}}=\sqrt{n}
+ 	\label{poisson_error}
+ 	\end{equation}
+ 	
+ 	
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/raw_ranges}
+ 		\centering
+ 		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+ 		\label{raw_plot}
+ 	\end{figure}
+ 	
+ 	As the next step a curve, analog to the one used for the time calibration, was
+ 	fitted to the range designated for the background compensation. A visual
+ 	representation of this fit is given in figure \ref{bckgnd_fit}. This fitted curve
+ 	was then subtracted from all the datapoints, as a mean to reduce the influence of
+ 	random background coincidences. The reason why the green part in figure \ref{raw_plot} can be used is that for the part of our measurement the random coincidences is almost flat. This is due to the fast decay of $9ns$ of our $136.5$\,keV state. Since it decays so fast the measurement takes part in the flat area of the background. To get the curve for the background we fit the Data Points using the python package \verb|scipy.optimize.curve_fit| \cite{SciPy_Opti}.
+ 	The parameters for the curve in form of $f(x)=m\cdot x+c$ are:
+ 	
+ 	\begin{equation*}
+ 	m = (-0.015 \pm 0.020)\frac{1}{\textrm{ns}}
+ 	\end{equation*}
+ 	$$c = (92 \pm 7)$$
+ 	
+ 	
+ 	
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/lin_bkgnd}
+ 		\centering
+ 		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+ 		\label{bckgnd_fit}
+ 	\end{figure}
+ 	
+ 	\FloatBarrier
+ 	After subtracting the background coincidences, a exponential function of the form
+ 	\ref{exp_style} was used to approximate the value of the decay constant $b$ in the fit. The parameter b in figure \ref{exp_fit} is the decay constant of our state. 
+ 	\begin{equation}
+ 	y\left(x,a,b,c,d\right) = a \cdot \exp\left(b\cdot\left(x+d\right)\right) + c
+ 	\label{exp_style}
+ 	\end{equation}
+ 	To get the half life the eq.\ref{Lifetime} can be used as well as eq.\ref{HalbwertszeitError} to calculate the error.
+ 	\begin{equation}
+ 	T_\frac{1}{2}=\frac{\log(2)}{b}
+ 	\label{Lifetime} 
+ 	\end{equation}
+ 	\begin{equation}
+ 	\Delta_T=\frac{\log(2)}{b^2}
+ 	\label{HalbwertszeitError} 
+ 	\end{equation}
+ 	With that the half life is $T_\frac{1}{2}=(83\pm10)$\,ns.
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/lin_fit_exp}
+ 		\centering
+ 		\caption{\small Plot of the datapoints in the roi with the fitted exponential curve. The determined parameters are given in the picture.}
+ 		\label{exp_fit}
+ 	\end{figure}
+ 	
+ 	\FloatBarrier
  	\bibliographystyle{plain}
  	\bibliography{Quellen}
  	\addcontentsline{toc}{section}{Literatur}

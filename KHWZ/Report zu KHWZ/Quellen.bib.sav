@@ -21,7 +21,7 @@
   publisher = {Uni Freiburg},
 }
 
-@Book{delayC,
+@Book{v,
   author    = {Bodenstedt, E.},
   title     = {Experimente der Kernphysik und ihre Deutung, Teil 2},
   year      = {1978},
