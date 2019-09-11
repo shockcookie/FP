@@ -1,9 +1,16 @@
 \begin{thebibliography}{1}
 
-\bibitem{Am_Decay}
-Jivan Khatry, Juha Nieminen, Joshua Smith, and Kari Slotten.
-\newblock 10 we radioisotope thermophotovoltaic (rtpv) power source
-  demonstration.
-\newblock 02 2017.
+\bibitem{Anleitung}
+{\em Versuchsanleitung: Fortgeschrittenen Praktikum Teil 1 Kurze
+  Halbwertszeiten}.
+
+\bibitem{delayC}
+E.~Bodenstedt.
+\newblock {\em Experimente der Kernphysik und ihre Deutung, Teil 2}.
+\newblock Bibliographisches Institut, 1978.
+
+\bibitem{SciPy_Opti}
+Eric Jones, Travis Oliphant, Pearu Peterson, et~al.
+\newblock Python3 package \verb|scipy.optimize| for curve fitting., 2001--.
 
 \end{thebibliography}
