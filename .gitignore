@@ -5,3 +5,8 @@
 *.out
 *.lof
 *.lot
+*.bak
+*.sav
+*.bbl
+*.blg
+
