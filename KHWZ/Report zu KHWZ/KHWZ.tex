@@ -69,7 +69,7 @@
 	\maketitle
 	\vspace{2cm}
 	\begin{abstract}
-	In the short half life experiment, the half life of $^{57}$Fe in the $14.4$\,keV state is measured with the delayed coincidence method. As the source, the Cobalt Isotope $^{57}$Co is used. The energy spectra of $^{57}$Co and ${^141}$Am were also measured during the experiment. The half life were obtained from the fit on an exponential curve to the collected data on a linear scale and a linear fit to the data on an exponential scale. The computed half lives were $T_\frac{1}{2}=(83\pm9952)$\,ns for the exponential fit and$T_{\frac{1}{2} \textrm{log}} = (142\pm 3)\,ns$ for the linear fit. As seen from both values, the error calculation was incorrect.
+	In the short half life experiment, the half life of $^{57}$Fe in the $14.4$\,keV state is measured with the delayed coincidence method. As the source, the Cobalt Isotope $^{57}$Co is used. The energy spectra of $^{57}$Co and ${^141}$Am were also measured during the experiment. The half life were obtained from the fit on an exponential curve to the collected data on a linear scale and a linear fit to the data on an exponential scale. The computed half lives were $T_\frac{1}{2}=(83\pm10)$\,ns for the exponential fit and$T_{\frac{1}{2} \textrm{log}} = (142\pm116)\,ns$ for the linear fit. Both values are compatible with the literature value of $98\,$ns within $2\,\sigma$.
 	\end{abstract}
 	\end{titlepage}
 	\newpage
@@ -369,7 +369,7 @@
  	\Delta T_\frac{1}{2}=\frac{\log(2)}{b^2}\Delta b
  	\label{HalbwertszeitError} 
  	\end{equation}
- 	With that the half life is $T_\frac{1}{2}=(83\pm9952)$\,ns.
+ 	With that the half life is $T_\frac{1}{2}=(83\pm10)$\,ns.
  	\begin{figure}[h]
  		\includegraphics{Bilder/lin_fit_exp}
  		\centering
@@ -385,8 +385,7 @@
 	Utilizing the slope of the fitted curve to the region of interrest, an other value for the half life of the $14.4$\,keV state of $^{57}$Fe was computed.
 	$$b_{\textrm{log}} = (0.005\pm0.004)$$
 	Utilizing formulas \ref{Lifetime} and \ref{HalbwertszeitError}, the half life was
-	determined.
-	$$T_{\frac{1}{2} \textrm{log}} = (142\pm 3)\,ns$$
+	determined:	$T_{\frac{1}{2} \textrm{log}} = (142\pm 116)\,ns$
 	
 	\begin{figure}[h]
 		\includegraphics{Bilder/data_log}
@@ -414,21 +413,17 @@
  	influence the resulting fitted parameter. If extended far enough, one could fit the
  	perfect literature value of the half life of the $14.4$\,keV state. The computed
  	half life with this method is close to the literature value of $98\,$ns. Using the 
- 	formula \ref{vergleich}, the compatibility of both is $0.0014$.
+ 	formula \ref{vergleich}, the compatibility of both is $1.5\,\sigma$.
  	\begin{equation}
  		t = \frac{\left|\textrm{compared value}-\textrm{literature value}\right|}{\textrm{uncertainty/error of compared value}}
  		\label{vergleich}
  	\end{equation}
- 	This good compatibility
- 	is caused by the extremly large error of the computed half live. 
- 	%To decrease this error, the most effective method would be to increase the right bound of the data used for the exponential fit. This, viewed in the context of physics, can be	explained with the signal processing. The bipolar signal from the main amplifier can slightly shift, causing the single canal analyzer to trigger on inaccureate times. This results in a shifted position of the datapoint, smearing the theoretically 	sharp edges of the decay curve.\\
- 	The method, used to compute this error is probably faulty, or the computation itself has an error. \\
+ 	To decrease the difference between literature value and the computed one, the most effective method would be to increase the right bound of the data used for the exponential fit. This, viewed in the context of physics, can be	explained with the signal processing. The bipolar signal from the main amplifier can slightly shift, causing the single canal analyzer to trigger on inaccureate times. This results in a shifted position of the datapoint, smearing the theoretically 	sharp edges of the decay curve.\\
  	
- 	With logarithmic scaled fit has multiple problems. The two most obvious ones are
- 	the incorrect error computations resulting in, by comparison, large errors. The
- 	errors are also symmetric, which should not happen in a logarithmic plot. 
- 	Unfortunately, due to the advanced time, this could not be fixed.
- 	The second big problem lies with the alomost 1.5 times too great computed half life of the logarithmic plot. Some of it can be explained by choosing the wrong range of values to fit, but this can not be the only explanation. The error on this value as unrealistic as the one from the linear plot, resulting in the same good compatibility of $0.0015$. For this is also the only explanation a wrong error computation formula. 
+ 	
+ 	With logarithmic scaled fit has multiple problems. The most obvious one is 	the incorrect error computations resulting in, by comparison, large and symmetric errors. Symmetric errors should not occur in a logarithmic scaled plot. 
+ 	Unfortunately, due to  time management issues, this could not be fixed on time.
+ 	There is an other issue with the alomost 1.5 times too great computed half life of the logarithmic plot. Some of it can be explained by choosing the wrong range of values to fit, but this can not be the only explanation. The error on this value is still comparatively large. This is due to the incorrect error calculation in the logarithmic plot. The large error results in a very good compatibility of $0.38\,\sigma$. 
  	\section{List of tables}
  	\listoftables
  	\section{List of Figures}
