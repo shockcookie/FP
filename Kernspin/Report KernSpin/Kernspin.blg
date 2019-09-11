@@ -1,0 +1,11 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Kernspin.aux
+A level-1 auxiliary file: Kapitel/Theorie.aux
+The style file: plain.bst
+I couldn't open database file Quellen.bib
+---line 22 of file Kernspin.aux
+ : \bibdata{Quellen
+ :                 }
+I'm skipping whatever remains of this command
+I found no \citation commands---while reading file Kernspin.aux
+I found no database files---while reading file Kernspin.aux
+(There were 3 error messages)
