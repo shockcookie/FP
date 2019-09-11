@@ -357,10 +357,10 @@
  	The channel and delay pairs were plotted and a unweighted linear model of first
  	order was fitted to the data. The plot is shown in figure \ref{time_cal_plot}.
  	The fitted linear model had the form of $n(\Delta t) = m \cdot \Delta t + c$. To calculate the parameters of the fit the python package \verb|scipy.optimize.curve_fit|\cite{SciPy_Opti} was used.	The fitted parameters were:
- 	\begin{eqnarray}
- 	m = (1.2 \pm 0.007)\frac{1}{\textrm{ns}} \\
+ 	$$
+ 	m = (1.2 \pm 0.007)\frac{1}{\textrm{ns}} \\$$$$
  	c = (-21.5 \pm 0.7)
- 	\end{eqnarray}
+ 	$$
  	The error for the time was estimated to be $\pm 0.5\,\textrm{ns}$, which is too small
  	to be visible in the graphic.
  	This parameters were used to compute the time corresponding to each channel using 
@@ -411,12 +411,7 @@
  	
  	
  	
- 	\begin{figure}[h]
- 		\includegraphics{Bilder/lin_bkgnd}
- 		\centering
- 		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
- 		\label{bckgnd_fit}
- 	\end{figure}
+ 
  	
  	\FloatBarrier
  	After subtracting the background coincidences, a exponential function of the form
@@ -434,16 +429,104 @@
  	\Delta_T=\frac{\log(2)}{b^2}
  	\label{HalbwertszeitError} 
  	\end{equation}
- 	With that the half life is $T_\frac{1}{2}=(83\pm10)$\,ns.
+ 	With that the half life is $T_\frac{1}{2}=(83\pm9952)$\,ns.
  	\begin{figure}[h]
  		\includegraphics{Bilder/lin_fit_exp}
  		\centering
  		\caption{\small Plot of the datapoints in the roi with the fitted exponential curve. The determined parameters are given in the picture.}
  		\label{exp_fit}
  	\end{figure}
- 	
+	\subsubsection{Analysis on logarithmic scale}
+	For the analysis on the logarithmic scale, the $\ln$ of every count value and their
+	respective error was computed. This data and its errors are illustrated in figure 
+	\ref{data_log}. Following this, almost the same steps as in the analysis on the linear scale
+	were carried out. Starting with a linear fit in the background data range (fig. \ref{log_bkg}), the background was subtracted from the original logarithmic data (fig. \ref{log_clean}). The main difference of this part was the linear fit 
+	in the region of interest (fig. \ref{log_relevant_fit}).\\
+	Utilizing the slope of the fitted curve to the region of interrest, an other value for the half life of the $14.4$\,keV state of $^{57}$Fe was computed.
+	$$b_{\textrm{log}} = (0.005\pm0.004)$$
+	Utilizing formulas \ref{Lifetime} and \ref{HalbwertszeitError}, the half life was
+	determined.
+	$$T_{\frac{1}{2} \textrm{log}} = (142\pm 3)\,ns$$
+	
+	\begin{figure}[h]
+		\includegraphics{Bilder/data_log}
+		\centering
+		\caption{\small Logarithmic scaled plot all data points.
+			 Notable are the abnormally big errors.}
+		\label{data_log}
+	\end{figure}
+	
  	\FloatBarrier
- 	\bibliographystyle{plain}
- 	\bibliography{Quellen}
- 	\addcontentsline{toc}{section}{Literatur}
+ 	\section{Discussion}
+ 	\subsection{Delayed coincidences}
+ 	Prominent for the delayed coincidence measurement is, that no extra background 
+ 	coincidence measurement was conducted. This is due to the extra channels after the 
+ 	decay peak of the $14.4$\,keV state of $^{57}$Fe. This also provided a very accurate
+ 	background measurement, due to its long duration.\\
+ 	The guessed error from the times for the time calibration measurement seems in
+ 	retrospective appropriate. Although it seemed too small at during the experiment,
+ 	the fitted curve shows aligns very good with the data points.\\
+ 	Notable for the linear scaled fit for the decay peak were multiple things.
+ 	First the slightly descending slope of the curve fitted to the background data.
+ 	This is a indication of the fast decaying $136.5$\,keV state of $^{57}$Fe, where
+ 	some of the background coincidences originate from.\\
+ 	Second to this is the fact, that the range used for the exponential fit greatly
+ 	influence the resulting fitted parameter. If extended far enough, one could fit the
+ 	perfect literature value of the half life of the $14.4$\,keV state. The computed
+ 	half life with this method is close to the literature value of $98\,$ns. Using the 
+ 	formula \ref{vergleich}, the compatibility of both is $0.0014$.
+ 	\begin{equation}
+ 		t = \frac{\left|\textrm{compared value}-\textrm{literature value}\right|}{\textrm{uncertainty/error of compared value}}
+ 		\label{vergleich}
+ 	\end{equation}
+ 	This good compatibility
+ 	is caused by the extremly large error of the computed half live. 
+ 	%To decrease this error, the most effective method would be to increase the right bound of the data used for the exponential fit. This, viewed in the context of physics, can be	explained with the signal processing. The bipolar signal from the main amplifier can slightly shift, causing the single canal analyzer to trigger on inaccureate times. This results in a shifted position of the datapoint, smearing the theoretically 	sharp edges of the decay curve.\\
+ 	The method, used to compute this error is probably faulty, or the computation itself has an error. \\
+ 	
+ 	With logarithmic scaled fit has multiple problems. The two most obvious ones are
+ 	the incorrect error computations resulting in, by comparison, large errors. The
+ 	errors are also symmetric, which should not happen in a logarithmic plot. 
+ 	Unfortunately, due to the advanced time, this could not be fixed.
+ 	The second big problem lies with the alomost 1.5 times too great computed half life of the logarithmic plot. Some of it can be explained by choosing the wrong range of values to fit, but this can not be the only explanation. The error on this value as unrealistic as the one from the linear plot, resulting in the same good compatibility of $0.0015$. For this is also the only explanation a wrong error computation formula. 
+ 	
+ 	\section{Bibliograpy}
+ 		\bibliographystyle{plain}
+ 		\bibliography{Quellen}
+ 		\addcontentsline{toc}{section}{Literatur}
+ 	\section{List of tables}
+ 	\listoftables
+ 	\section{List of Figures}
+ 	\listoffigures
+ 	\section{Appendix}
+ 	
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/lin_bkgnd}
+ 		\centering
+ 		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+ 		\label{bckgnd_fit}
+ 	\end{figure}
+  
+  	\begin{figure}[h]
+ 	\includegraphics{Bilder/log_bkg}
+ 	\centering
+ 	\caption{\small Logarithmic scaled plot of the background data with the fitted
+ 	curve. Notable are the abnormally big errors.}
+ 	\label{log_bkg}
+	\end{figure}
+
+ 	\begin{figure}[h]
+ 	\includegraphics{Bilder/log_clean}
+ 	\centering
+ 	\caption{\small Logarithmic scaled plot of all data with subtracted background curve. Due to the choice of the axis labels, some of the unused data is not visible. Notable are the abnormally big errors.}
+ 	\label{log_clean}
+	\end{figure}
+
+ 	\begin{figure}[h]
+ 	\includegraphics{Bilder/log_relevant_fit}
+ 	\centering
+ 	\caption{\small Logarithmic scaled plot of the region of interest and the fitted 
+ 	curve. Notable are the abnormally big errors.}
+ 	\label{log_relevant_fit}
+	\end{figure}
 \end{document}
