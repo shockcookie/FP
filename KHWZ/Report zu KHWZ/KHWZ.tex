@@ -124,7 +124,7 @@
  		\draw[->] (-0.3,-0.1) -- node[rotate=90,below]{$\gamma$ $88\%$} (-0.3,-1.4);
  		\draw[->] (0.8,-1.6) -- node[rotate=90,below]{IC $90\%$} (0.8,-2.9);
  		\end{tikzpicture}
- 		\caption{\small Decay scheme for the cobalt isotope $^{57}$Co into $^{57}$Fe used into the experiment to measure the half-life of the $14.4$\,keV state of the Iron isotope.}
+ 		\caption[Decay of Cobalt]{\small Decay scheme for the cobalt isotope $^{57}$Co into $^{57}$Fe used into the experiment to measure the half-life of the $14.4$\,keV state of the Iron isotope.}
  		\label{CoDecay}
  	\end{wrapfigure}
  	\ \\ 
@@ -153,7 +153,7 @@
  	\begin{figure}[h]
  		\includegraphics[scale=0.92]{Bilder/Circuit_ES}
  		\centering
- 		\caption{\small Setup for the measurement of energy spectra with the MCA. \cite{Anleitung}}
+ 		\caption[Energy Spectrum Setup]{\small Setup for the measurement of energy spectra with the MCA. \cite{Anleitung}}
  		\label{setup_ES}
  	\end{figure}
  	\subsection{SCA Thresholds}
@@ -161,7 +161,7 @@
  	\begin{figure}[h]
  		\includegraphics{Bilder/Circuit_ES_calib}
  		\centering
- 		\caption{\small Setup for the calibration of the energy windows to filter out the photons with correct energies. \cite{Anleitung}}
+ 		\caption[Energy Spectrum Setup]{\small Setup for the calibration of the energy windows to filter out the photons with correct energies. \cite{Anleitung}}
  		\label{setup_EW}
  	\end{figure}\\
  	\FloatBarrier
@@ -170,7 +170,7 @@
  	\begin{figure}[h]
  		\includegraphics{Bilder/Circuit_DC}
  		\centering
- 		\caption{\small Setup for the measurement with the method of delayed coincidences. \cite{Anleitung}}
+ 		\caption[Delayed Coincidences Setup]{\small Setup for the measurement with the method of delayed coincidences. \cite{Anleitung}}
  		\label{setup_DC}
  	\end{figure}\\
  	\subsection{TAC Calibration}
@@ -178,13 +178,14 @@
  	\begin{figure}[h]
  		\includegraphics{Bilder/Circuit_DC_calib}
  		\centering
- 		\caption{\small Setup for the calibration of the TAC. \cite{Anleitung}}
+ 		\caption[Time Calibration Setup]{\small Setup for the calibration of the TAC. \cite{Anleitung}}
  		\label{setup_TC}
  	\end{figure}\\
  	\section{Conduction of the Experiment}
- 	First of all the $^{141}Am$ isotope was put into the detector. Directly after the PA and the MA were connected to an oscilloscope. Here the signals of both could be compared like in figure \ref{Ossi-lloscope}.\\
- 	After this the MCA was connected like in figure \ref{setup_ES}. The MCA was also connected to the interface from which the measurement of the energy spectra can be started. With the $^{141}Am$ source one measurement with each scintillator was made. These can be used to make the energy calibration of the MCA.\\
- 	After this measurement the  $^{141}Am$ source was switched with the $^{57}$Co source. Here four different spectra were taken, two for both detectors with different sides of the sample. With these information the best combination of side of the sample and scintillator was chosen for the different energies. With this set the calibration of the energy windows could be started. For this the layout in figure \ref{setup_EW} was used. First the window was opened completely so the whole spectrum, which was measured before could be seen. Than the thresholds at the SCA were slowly adjusted so that only one peak of the needed energy could be seen on the computer. After both SCAs were configured the actual measurement seen in figure \ref{setup_DC} was set up. For the delay we choose the highest of $196$\,ns to get as much of the exponential curve as possible. After running a test the main measurement was started with a timer of 15 hours. Since the measured spectrum had a big part with only random coincidences this can be used instead of another measurement for the random coincidences. At last the calibration for the TAC was done by using the setup of figure \ref{setup_TC}. Here different delays were set and the corresponding channel were noted.
+ 	First of all the $^{141}Am$ isotope was put into the detector. Directly after the PA and the MA were connected to an oscilloscope. Here the signals of both could be compared like in figure \ref{Bi}.\\
+ 	After this, the MCA was connected like in figure \ref{setup_ES}. The MCA was also connected to the interface from which the measurement of the energy spectra can be started. With the $^{141}Am$ source one measurement with each scintillator was made. These can be used to make the energy calibration of the MCA.\par
+ 	After this measurement the  $^{141}Am$ source was switched with the $^{57}$Co source. Here four different spectra were taken, two for both detectors with different sides of the sample. Here the LLD value needed to be tuned a bit to decrease a noise signal at the low energy range. With these information the best combination of side of the sample and scintillator was chosen for the different energies. With this set the calibration of the energy windows could be started. For this the layout in figure \ref{setup_EW} was used. First the window was opened completely so the whole spectrum, which was measured before could be seen. Than the thresholds at the SCA were slowly adjusted so that only one peak of the needed energy could be seen on the computer. The Peaks in the threshold calibration can be seen in figure \ref{low} and \ref{high}\par
+ 	After both SCAs were configured the actual measurement seen in figure \ref{setup_DC} was set up. For the delay we choose the highest of $196$\,ns to get as much of the exponential curve as possible. After running a test the main measurement was started with a timer of 15 hours. Since the measured spectrum had a big part with only random coincidences this can be used instead of another measurement for the random coincidences. At last the calibration for the TAC was done by using the setup of figure \ref{setup_TC}. Here different delays were set and the corresponding channel were noted.
  	\section{Analysis}
  	\subsection{Energy Calibration}
  	To calibrate the MCA the decay of the Americium is used since it has clear visible Photo-peaks with known energies. To get the position of the peaks three Gaussian peaks are fitted on the curves. For the fits the python package \verb|scipy.optimize.curve_fit|\cite{SciPy_Opti} was used. For the $59.5$\,keV peak the equation \ref{eq6} was used. 
@@ -207,7 +208,7 @@
  		\hline
  	\end{Dtabular}
  	\centering
- 	\caption{Positions of the different energy peaks of the right and left scintillator.}
+ 	\caption[Positions of Americium Photo-Peaks]{Positions of the different energy peaks of the right and left scintillator.}
  	\label{EnCalib}
  	\end{table}\\
  	These values can be plotted as a line which gives for every channel the corresponding energy. $R^2$ is the coefficient of determinate and n the channel number. 
@@ -219,24 +220,6 @@
 	\end{equation}
 	The fits can be seen in figure \ref{EnergieCalib}.
  	\subsection{Analysis of the Signal Shapes}
- 	\begin{figure}
- 		\includegraphics[scale=0.42]{Bilder/OsziPA}
- 		\centering
- 		\caption[PA]{Signal of the PA measured with an oscilloscope.}
- 		\label{PA}
- 	\end{figure}
- 	\begin{figure}
- 		\includegraphics[scale=0.42]{Bilder/OsziBipolar}
- 		\centering
- 		\caption[Bipolar]{Bipolar signal output of the MA compared to the signal coming from the PA. Measured with an oscilloscope. In yellow the signal of the PA. In Blue the signal of the MA.}
- 		\label{Bi}
- 	\end{figure}
- 	\begin{figure}
- 		\includegraphics[scale=0.42]{Bilder/OsziUnipolar}
- 		\centering
- 		\caption[Unipolar]{Unipolar signal output of the MA compared to the signal coming from the PA. Measured with an oscilloscope. In yellow the signal of the PA. In Blue the signal of the MA.}
- 		\label{Uni}
- 	\end{figure}
  	In figure \ref{PA} we see the signal coming from the PA output of the detector. The signal reaches almost instantaneously its peak and than drops slowly down to the ground level. If we compare this signals with the one coming from the MA we can see that they are more Gaussian like and the beginning of the signal is a bit shifted to the left. In figure \ref{Bi} the maximum of the blue signal is only a bit higher than the signal of the PA but its obvious that we have a bipolar signal. It is also notable that the ground level of the MA is higher than the one of the PA. In figure \ref{Uni} this is the same but we see that the maximum amplitude of the MA signal is much higher than the one of the PA and we have a bell shaped signal. Comparing right and left slope of the MA curves with each other we notice that here the left side has a bit sharper increase than the right side of the signal.
  	\subsection{Analysis of the Energy Spectra}
  	\subsubsection{Americium Spectra}
@@ -261,7 +244,7 @@
 			\hline
 		\end{Dtabular}
 		\centering
-		\caption{Points of interest for the scintillators. To calculate the channel equation \ref{eqRC} for the right side and equation \ref{eqLC} for the left side is used. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator. The - means that the peak ether cant exist in the spectrum.}
+		\caption[Expected Regions of Interest in Americium Spectrum]{Points of interest for the scintillators. To calculate the channel equation \ref{eqRC} for the right side and equation \ref{eqLC} for the left side is used. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator. The - means that the peak ether cant exist in the spectrum.}
 		\label{ROIs1}
 	\end{table}
 	To calculate the Escape Peak $28$\,keV were deducted from the Photo-peaks energy since this is the energy between the K and L shall in this experiment. To calculate the energy of the Compton edge equation \ref{comtonedge} was used.\par
@@ -296,46 +279,16 @@
 			\hline
 		\end{Dtabular}
 		\centering
-		\caption{Expected positions of certain regions of interest in the cobalt spectrum. The channels were calculated out of the expected energies with the equations \ref{eqLC} and \ref{eqRC}. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator. The - means that the peak ether cant exist in the spectrum.}
+		\caption[Expected Regions of Interest in Cobalt Spectrum]{Expected positions of certain regions of interest in the cobalt spectrum. The channels were calculated out of the expected energies with the equations \ref{eqLC} and \ref{eqRC}. The equations are tuned for the different scintillators. Left Channel gives the positions of the two spectra of the left one. The column Right Channel gives the position for the right scintillator. The - means that the peak ether cant exist in the spectrum.}
 		\label{ROIs2}
 	\end{table}
 	\begin{figure}[h]
 		\includegraphics[scale=0.5]{Bilder/Cobalt_Energy_Spectra1}
 		\centering
-		\caption{Energy Spectra of Cobalt with both sides of the detector and sides of the source.}
+		\caption[Cobalt Spectrum]{Energy Spectra of Cobalt with both sides of the detector and sides of the source.}
 		\label{4cobaltspectra}
 	\end{figure}
 	Comparing the expected positions to the measured ones we see that these don't align to well. For example is the expected position of the $136\,$keV Photo Peak outside of our measured spectrum for the right scintillator while left one is at the position were we see the right peak in figure \ref{4cobaltspectra}. Since it is unlikely that those peaks in the figure aren't the $122.1$\,keV peaks its possible that our calibration isn't very precise. The reason for this may be that there is a systematic error that wasn't considered which shifted the cobalt spectra or the americium spectra into one direction. If we consider this its very likely that the peaks closest to the $122.1$\,keV peaks are the $108.5\,$keV and $94.1\,$keV Escape Peaks because they are expected to be quite close to the main peaks. The Compton Edge is very likely not visible since the chance for Compton scattering is to low because of the low energy levels. At channel number 200 we see a peak which might be a backscatter peak which originates from photon that lost energy outside of the scintillator can got back were they were absorbed. The little increase after this is what we expected to be the  area of the $14.4\,$keV peak. Since the calibration isn't reliable we can't be sure of it. The low count rates at this part of the spectrum might come from the increase in the lower level discriminator (LLD) value during the experiment. Since there was an unrealistic high count rate at the lower energy level it was increased and it also affects the count rate of the region were the $14.4$\,keV photon is expected to be. The high count rate probably comes from electronics. 
-	\begin{figure}[h]
-		\includegraphics[scale=0.5]{Bilder/Cobalt_Energy_Spectra2}
-		\centering
-		\caption{Energy Spectra of Cobalt of the two less visible peaks duo to lower radiation from the side of the screw.}
-		\label{2cobaltspectra}
-	\end{figure}
-	\begin{figure}[h]
-		\includegraphics[scale=0.5]{Bilder/EnergyCalib}
-		\centering
-		\caption{Calibration curves for the energy calibrations.}
-		\label{EnergieCalib}
-	\end{figure}
- 	\begin{figure}[h]
- 		\includegraphics[scale=0.5]{Bilder/Americium_Energy_Spectra}
- 		\centering
- 		\caption[Americium Spectra]{Measured Americium Energy Spectra. The green curve is the measurement with the left scintillator while the red one is the scintillator of the right detector side.}
- 		\label{AS}
- 	\end{figure}
- 	\begin{figure}[h]
- 		\includegraphics[scale=0.5]{Bilder/kleine_Peaks2}
- 		\centering
- 		\caption[Americium Spectra Double Peak Left Detector Side]{Measured Americium Energy Spectra of the $26.3$\,keV and $33.2$\,keV double peak with fits of the split peaks. Spectrum of the left scintillator.}
- 		\label{ASL}
- 	\end{figure}
- 	\begin{figure}[h]
- 		\includegraphics[scale=0.5]{Bilder/kleine_Peaks1}
- 		\centering
- 		\caption[Americium Spectra Double Peak Right Detector Side]{Measured Americium Energy Spectra of the $26.3$\,keV and $33.2$\,keV double peak with fits of the split peaks. Spectrum of the right scintillator.}
- 		\label{ASR}
- 	\end{figure}
  	\FloatBarrier
  	\subsection{Analysis of the delayed coincidences measurement}
  	\subsubsection{Time calibration}
@@ -361,7 +314,7 @@
  	\begin{figure}[h]
  		\includegraphics{Bilder/time_cal}
  		\centering
- 		\caption{\small Plot of the datapoints of the time calibration and the linear fit of them. The errors are too small to be visible in the graphic.}
+ 		\caption[Time Calibration]{\small Plot of the datapoints of the time calibration and the linear fit of them. The errors are too small to be visible in the graphic.}
  		\label{time_cal_plot}
  	\end{figure}
  	
@@ -380,7 +333,7 @@
  	\begin{figure}[h]
  		\includegraphics{Bilder/raw_ranges}
  		\centering
- 		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+ 		\caption[Raw Data Counts]{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
  		\label{raw_plot}
  	\end{figure}
  	
@@ -420,7 +373,7 @@
  	\begin{figure}[h]
  		\includegraphics{Bilder/lin_fit_exp}
  		\centering
- 		\caption{\small Plot of the datapoints in the roi with the fitted exponential curve. The determined parameters are given in the picture.}
+ 		\caption[Exponential Fit of the Decay]{\small Plot of the datapoints in the roi with the fitted exponential curve. The determined parameters are given in the picture.}
  		\label{exp_fit}
  	\end{figure}
 	\subsubsection{Analysis on logarithmic scale}
@@ -438,7 +391,7 @@
 	\begin{figure}[h]
 		\includegraphics{Bilder/data_log}
 		\centering
-		\caption{\small Logarithmic scaled plot all data points.
+		\caption[Data with on logarithmic scale]{\small Logarithmic scaled plot all data points.
 			 Notable are the abnormally big errors.}
 		\label{data_log}
 	\end{figure}
@@ -476,28 +429,27 @@
  	errors are also symmetric, which should not happen in a logarithmic plot. 
  	Unfortunately, due to the advanced time, this could not be fixed.
  	The second big problem lies with the alomost 1.5 times too great computed half life of the logarithmic plot. Some of it can be explained by choosing the wrong range of values to fit, but this can not be the only explanation. The error on this value as unrealistic as the one from the linear plot, resulting in the same good compatibility of $0.0015$. For this is also the only explanation a wrong error computation formula. 
- 	
- 	\section{Bibliograpy}
- 		\bibliographystyle{plain}
- 		\bibliography{Quellen}
- 		\addcontentsline{toc}{section}{Literatur}
  	\section{List of tables}
  	\listoftables
  	\section{List of Figures}
  	\listoffigures
+ 	\section{Bibliograpy}
+ 		\bibliographystyle{plain}
+ 		\bibliography{Quellen}
+ 		\addcontentsline{toc}{section}{Literatur}
  	\section{Appendix}
  	
  	\begin{figure}[h]
  		\includegraphics{Bilder/lin_bkgnd}
  		\centering
- 		\caption{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+ 		\caption[Background with Fit]{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
  		\label{bckgnd_fit}
  	\end{figure}
   
   	\begin{figure}[h]
  	\includegraphics{Bilder/log_bkg}
  	\centering
- 	\caption{\small Logarithmic scaled plot of the background data with the fitted
+ 	\caption[Logarithmic scaled Background]{\small Logarithmic scaled plot of the background data with the fitted
  	curve. Notable are the abnormally big errors.}
  	\label{log_bkg}
 	\end{figure}
@@ -505,15 +457,63 @@
  	\begin{figure}[h]
  	\includegraphics{Bilder/log_clean}
  	\centering
- 	\caption{\small Logarithmic scaled plot of all data with subtracted background curve. Due to the choice of the axis labels, some of the unused data is not visible. Notable are the abnormally big errors.}
+ 	\caption[Data without Background]{\small Logarithmic scaled plot of all data with subtracted background curve. Due to the choice of the axis labels, some of the unused data is not visible. Notable are the abnormally big errors.}
  	\label{log_clean}
 	\end{figure}
 
  	\begin{figure}[h]
  	\includegraphics{Bilder/log_relevant_fit}
  	\centering
- 	\caption{\small Logarithmic scaled plot of the region of interest and the fitted 
+ 	\caption[Logarithmic Plot]{\small Logarithmic scaled plot of the region of interest and the fitted 
  	curve. Notable are the abnormally big errors.}
  	\label{log_relevant_fit}
+	\end{figure}
+	\begin{figure}
+		\includegraphics[scale=0.42]{Bilder/OsziPA}
+		\centering
+		\caption[PA Signal]{Signal of the PA measured with an oscilloscope.}
+		\label{PA}
+	\end{figure}
+	\begin{figure}
+		\includegraphics[scale=0.42]{Bilder/OsziBipolar}
+		\centering
+		\caption[Bipolar Signal]{Bipolar signal output of the MA compared to the signal coming from the PA. Measured with an oscilloscope. In yellow the signal of the PA. In Blue the signal of the MA.}
+		\label{Bi}
+	\end{figure}
+	\begin{figure}
+		\includegraphics[scale=0.42]{Bilder/OsziUnipolar}
+		\centering
+		\caption[Unipolar Signal]{Unipolar signal output of the MA compared to the signal coming from the PA. Measured with an oscilloscope. In yellow the signal of the PA. In Blue the signal of the MA.}
+		\label{Uni}
+	\end{figure}
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/Cobalt_Energy_Spectra2}
+		\centering
+		\caption[Cobalt Spectrum less visible Peaks]{Energy Spectra of Cobalt of the two less visible peaks duo to lower radiation from the side of the screw.}
+		\label{2cobaltspectra}
+	\end{figure}
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/EnergyCalib}
+		\centering
+		\caption[Energy Calibration Curves]{Calibration curves for the energy calibrations.}
+		\label{EnergieCalib}
+	\end{figure}
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/Americium_Energy_Spectra}
+		\centering
+		\caption[Americium Spectra]{Measured Americium Energy Spectra. The green curve is the measurement with the left scintillator while the red one is the scintillator of the right detector side.}
+		\label{AS}
+	\end{figure}
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/kleine_Peaks2}
+		\centering
+		\caption[Americium Spectra Double Peak Left Detector Side]{Measured Americium Energy Spectra of the $26.3$\,keV and $33.2$\,keV double peak with fits of the split peaks. Spectrum of the left scintillator.}
+		\label{ASL}
+	\end{figure}
+	\begin{figure}[h]
+		\includegraphics[scale=0.5]{Bilder/kleine_Peaks1}
+		\centering
+		\caption[Americium Spectra Double Peak Right Detector Side]{Measured Americium Energy Spectra of the $26.3$\,keV and $33.2$\,keV double peak with fits of the split peaks. Spectrum of the right scintillator.}
+		\label{ASR}
 	\end{figure}
 \end{document}
