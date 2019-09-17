@@ -17,3 +17,75 @@ $$\mu_K = \frac{e\hbar}{2m_p}$$
 The difference between those two is that for the Bohr magneton the elecron mass is used and for the nuclear magneton the proton mass. 
 In the ground state of atomic nuclei, the nucleons are arranged according to the Pauli principle so that each orbital is occupied by two protons or neutrons of opposite spins. If now a eu-nucleus (with an even number of protons and an uneven number of neutrons) or if an ue-nucleus (where the even and uneven nucleons are reversed) is present, an unpaired nucleon remains. This leads to an half-digit total spin. For a uu-nucleus two unpaired nucleons remain resulting in an integer total spin. In a ee-nucleus all nucleons are paired, therefore the total spin is zero. Examples for ee-nuclei are $^{16}_{8}$O and $^{12}_6$C. Therefore it is possible to measure the spin of hydrogen $I=\frac{1}{2}$ utilizing glycol (C$_2$H$_6$O$_2$) and water (H$_2$O) samples. For the $^{9}_{19}$F nucleus with 9 protons and 10 neutrons the total spin is also $I=\frac{1}{2}$.
 \subsection{Interaction with magnetic fields and radiation (nuclear magnetic resonance)}
+Classically the the energy of a magnetic dipole moment $\hat{\mu}$ in a magnetic field $B$ is described by the equation \ref{eqDipol}.
+\begin{equation}
+E=-\hat{\mu}\cdot B
+\label{eqDipol}
+\end{equation}
+If the magnetic field goes in the z direction this can be written in quantum mechanics like in equation \ref{Zeeman} and is called Zeeman-splitting. 
+\begin{equation}
+E = - \mu_K g_I m_I B_x
+\label{Zeeman}
+\end{equation}
+Here our energy niveaus are degenerated if there is no outer magnetic field, with the magnetic field the levels spits up depending on the quantum number $m_j$. In figure \ref{ZeemanBild} we see this splitting up under the influence of the magnetic field. 
+\begin{figure}[h]
+	\begin{tikzpicture}
+	\draw (1,0) -- node[above] {$I=1$} (3,0);
+	\draw (3.2,0) -- (4,0);
+	\draw (3.2,0.1) -- (4,1);
+	\draw (3.2,-0.1) -- (4,-1);
+	\draw (4.1,0) -- (6,0) node[right] {\quad$1$} ;
+	\draw (4.1,1) -- (6,1) node[right] {\quad$0$} ;
+	\draw (4.1,-1) -- (6,-1) node[right] {\quad$-1$} ;
+	\node at (2,1) {$B=0$};
+	\node at (5,2) {$B>0$}; 
+	\node at (6.6,2) {$m_j$};
+	\end{tikzpicture}
+	\centering
+	\caption{Zeeman splitting for $I=1$}
+	\label{ZeemanBild}
+\end{figure}
+The difference energy $\Delta E$ between attached $m_j$ can be written as follows:
+\begin{equation}
+\Delta E = g_I \mu_K B
+\end{equation}   
+This amount of energy needs to be absorbed or emitted for the spin to change its direction. This can happen through photons or by interaction with a 'Strahlungsfeld'. Since a certain amount of energy is needed it happens only at certain frequencies. This so called resonance frequency is given by:
+\begin{equation}
+	\nu = \frac{\Delta E}{h}=\frac{g_I\mu_KB}{h}=\frac{\gamma B}{2\pi}	
+\end{equation}
+If a spin absorbs energy of the 'Strahlungsfeld' and changes into a higher level the intensity of 'Strahlungsfeld' decreases which is measurable. 
+\section{Relaxation Effects}
+In thermal equilibrium the occupation number are Boltzmann distributed.
+The probability of a state depending on energy and temperature is given through:
+\begin{equation}
+p_i=\frac{e^{\nicefrac{-E_i}{kT}}}{Z}
+\label{Boltzmann}
+\end{equation}
+Here k is the Boltzmann constant and Z is the canonical partition function of all the states in the system. The probability $p_i$ can also be given by: $$p_i=\frac{N_i}{N}$$ With that the relationship between two states $1$ and $2$ is given through eq.\ref{Boltzmann2}
+\begin{equation}
+\frac{N_1}{N_2}=e^{-\frac{E_1-E_2}{kT}}=e^{-\frac{\Delta E}{kT}}
+\label{Boltzmann2}
+\end{equation}
+That means that there will always be more particles in the lower state than in an upper one. That would mean that the occupation numbers should equalize and with that the measurable effect. This is not happening because of so called relaxation effects. There are two major relaxation effects:
+\begin{enumerate}
+	\item Spin-Lattice Relaxation: Here the exited nucleus give their energy to the lattice structure of the molecule. This energy is lost to the 'Strahlungsfeld'.
+	\item Spin-Spin Relaxation: One nucleus creates a magnetic field at the another nucleus which shifts the outer magnetic increasing or decreasing it. This leads to an increase in the width of the absorption line.
+\end{enumerate} 
+\section{Hall Sensor}
+The Hall sensor is used to measure magnetic fields. It uses the Hall effect. The effect happens to electrons in a cable effected by a outer magnetic field. Here the electrons are pushed under the Lorenz force $\vec{F}_L=q\cdot(\vec{v}\times \vec{B})$to the side of the cable till certain voltage is reached which counters the Lorenz force. That means we have $F_L=F_E$ This voltage $U_{Hall}$ can be measured. Equation \ref{Hall} gives a way to calculate the magnetic force acting on the cable. 
+\begin{equation}
+U_{Hall}=H\frac{IB}{d}
+\label{Hall}
+\end{equation}
+\begin{enumerate}
+	\item[] $H$: Is the Hall constant $\frac{1}{ne}$ with $n$ the electric charge density and $e$ the charge of an electron.
+	\item[.] $I$: The \color{red} Stromstärke \color{black}
+	\item[.] $B$: The magnetic field.
+	\item[.] $d$: The width of the cable.
+\end{enumerate}
+\section{Method of Measuring}
+\subsection{Measuring the Magnetic Field}
+To measure the magnetic field the earlier discussed Hall sensor is used. It is put onto a long rod which a cm scale. That way it can be put into the magnetic field and measure it for certain depths. That way it can be checked if the field is \colorbox{red}{Homogen} since the magnetic field value will stay the same.
+\subsection{Measurement of the Resonance Frequency}
+To measure the resonance frequency the constant field method is used. Here the 'Strahlungsfeld' of the NMR (Nuclear Magnetic Resonance) Oscillator is set at a constant frequency and the magnetic field is changed with a wave to check for the correct resonance frequency. If this frequency is hit the Spins will change and the 'Strahlungsfeld will lose energy which will be seen in the amplitude. For the magnetic field two electromagnets are used which have to smaller ones for the variance of the magnetic field. To measure the correct frequency two different methods are used.\par
+The first one uses a sinus wave to change the magnetic field. 
