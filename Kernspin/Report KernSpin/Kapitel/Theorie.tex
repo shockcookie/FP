@@ -27,24 +27,24 @@ If the magnetic field goes in the z direction this can be written in quantum mec
 E = - \mu_K g_I m_I B_x
 \label{Zeeman}
 \end{equation}
-Here our energy niveaus are degenerated if there is no outer magnetic field, with the magnetic field the levels spits up depending on the quantum number $m_j$. In figure \ref{ZeemanBild} we see this splitting up under the influence of the magnetic field. 
+Here the energy niveaus are degenerated if there is no outer magnetic field, with the magnetic field the levels spits up depending on the quantum number $m_j$. In figure \ref{ZeemanBild} we see this splitting up under the influence of the magnetic field. 
 \begin{figure}[h]
 	\begin{tikzpicture}
 	\draw (1,0) -- node[above] {$I=1$} (3,0);
-	\draw (3.2,0) -- (4,0);
-	\draw (3.2,0.1) -- (4,1);
-	\draw (3.2,-0.1) -- (4,-1);
-	\draw (4.1,0) -- (6,0) node[right] {\quad$1$} ;
-	\draw (4.1,1) -- (6,1) node[right] {\quad$0$} ;
+	%\draw (3.2,0) -- (4,0);
+	%\draw (3.2,0.1) -- (4,1);
+	%\draw (3.2,-0.1) -- (4,-1);
+	\draw (4.1,0) -- (6,0) node[right] {\quad$0$} ;
+	\draw (4.1,1) -- (6,1) node[right] {\quad$1$} ;
 	\draw (4.1,-1) -- (6,-1) node[right] {\quad$-1$} ;
-	\node at (2,1) {$B=0$};
+	\node at (2,2) {$B=0$};
 	\node at (5,2) {$B>0$}; 
 	\node at (6.6,2) {$m_j$};
 	\end{tikzpicture}
 	\centering
-	\caption{Zeeman splitting for $I=1$}
+	\caption[Zeeman Splitting]{Zeeman splitting for $I=1$}
 	\label{ZeemanBild}
-\end{figure}
+\end{figure}\\
 The difference energy $\Delta E$ between attached $m_j$ can be written as follows:
 \begin{equation}
 \Delta E = g_I \mu_K B
@@ -66,13 +66,13 @@ Here k is the Boltzmann constant and Z is the canonical partition function of al
 \frac{N_1}{N_2}=e^{-\frac{E_1-E_2}{kT}}=e^{-\frac{\Delta E}{kT}}
 \label{Boltzmann2}
 \end{equation}
-That means that there will always be more particles in the lower state than in an upper one. That would mean that the occupation numbers should equalize and with that the measurable effect. This is not happening because of so called relaxation effects. There are two major relaxation effects:
+That means that there will always be more particles in the lower state than in an upper one. It follows as well, that the occupation numbers should equalize and with it the measurable effect. This is not happening because of so called relaxation effects. There are two major relaxation effects:
 \begin{enumerate}
 	\item Spin-Lattice Relaxation: Here the exited nucleus give their energy to the lattice structure of the molecule. This energy is lost to the 'Strahlungsfeld'.
-	\item Spin-Spin Relaxation: One nucleus creates a magnetic field at the another nucleus which shifts the outer magnetic increasing or decreasing it. This leads to an increase in the width of the absorption line.
+	\item Spin-Spin Relaxation: One nucleus creates a magnetic field at the another nucleus which shifts the outer magnetic field increasing or decreasing it. This leads to an change in the width of the absorption line.
 \end{enumerate} 
 \section{Hall Sensor}
-The Hall sensor is used to measure magnetic fields. It uses the Hall effect. The effect happens to electrons in a cable effected by a outer magnetic field. Here the electrons are pushed under the Lorenz force $\vec{F}_L=q\cdot(\vec{v}\times \vec{B})$to the side of the cable till certain voltage is reached which counters the Lorenz force. That means we have $F_L=F_E$ This voltage $U_{Hall}$ can be measured. Equation \ref{Hall} gives a way to calculate the magnetic force acting on the cable. 
+The Hall sensor is used to measure magnetic fields. It uses the Hall effect. The effect happens to electrons in a cable effected by a outer magnetic field. Here the electrons are pushed under the Lorenz force $\vec{F}_L=q\cdot(\vec{v}\times \vec{B})$ to the side of the cable till certain voltage is reached which counters the Lorenz force $F_L=F_E$. This voltage $U_{Hall}$ can be measured. Equation \ref{Hall} gives a relationship between the Hall voltage and the magnetic field.
 \begin{equation}
 U_{Hall}=H\frac{IB}{d}
 \label{Hall}
@@ -84,7 +84,7 @@ U_{Hall}=H\frac{IB}{d}
 	\item[•] $d$: The width of the cable.
 \end{enumerate}
 \subsection{Lock-in Amplifier}
-The lock-in method is used to make small signal visible inside of huge noise. To do this the main signal will be multiplied with a reference signal and integrated with a low pass filter and amplified. That way only the part of the signal will pass through at which the signal is expected.
+The lock-in method is used to make small signal visible inside of huge noise. To do this the main signal will be multiplied with a reference signal and integrated with a low pass filter and amplified. When the magnetic field doesn't change while changing the position of the Hall sensor the field is homogeneously. 
 \section{Method of Measuring}
 \subsection{Measuring the Magnetic Field}
 To measure the magnetic field the earlier discussed Hall sensor is used. It is put onto a long rod which a cm scale. That way it can be put into the magnetic field and measure it for certain depths. That way it can be checked if the field is \colorbox{red}{Homogen} since the magnetic field value will stay the same.
