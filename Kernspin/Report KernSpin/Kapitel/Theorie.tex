@@ -90,20 +90,20 @@ The lock-in method is used to make small signal visible inside of huge noise. To
 To measure the magnetic field the earlier discussed Hall sensor is used. It is put onto a long rod which a cm scale. That way it can be put into the magnetic field and measure it for certain depths.  When the magnetic field doesn't change while changing the position of the Hall sensor the field is homogeneously. 
 \subsection{Measurement of the Resonance Frequency}
 To measure the resonance frequency the constant field method is used. Here the 'Strahlungsfeld' of the NMR (Nuclear Magnetic Resonance) Oscillator is set at a constant frequency and the magnetic field is changed with a wave to check for the correct resonance frequency. If this frequency is hit the spins will change and the 'Strahlungsfeld will lose energy which can be seen in the change of the amplitude. For the magnetic field two electromagnets are used which have to smaller ones attached to vary the field with the help of a wave. To measure the correct frequency two different methods are used.
-\subsubsection{Sinus Modeling Method}
-The first one uses a sinus wave to change the magnetic field. That means that the correct frequency will be hit two times each sinus period and with this two absorption lines. To find the exact resonance frequency the minima need to be equidistant, since at this point they will be at the 'Nulldurchgang' of the modulated magnetic field. At this point the correct frequency to the set magnetic field is found. The experimental setup for this part can be seen in figure \ref{Exp_part1}.
+\subsubsection{Sine Modeling Method}
+The first one uses a sine wave to change the magnetic field. That means that the correct frequency will be hit two times each sine period and with this two absorption lines. To find the exact resonance frequency the minima need to be equidistant, since at this point they will be at the 'Nulldurchgang' of the modulated magnetic field. At this point the correct frequency to the set magnetic field is found. The experimental setup for this part can be seen in figure \ref{Exp_part1}.
 \begin{figure}[h]
 	\includegraphics[scale=1]{Bild/Setup1}
 	\centering
-	\caption[Block Diagram for Setup 1]{Setup for measuring the resonance frequency with a sinus modulation.}
+	\caption[Block Diagram for Setup 1]{Setup for measuring the resonance frequency with a sine modulation.}
 	\label{Exp_part1}
 \end{figure}
 \subsubsection{Lock-In Method}
-For the second part the lock-in method is used since it is more precise duo to its lower background noise. Instead of the former absorption curve this method gives the differentiated curve. For the modulation of the magnetic field the superposition of a sinus and a sawtooth is used. Here the sawtooth is used mainly for the variance of the field while the sinus is used to create the differentiated signal since it has a similar frequency to the reference signal. The former minima of the absorption curve will now be the 'Nulldurchgang' of the signal. The moment the 'Nulldurchgang' of both measured signals overlap the correct resonance frequency is hit. Examples of both signals are shown in figure \ref{SägezahnBsp} and the setup is given in figure \ref{Exp_part2}.
+For the second part the lock-in method is used since it is more precise duo to its lower background noise. Instead of the former absorption curve this method gives the differentiated curve. For the modulation of the magnetic field the superposition of a sine and a sawtooth is used. Here the sawtooth is used mainly for the variance of the field while the sine is used to create the differentiated signal since it has a similar frequency to the reference signal. The former minima of the absorption curve will now be the 'Nulldurchgang' of the signal. The moment the 'Nulldurchgang' of both measured signals overlap the correct resonance frequency is hit. Examples of both signals are shown in figure \ref{SägezahnBsp} and the setup is given in figure \ref{Exp_part2}.
 \begin{figure}[h]
 	\includegraphics[scale=1]{Bild/BspLockIn}
 	\centering
-	\caption{Derived absorption signal in red. Superposition of sinus and sawtooth waves with both 'Nulldurchgängen' aligned.}
+	\caption{Derived absorption signal in red. Superposition of sine and sawtooth waves with both 'Nulldurchgängen' aligned.}
 	\label{SägezahnBsp}
 \end{figure}
 \begin{figure}[h]
