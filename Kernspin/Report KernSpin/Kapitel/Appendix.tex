@@ -1,4 +1,10 @@
-\begin{table}[ht]
+	\begin{figure}[ht]
+		\includegraphics[scale=0.8]{Bild/BspLockIn}
+		\centering
+		\caption[Expected Signal for the Lock-In Method]{Derived absorption signal in red. Superposition of sinus and sawtooth waves with both 'Nulldurchgängen' aligned.\cite{anleitung}}
+		\label{SägezahnBsp}
+	\end{figure}
+	\begin{table}[ht]
 	\begin{Dtabular}[1.1]{|c|c|c|c|}
 		\hline
 		CSV File&Parameter $m$&Parameter $b$&$d_s$\\
@@ -20,9 +26,19 @@
 		\verb|lockin_8|&$0.01091\pm0.00011$&$-3.87\pm0.04$&$355\pm5$\\
 		\hline
 	\end{Dtabular}
-	\centering
-	\caption[Parameter of Sawtooth]{Parameters and position of the 'Nulldurchgang' of the sawtooth fit. Here $m$ is the slope, $b$ the crossing of the y-axis and $d_s$ the 'Nulldurchgang'.}
-	\label{SägezahnParameter}
+		\centering
+		\caption[Parameter of Sawtooth]{Parameters and position of the 'Nulldurchgang' of the sawtooth fit. Here $m$ is the slope, $b$ the crossing of the y-axis and $d_s$ the 'Nulldurchgang'.}
+		\label{SägezahnParameter}
+	\end{table}
+	\begin{table}[ht]
+		\begin{Dtabular}[1.1]{|c|c|c|c|c|c|}
+			\hline
+			CSV File&Parameter $m$&Parameter $b$&$d_s$\\
+			\hline
+		\end{Dtabular}
+		\centering
+		\caption[Parameter of Derived Gaussian]{Parameters and position of the 'Nulldurchgang' of the derived Gaussian fit.}
+		\label{GaussianTable}
 	\end{table}
 	\begin{figure}[ht]
 		\includegraphics[scale=0.5]{Bild/LockIn2.png}
