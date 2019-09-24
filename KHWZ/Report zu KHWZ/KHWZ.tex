@@ -106,9 +106,9 @@
  	\subsection{Energy Spectrum}
  	In the energy spectrum are a few areas of interest. \\
  	First of all their are the photo peaks. These are peaks which come into being when a photon gives its whole energy to the detector. This will happen during a photoelectric effect if the emitted X-ray or auger electron also gets absorbed.\par
- 	Another region of interest (ROI) could be the Escape-peak. Here the x-Ray emitted by an exited state dropping to back to the ground state leaves the detector without interaction. That means the escape peak will be shifted by the amount of energy that left the detector.\par
+ 	Another region of interest (ROI) could be the Escape-peak. Here the X-ray emitted by an exited state dropping to back to the ground state leaves the detector without interaction. That means the escape peak will be shifted by the amount of energy that left the detector.\par
  	The next point is the Compton edge and spectrum. If the emitted photon only interacts with the detector only by Compton scattering, and leaves the detector only a part of the energy will be deposed. This energy will form the Compton-spectrum. For a scattering angle of $180$ the maximum amount of energy will be absorbed. This energy symbols the abrupt end of this spectrum and is called the Compton-edge.\\
- 	A typical peak is also the Backscatter-peak which happens through photons that get scattered at material outside of the detector and find their way back in where they get absorbed. That way they lose some energy depending on the material. This is way the peak is shifted by this amount from the position of the Photo-peak. 
+ 	A typical peak is also the Backscatter-peak. It occurs through photons that get scattered at material outside of the detector and find their way back in where they get absorbed. That way they lose some energy depending on the material. This is way the peak is shifted by this amount from the position of the Photo-peak. 
  	\subsection{Methodology}
  	\ \\ 
  	\begin{wrapfigure}{l}{8cm}
@@ -188,7 +188,7 @@
  	After both SCAs were, configured the actual measurement seen in figure \ref{setup_DC} was set up. For the delay we choose the highest of $196$\,ns to get as much of the exponential curve as possible. After running a test, the main measurement was started with a timer of 15 hours. Since the measured spectrum had a big part with only random coincidences this can be used instead of another measurement for the random coincidences. At last, the calibration of the TAC was done by using the setup of figure \ref{setup_TC}. Here different delays were set and the corresponding channel were noted.
  	\section{Analysis}
  	\subsection{Analysis of the Signal Shapes}
- 	In figure \ref{PA} we see the signal coming from the PA output of the detector. The signal reaches almost instantaneously its peak and than drops slowly down to the ground level. The maximum of the blue signal is much higher than the signal of the PA. Same goes naturally for the background as well. This is duo to the increase in amplitude through the MA. In figure \ref{Uni} it's noticeable that the signal is formed like a Gaussian. Comparing this to the Bipolar signal of the Main Amplifier in figure \ref{Bi}, we notice that the signal here looks like the derivative of the Unipolar signal. 
+ 	In figure \ref{Bi} we see the signals of the PA and the MA with the bipolar output. Looking at the scaling its obvious that the signal coming from the MA has a much higher amplitude. This is applies to the background noise as well. Watching the shape of the signal it's noticeable that it is bipolar. Comparing this to figure \ref{Uni} with the unipolar output of the amplifier we see that here the amplitude is also much higher for the blue line. The signal shape here is Gaussian shaped. Its likely that the Bipolar signal is the derived signal of the Unipolar signal since the 'Nulldurchgang' is around the position of the unipolar signal peak.
  	\begin{figure}[h]
  		\includegraphics[scale=0.42]{Bilder/OsziBipolar}
  		\centering
@@ -251,7 +251,7 @@
 			\hline
 			Escape Peak of $59.5$\,keV&$31.5$&$171\pm10$&$165\pm5$\\
 			\hline
-			Escape Peak of $33.2$\,keV&$5.2$&&\\
+			Escape Peak of $33.2$\,keV&$5.2$&$-63\pm8$&$-31\pm4$\\
 			\hline
 			Compton Edge of $59.5$\,keV&$11.23$&$-10\pm8$&$14\pm4$\\
 			\hline
@@ -270,7 +270,8 @@
 	\end{equation}
 	Looking at these it can be expected to see an Escape Peak of the $59.5$\,keV peak and its Compton Edge. The Reason we don't see them is that our Escape Peak is overshadowed by the Photo Peak of our $33.2\,$keV Photon. For the Compton Edge its possible that our energies are to low for it to happen often enough that it would get visible since the Compton scattering happens mostly in the range of $200\,$keV to $5\,$MeV.
 	\subsubsection{Cobalt Spectra}
-	The cobalt spectra was measured four times and all four spectra can be seen in figure \ref{4cobaltspectra}. Since the two spectra where the screw of the source was turned to the scintillator are much lower, these are separate in figure \ref{2cobaltspectra}. Looking at the figures we can clearly see the $122.1\,$keV peaks. But in this peak there is also hidden the in theory smaller, duo to its lower probability, $136.5$\,keV peak. These are similar to the $26.3\,$keV and $33.2$\,keV peaks very close to each other. That's why the $136.5$\,keV Photo-peak is hidden in the big peak at the right side of the spectrum. It is also visible that depending on which sides of detector are here also shifted against each other. Notable as well is that there is a smaller shift depending on the side of the source. So the spectra measured with the screw side are a bit sifted to the left. In the table \ref{ROIs2} the positions of certain expected regions are listed. The Compton Edge was calculated like in the Americium Spectrum before with equation \ref{comtonedge}.\par
+	The cobalt spectra was measured four times and all four spectra can be seen in figure \ref{4cobaltspectra}. Since the two spectra where the screw of the source was turned to the scintillator are much lower, these are separate in figure \ref{2cobaltspectra}. Looking at the figures we can clearly see the $122.1\,$keV peaks. It has to be mentioned, that this peaks are made of two different photo peaks. The $136.5\,$keV peak and the $122.1\,$keV peak. Since the  $136.5\,$keV peak is very small it shouldn't affect the other one to much, which means it can be considered as $122.1\,$keV peak.\par
+	Depending on which which detector was used we get a shift in the energy spectrum as well as a smaller shift depending on the side of the source. The spectra measured with the screw side are a bit sifted to the left. In the table \ref{ROIs2} the positions of certain expected regions are listed. The Compton Edge was calculated like in the Americium Spectrum before with equation \ref{comtonedge}.\par
 	\begin{table}[h]
 		\begin{Dtabular}[1.1]{|c|c|c|c|}
 			\hline
@@ -334,11 +335,11 @@
  	\end{figure}
  	
  	\subsubsection{Analysis on linear scale}
- 	For the analysis in the linear scale, two ranges of the data set were chosen.
+ 	For the analysis in the linear scale, two ranges of the data sets were chosen.
  	One	was used for the background compensation, the other one for the exponential fit.
  	For a visual representation and the exact value ranges, see figure \ref{raw_plot}.
- 	The error on the counts is, because a poisson distribution was assumed, computed by
- 	equation \ref{poisson_error}. $s_{\text{counts}}$ is the error for the counts of a channel, $n$  the actual counts of the same channel. All errors were calculated for each channel individually.
+ 	The error on the counts is computed by
+ 	equation \ref{poisson_error}. This is duo to the  $s_{\text{counts}}$ is the error for the counts of a channel, $n$  the actual counts of the same channel. All errors were calculated for each channel individually.
  	\begin{equation}
  	s_{\text{counts}}=\sqrt{n}
  	\label{poisson_error}
@@ -351,12 +352,17 @@
  		\caption[Raw Data Counts]{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
  		\label{raw_plot}
  	\end{figure}
- 	
- 	As the next step a curve, analog to the one used for the time calibration, was
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/lin_fit_exp}
+ 		\centering
+ 		\caption[Exponential Fit of the Decay]{\small Plot of the datapoints in the roi with the fitted exponential curve. The determined parameters are given in the picture.}
+ 		\label{exp_fit}
+ 	\end{figure}
+ 	As the next step a linear curve was
  	fitted to the range designated for the background compensation. A visual
  	representation of this fit is given in figure \ref{bckgnd_fit}. This fitted curve
- 	was then subtracted from all the datapoints, as a mean to reduce the influence of
- 	random background coincidences. The reason why the green part in figure \ref{raw_plot} can be used is that for the part of our measurement the random coincidences is almost flat. This is due to the fast decay of $9ns$ of our $136.5$\,keV state. Since it decays so fast the measurement takes part in the flat area of the background. To get the curve for the background we fit the Data Points using the python package \verb|scipy.optimize.curve_fit| \cite{SciPy_Opti}.
+ 	was then subtracted from all the data points, as a mean to reduce the influence of
+ 	random background coincidences. The reason this can be used as background for the whole measurement is, that we have a constant number of iron isotopes that decay and with that a flat background over the whole measurement. The reason for the constant amount of iron isotopes is the long Half-life of Cobalt.  To get the curve for the background we fit the Data Points using the python package \verb|scipy.optimize.curve_fit| \cite{SciPy_Opti}.
  	The parameters for the curve in form of $f(x)=m\cdot x+c$ are:
  	
  	\begin{equation*}
@@ -385,12 +391,6 @@
  	\label{HalbwertszeitError} 
  	\end{equation}
  	With that the half life is $T_\frac{1}{2}=(83\pm10)$\,ns.
- 	\begin{figure}[h]
- 		\includegraphics{Bilder/lin_fit_exp}
- 		\centering
- 		\caption[Exponential Fit of the Decay]{\small Plot of the datapoints in the roi with the fitted exponential curve. The determined parameters are given in the picture.}
- 		\label{exp_fit}
- 	\end{figure}
 	\subsubsection{Analysis on logarithmic scale}
 	For the analysis on the logarithmic scale, the $\ln$ of every count value and their
 	respective error was computed. This data and its errors are illustrated in figure 
