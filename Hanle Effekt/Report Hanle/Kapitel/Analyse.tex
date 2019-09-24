@@ -1,10 +1,10 @@
 \section{Auswertung}
 \subsection{Umrechnung in Magnetfelder}
-Zu Beginn der Auswertung musste die Zeit Achse des Oszilloskops in Tesla umgerechnet werden um die $B_{FW}$ zu bestimmen welches in Gleichung \ref{tau} zu nutzten. Hierfür wurde eine gerade durch die Rampenspannung angepasst. Hierfür wurde aus dem Python Paket \verb|scipy.optimize| das Modul \verb|curve_fit| verwendet. Für den Fit wurde die Form $f(x)=mx+b$ genommen. Mit dieser Kurve kann nun die Messwerte der x-Achse in Tesla umgerechnet werden. Dies wurde für jede CAV Datei einzeln gemacht. In Abbildung \ref{MagnetfeldAbbildung} ist ein Fit beispielhaft eingezeichnet.\par
+Zu Beginn der Auswertung musste die Zeit Achse des Oszilloskops in Tesla umgerechnet werden um die $B_{FW}$ zu bestimmen welches in Gleichung \ref{tau} zu nutzten. Hierfür wurde eine gerade durch die Rampenspannung angepasst. Hierfür wurde aus dem Python Paket \verb|scipy.optimize|\cite{SciPy_Opti} das Modul \verb|curve_fit| verwendet. Für den Fit wurde die Form $f(x)=mx+b$ genommen. Mit dieser Kurve kann nun die Messwerte der x-Achse in Tesla umgerechnet werden. Dies wurde für jede CAV Datei einzeln gemacht. In Abbildung \ref{MagnetfeldAbbildung} ist ein Fit beispielhaft eingezeichnet.\par
 \begin{figure}[ht]
-	%\includegraphics[scale=0.5]{Bild/...}?
+	\includegraphics[scale=0.5]{Bild/Magnetfeldcali.png}
 	\centering
-	\caption{text}
+	\caption[Magnetfeld Kalibration]{Beispiel für den Fit der Rampenspannung einer $90^\circ$ Messung. In blau die gemessenen Verlauf der Spannung des Photomultipliers. In orange die Rampenspannung und in grün der Fit.}
 	\label{MagnetfeldAbbildung}
 \end{figure}
 \subsection{Berechnung der Lebenszeit bei $0^\circ$ und $90^\circ$}
@@ -22,19 +22,80 @@ Der Fehler $\sigma_\tau$ ergibt sich durch Gaußsche Fehlerfortpflanzung mit Gle
 	\sigma_\tau=\frac{\hbar}{g_J\mu_B2\gamma^2}\sigma_\gamma
 	\label{Fehlertau}
 \end{equation}
-Für die zwei Winkel sind Abbildung \ref{0} und \ref{90} Beispielhaft dargestellt.\par
-Zur Bestimmung des Fehlers wurde die Messung bei $0^\circ$ $15$ mal bei gleicher Temperatur von $20^\circ$ wiederholt um eine bessere Einschätzung des Fehlers auf die Lebenszeit zu bekommen. Als erstes wurde versucht ein Histogramm mit diesen Werten zu erstellen und darüber eine Gaußkurve zu fitten um den Fehler zu bestimmen. Hierbei ergab sich die Grafik in Abbildung \ref{Fail}. Da sich hier keine schöne Gaußkurve ergab wurde alternativ die Streuung der einzelnen Lebensdauern bestimmt. Hierfür wurde die folgende Gleichung verwendet:
+Für die zwei Winkel sind Abbildung \ref{Lo0} und \ref{Lo90} Beispielhaft dargestellt.\par
+\begin{figure}[ht]
+	\includegraphics[scale=0.5]{Bild/GradLorenz0}
+	\centering
+	\caption[Fit der Lorentzkurve bei Nullgrad]{Fit der Messung bei $0^\circ$ mit dem dazugehörigen Fit als Beispiel.}
+	\label{Lo0}
+\end{figure}
+\begin{figure}[ht]
+	\includegraphics[scale=0.5]{Bild/90GradLorenz}
+	\centering
+	\caption[Fit der Lorentzkurve bei für 90Grad]{Fit der Messung bei $90^\circ$ mit dem dazugehörigen Fit als Beispiel.}
+	\label{Lo90}
+\end{figure}
+\FloatBarrier
+Zur Bestimmung des Fehlers wurde die Messung bei $0^\circ$ $15$ mal bei gleicher Temperatur von $20^\circ$ wiederholt um eine bessere Einschätzung des Fehlers auf die Lebenszeit zu bekommen (Abbildungen sind im Anhang). Als erstes wurde versucht ein Histogramm mit diesen Werten zu erstellen und darüber eine Gaußkurve zu fitten um den Fehler zu bestimmen. Hierbei ergab sich die Grafik in Abbildung \ref{Fail}. Da sich hier keine schöne Gaußkurve ergab wurde alternativ die Streuung der einzelnen Lebensdauern bestimmt. Hierfür wurde die folgende Gleichung verwendet:
 \begin{equation}
 	\sigma_{\tau Streuung}=\sqrt{\left(\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2\right)}
 \end{equation}
 Der hierdurch erhaltene Fehler  von $\sigma_{\tau Streuung}=6,1\cdot10^{-7}\,$s wird von nun zu den Fehler der Lebensdauern quadratisch addiert.
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{Bild/gammas_hist}
+\centering
+\caption[Histogramm zur Bestimmung der Fehler]{Histogramm der Fit Parameter $\gamma$ von $15$ $0^\circ$ Messungen bei selber Temperatur.}
+\label{Fail}
+\end{figure}
 \subsection{Extrapolation zur Ausschließung des Coherence Narrowing Effektes}
 Die für verschiedene Temperaturen kann nun mit der Gleichung \ref{Coherence} der Druck bestimmt werden. Der Fehler des Drucks $\sigma_p$ wird mittels Gaußscher Fehlerfortpflanzung bestimmt:
 \begin{equation}
 \sigma_p = \frac{\partial p}{\partial T} \sigma_T
 \end{equation}
 Der Fehler für die Temperatur wurde auf $0.5\,$K geschätzt.\par
-Um Coherence Narrowing auszuschließen werden nun der aus der Temperatur bestimmte Druck gegen die Lebensdauer gezeichnet. Hierbei wurde wieder ein linearer Fit der Form $f(x)=mx+b$ gewählt und mit \verb|Curve_fit| erstellt. Der Fehler der Lebensdauer wurde mit berücksichtigt. Mit einer Extrapolation kann man die Lebensdauer am Punkt $p=0\,$Pa also dem Parameter $b$ bestimmen. Diese ist dann die echte Lebenszeit ohne Coherence Narrowing. 
+Um Coherence Narrowing auszuschließen werden nun der aus der Temperatur bestimmte Druck gegen die Lebensdauer gezeichnet. Hierbei wurde wieder ein linearer Fit der Form $f(x)=mx+b$ gewählt und mit \verb|curve_fit| erstellt. Der Fehler der Lebensdauer wurde mit berücksichtigt. Mit einer Extrapolation kann man die Lebensdauer am Punkt $p=0\,$Pa also dem Parameter $b$ bestimmen. Diese ist dann die echte Lebenszeit ohne Coherence Narrowing. 
 \subsubsection{Lebensdauern der Abkühlungsmessung 1}
+Für die erste Abkühlungsmessung ergeben sich erhält man für die Angepassten Kurven:
+\begin{equation*}
+	f(p)_{0^\circ}=(2.4 \pm 1.4)\cdot 10^{-11} \frac{\text{s}}{\text{$\mu$Pa}}\cdot p + (1.224\pm 0.022)\cdot 10^{-7} \text{s}
+\end{equation*}
+\begin{equation*}
+	f(p)_{90^\circ}=(9.0\pm 2.6)\cdot 10^{-11} \frac{\text{s}}{\text{$\mu$Pa}}\cdot p + (1.222\pm 0.020)\cdot 10^{-7} \text{s}
+\end{equation*}
+Hierbei ist der y-Achsen Abschnitt jeweils die gesuchte Lebensdauer.
+\begin{figure}[ht]
+	\includegraphics[scale=0.5]{Bild/Abk1}
+	\centering
+	\caption[Druck zu Lebensdauer Fit für Abkühlung 1]{Abkühlungsmessung der ersten Messreihe einmal für $90^\circ$ und einmal für $0^\circ$. Die Datenpunkte sind mit Fehlern für Lebensdauer und Druck aber für den Fit wurden nur die dominanteren der Lebensdauer verwendet.}
+	\label{Abk1}
+\end{figure}
+\FloatBarrier
 \subsubsection{Lebensdauern der Aufwärmmessung 1}
+Für die erste Abkühlungsmessung ergeben sich erhält man für die Angepassten Kurven:
+\begin{equation*}
+f(p)_{0^\circ}=(1.4\pm 0.5)\cdot 10^{-10} \frac{\text{s}}{\text{$\mu$Pa}}\cdot p + (1.028\pm 0.013)\cdot 10^{-7} \text{s}
+\end{equation*}
+Hierbei ist der y-Achsen Abschnitt jeweils die gesuchte Lebensdauer.
+\begin{figure}[ht]
+	\includegraphics[scale=0.5]{Bild/Abk1}
+	\centering
+	\caption[Druck zu Lebensdauer Fit für Aufwärmung]{Aufwärmmessung der ersten Messreihe einmal für $90^\circ$ und einmal für $0^\circ$. Die Datenpunkte sind mit Fehlern für Lebensdauer und Druck aber für den Fit wurden nur die dominanteren der Lebensdauer verwendet.}
+	\label{Auf1}
+\end{figure}
+\FloatBarrier
 \subsubsection{Lebensdauern der Abkühlmessung 2}
+Für die erste Abkühlungsmessung ergeben sich erhält man für die Angepassten Kurven:
+\begin{equation*}
+f(p)_{0^\circ}=(8.2\pm 2.7)\cdot 10^{-11} \frac{\text{s}}{\text{$\mu$Pa}}\cdot p + (1.166\pm 0.017)\cdot 10^{-7} \text{s}
+\end{equation*}
+\begin{equation*}
+f(p)_{90^\circ}=(1.7\pm 0.5)\cdot 10^{-11} \frac{\text{s}}{\text{$\mu$Pa}}\cdot p + (1.181\pm 0.018)\cdot 10^{-7} \text{s}
+\end{equation*}
+Hierbei ist der y-Achsen Abschnitt jeweils die gesuchte Lebensdauer.
+\begin{figure}[ht]
+	\includegraphics[scale=0.5]{Bild/Abk2}
+	\centering
+	\caption[Druck zu Lebensdauer Fit für Abkühlung 2]{Abkühlungsmessung der zweiten Messreihe einmal für $90^\circ$ und einmal für $0^\circ$. Die Datenpunkte sind mit Fehlern für Lebensdauer und Druck aber für den Fit wurden nur die dominanteren der Lebensdauer verwendet.}
+	\label{Abk2}
+\end{figure}
+\subsection{45 Stuff HAVE A LOT OF FUN (I know ich habe spaß :P)}
