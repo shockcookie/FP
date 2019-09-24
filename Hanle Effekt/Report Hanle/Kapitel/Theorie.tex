@@ -19,7 +19,7 @@ Grafisch wird die Bewegung in Abbildung \ref{Präzesionsbild} dargestellt.
 \begin{figure}[ht]
 	\includegraphics[scale=0.8]{Bild/TestP}
 	\centering
-	\caption{2: Darstellung der Präzessionsbewegung eines Elektrons mit Dipolmoment $\vec{P}$, Drehimpuls $\vec{L}$ und magnetischem Moment $\mu_L$ bei angelegtem Magnetfeld der Flussdichte $B$.}
+	\caption[Semiklassische Darstellung des Hanle Effekts]{Darstellung der Präzessionsbewegung eines Elektrons mit Dipolmoment $\vec{P}$, Drehimpuls $\vec{L}$ und magnetischem Moment $\mu_L$ bei angelegtem Magnetfeld der Flussdichte $B$.}
 	\label{Präzesionsbild}
 \end{figure}\\
 Sind Polarisation (und somit auch Dipolachse) zum Zeitpunkt der Absorption parallel zur Beobachtungsebene gilt $\theta(t)=\omega_Lt$ mit $\theta(t=0)=0$. Das bedeutet für die Intensität:
@@ -39,7 +39,7 @@ Die Gleichung \ref{GLStuff} entspricht einer inversen Lorenz-kurve und Gleichung
 \begin{figure}
 	\includegraphics[scale=0.7]{Bild/Lorenz}
 	\centering
-	\caption{Lorentzkurve mit sichtbare Intensität in Beobachtungsrichtung $0^\circ$ mit FWHM eingezeichnet.}
+	\caption[Lorentzkurve]{Lorentzkurve mit sichtbare Intensität in Beobachtungsrichtung $0^\circ$ mit FWHM eingezeichnet.}
 	\label{Lorenzbild}
 \end{figure}
 \subsection{Quantenmechanische Erklärung}
@@ -47,7 +47,7 @@ In der Quantenmechanik wird das Phänomen der Resonanzfluoreszenz durch Interfer
 \begin{figure}[ht]
 	\includegraphics[scale=0.6]{Bild/Zeeman}
 	\centering
-	\caption{Aufspaltung der Energieniveaus durch $m_j$ in einem Magnetfeld.}
+	\caption[Zeeman-Effekt]{Aufspaltung der Energieniveaus durch $m_j$ in einem Magnetfeld.}
 \end{figure}
 Liegt keine Energieaufspaltung vor werden die Niveaus kohärent angeregt werden und bei Abregung kommt es zur Interferenz mehrerer Zustände des selben Atoms. Damit gilt:
 \begin{equation}
@@ -57,3 +57,31 @@ Bei einer Aufspaltung der Niveaus können die Niveaus getrennt angeregt und abge
 \begin{equation}
 I\propto A_1^2+A_2^2
 \end{equation}
+\subsubsection{Breit-Formel}
+Zur quantenmechanischen Auswertung wird eine allgemeine Formel zur Resonanzfluoreszenz von G.Breit und P.Franken. Die Formel beschreibt die Rate mit der Photonen einer linearen Polarisationsrichtung $\vec{g}$ emittiert wenn die Probe mit in $\vec{f}$ polarisiertes Licht gestrahlt wird. Die Gleichung, hier ohne Herleitung lautet:
+\begin{equation}
+	R(\vec{f},\vec{g})=N\int_{0}^{\infty}R(\vec{f},\vec{g},t)dt=N\sum_{m,m'}^{\mu,\mu'}\frac{f_{m\mu}f_{\mu'm}g_{\mu m'}g_{m',\mu'}}{L_{\mu,\mu'}-i(\omega_\mu -\omega_\mu')}
+\end{equation}
+Eine genauere Herleitung findet sich in der Versuchsanleitung\cite{Anleitung} oder in der 'Interfernce Effects in the Resonance Fluorescence of "Crossed" Exited Atomic States' by P.A.Franken. \par
+Diese Formel für das hier durchgeführte Experiment auf den Übergang von $^3P_1$ auf den $^1S_0$ Zustand angewendet. Daraus ergibt sich wie in der Versuchsanleitung \cite{Anleitung} beschrieben die Form:
+\begin{equation}
+R=C\frac{1}{1+(2\omega_L\tau)^2}
+\end{equation}
+Diese entspricht dem Semiklassischen Ergebnis in Gleichung \ref{GLStuff}.
+\subsection{Coherence Narrowing und Dampfdruck}
+Coherence Narrowing bezieht sich auf den Effekt, dass ein von einem Atom emittiertes Photon ein weiteres Atom anregt. Dieses Atom würde nun die gleiche Präzessionsbewegung machen und wieder ein identisches Photon aussenden. Dies führt dazu, dass bei genügend großen Streuquerschnitt sich dieser Prozess mehrfach wiederholen kann. Durch die Ununterscheidbarkeit der Photonen wird die Lebenszeit künstlich erhöht. Um diesen Effekt zu eliminieren werden die Messungen bei variierendem Druck durchgeführt und die tatsächliche Lebensdauer aus der Extrapolation für den Druck $p = 0$ bestimmt. Da der Druck im System nicht messbar ist, muss er mit folgender empirisch bestimmten Formel aus
+der Temperatur berechnet werden: 
+\begin{equation}
+	\ln(\frac{p}{p_c})=(\frac{T_c}{T})(a_1T_r+a_2T_r^{1.89}+a_3T_r^2+a_4T_r^8+a_5T_r^{8.5}+a_6T_r^9)
+\end{equation}
+\subsection{Versuchsaufbau}
+Der Versuchsaufbau sieht wie in Abbildung:\ref{VAufbau} gezeigt aus. Zu Beginn wird Licht aus einer Quecksilberdampflampe genommen und durch eine Linse fokussiert mit der Hilfe eines Interferenzfilters wird dann die gesuchte Wellenlänge von herausgefiltert. Daraufhin wird ein Polarisationsfilter genutzt um die Polarisation des Lichtes einzustellen. Hiernach wird das Licht auf die Quecksilber Probe fokussiert mit einer weiteren Linse. Senkrecht zum Strahlengang befindet sich der Photomultiplier welcher als Detektor der emittierten Photonen genutzt wird. Die Quecksilber probe wird über Wärmeleitungen (HP) mit Peltierelementen verbunden welche die Probe kühlen. Um das Magnetfeld zu kontrollieren wird eine Anordnung von Helmholtz-Spulen verwendet. Hierbei werden einmal die Felder in $y,z$ Richtung eliminiert. Die Spule die das Feld in $x$ Richtung verändert wird zum Durchfahren des Feldes genutzt um die Zeeman Aufspaltung zu erreichen welche letztendlich das Hanle-Signal generiert. Hierzu wird ein Rampengenerator verwendet der die Spannung die an der Helmholtz-Spule anliegt langsam verändert wodurch sich die Lorentzkurve bei Richtiger Polarisationseinstellung ausbildet.
+\begin{figure}[ht]
+	\includegraphics[scale=0.9]{Bild/VAufbau}
+	\centering
+	\caption[Versuchsaufbau]{Versuchsaufbau des Experiments. Quecksilberdampflampe (QL), Linse (L), Interferenzfilter (IF), Polarisationsfilter (PF), Quecksilberdampf-Resonanzzelle (QZ), Heatpipes (HP), Peltierelemente (PE), Helmholtz-spulen (HS), Photomultiplier (PM)}
+	\label{VAufbau}
+\end{figure} 
+\FloatBarrier
+\section{Versuchsdurchführung}
+Zu beginn des Experiments musste als erstes die Magnetfelder in $y$ und $z$ Richtung kalibriert werden. Dafür musste am Polarisationsfilter die $0^\circ$ Einstellung gefunden werden. Durch das Durchfahren des Feldes in x Richtung erkennt man bei $0^\circ$ eine Lorentzkurve. Diese muss durch Veränderung der Spannung in $y$ und $z$ verbessert werden. So war zu beginn die Kurve nicht sehr symmetrisch. Dies wurde dann nochmal für $90^\circ$ gemacht. Dies stellte sich an vielen Stellen als sehr schwierig und Zeitaufwendig heraus. Besonders bei $45^\circ$ wurde keine besonders schöne Symmetrie erreicht. Nachdem eine geeignete Einstellung gefunden wurde, wurden bei $0^\circ$ $15$ Messungen der Lorentzkurve gemacht. Danach wurde das System mit Hilfe der Peltierelemente stückweise abgekühlt um an diesen Stellen die Kurven für die Unterschiedlichen Polarisationsrichtungen gemessen. Aus Zeitgründen wurde diese erste Messung kurzgehalten und eine Messung bei steigender Temperatur gemacht. Am nächsten Tag wurde nochmal eine Kühlmessung gemacht mit mehr Messpunkten.   
