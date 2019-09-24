@@ -24,24 +24,30 @@ Grafisch wird die Bewegung in Abbildung \ref{Präzesionsbild} dargestellt.
 \end{figure}\\
 Sind Polarisation (und somit auch Dipolachse) zum Zeitpunkt der Absorption parallel zur Beobachtungsebene gilt $\theta(t)=\omega_Lt$ mit $\theta(t=0)=0$. Das bedeutet für die Intensität:
 \begin{equation}
-	I=C\cdot \int_{0}^{\infty}\sin(\phi)^2e^{-\frac{t}{\tau}}dt=\frac{C\tau}{2}\left(\frac{(2\omega_L\tau)^2}{1+(2\omega_L\tau)^2}\right)
+	I=C\cdot \int_{0}^{\infty}\sin(\omega_Lt)^2e^{-\frac{t}{\tau}}dt=\frac{C\tau}{2}\left(\frac{(2\omega_L\tau)^2}{1+(2\omega_L\tau)^2}\right)
 	\label{GLStuff}
 \end{equation}
 Ist die Beobachtungsrichtung zum Zeitpunkt der Absorption senkrecht zur Polarisationsrichtung gilt: $\theta(t)=\omega_Lt+\frac{\pi}{2}$ mit $\theta(t=0)=\frac{\pi}{2}$. Die Intensität lässt sich ähnlich wie in Gleichung \ref{GLStuff} beschreiben:
 \begin{equation}
-I=C\cdot \int_{0}^{\infty}\cos(\phi)^2e^{-\frac{t}{\tau}}dt=\frac{C\tau}{2}\left(2-\frac{(2\omega_L\tau)^2}{1+(2\omega_L\tau)^2}\right)
+I=C\cdot \int_{0}^{\infty}\cos(\omega_Lt)^2e^{-\frac{t}{\tau}}dt=\frac{C\tau}{2}\left(2-\frac{(2\omega_L\tau)^2}{1+(2\omega_L\tau)^2}\right)
 \label{GLStuff2}
 \end{equation}
 Die Gleichung \ref{GLStuff} entspricht einer inversen Lorenz-kurve und Gleichung \ref{GLStuff2} einer normalen. Die Lebensdauer $\tau$ dieser Kurven kann über die Breite der Funktion auf halber Höhe (\textit{eng: Full width at half maximum (FWHM)}) bestimmt werden (siehe Abb.\ref{Lorenzbild}). Hierfür gilt:
 \begin{equation}
 	\tau=\frac{\hbar}{g_J\mu_BB_{FW}}
+	\label{tau}
 \end{equation}
-\begin{figure}
+\begin{figure}[ht]
 	\includegraphics[scale=0.7]{Bild/Lorenz}
 	\centering
 	\caption[Lorentzkurve]{Lorentzkurve mit sichtbare Intensität in Beobachtungsrichtung $0^\circ$ mit FWHM eingezeichnet.\cite{anleitung}}
 	\label{Lorenzbild}
 \end{figure}
+Durch das einfügen einer Phase in Gleichung \ref{GLStuff2} kann man die Gleichung \ref{EasyFit} erhalten die von dem Winkel unabhängig ist. Durch einen Fit kann man hier direkt $\tau$ ablesen.
+\begin{equation}
+I=C\cdot \int_{0}^{\infty}\cos(\omega_Lt+\phi)^2e^{-\frac{t}{\tau}}dt=\frac{C\tau}{2}\left(\frac{1+(2\tau\omega_L)^2+\cos(2\phi)-2\omega_L\tau\sin(2\phi)}{1+(2\tau\omega_L)^2}\right)
+\label{EasyFit}
+\end{equation}
 \subsection{Quantenmechanische Erklärung}
 In der Quantenmechanik wird das Phänomen der Resonanzfluoreszenz durch Interferenz sich überlagernder Zustände beschrieben. Zustände unterschiedlicher magnetischer Quantenzahl $m_j$ sind im Allgemeinen erst einmal energetisch gleich, “entartet“. Die Entartung kann aber durch Anlegen eines Magnetfeldes aufgehoben werden (Zeeman-Effekt). In Spezialfällen verursacht die Kreuzung zweier Niveaus von Zuständen verschiedener Gesamtdrehimpulse, bei bestimmten Magnetfeldstärken, eine weitere Entartung. 
 \begin{figure}[ht]
@@ -62,8 +68,8 @@ Zur quantenmechanischen Auswertung wird eine allgemeine Formel zur Resonanzfluor
 \begin{equation}
 	R(\vec{f},\vec{g})=N\int_{0}^{\infty}R(\vec{f},\vec{g},t)dt=N\sum_{m,m'}^{\mu,\mu'}\frac{f_{m\mu}f_{\mu'm}g_{\mu m'}g_{m',\mu'}}{L_{\mu,\mu'}-i(\omega_\mu -\omega_\mu')}
 \end{equation}
-Eine genauere Herleitung findet sich in der Versuchsanleitung\cite{Anleitung} oder in der 'Interfernce Effects in the Resonance Fluorescence of "Crossed" Exited Atomic States' by P.A.Franken.\cite{Franken} \par
-Diese Formel für das hier durchgeführte Experiment auf den Übergang von $^3P_1$ auf den $^1S_0$ Zustand angewendet. Daraus ergibt sich wie in der Versuchsanleitung \cite{Anleitung} beschrieben die Form:
+Eine genauere Herleitung findet sich in der Versuchsanleitung\cite{anleitung} oder in der 'Interfernce Effects in the Resonance Fluorescence of "Crossed" Exited Atomic States' by P.A.Franken.\cite{Franken} \par
+Diese Formel für das hier durchgeführte Experiment auf den Übergang von $^3P_1$ auf den $^1S_0$ Zustand angewendet. Daraus ergibt sich wie in der Versuchsanleitung \cite{anleitung} beschrieben die Form:
 \begin{equation}
 R=C\frac{1}{1+(2\omega_L\tau)^2}
 \end{equation}

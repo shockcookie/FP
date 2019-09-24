@@ -1,7 +1,40 @@
 \section{Auswertung}
+\subsection{Umrechnung in Magnetfelder}
+Zu Beginn der Auswertung musste die Zeit Achse des Oszilloskops in Tesla umgerechnet werden um die $B_{FW}$ zu bestimmen welches in Gleichung \ref{tau} zu nutzten. Hierfür wurde eine gerade durch die Rampenspannung angepasst. Hierfür wurde aus dem Python Paket \verb|scipy.optimize| das Modul \verb|curve_fit| verwendet. Für den Fit wurde die Form $f(x)=mx+b$ genommen. Mit dieser Kurve kann nun die Messwerte der x-Achse in Tesla umgerechnet werden. Dies wurde für jede CAV Datei einzeln gemacht. In Abbildung \ref{MagnetfeldAbbildung} ist ein Fit beispielhaft eingezeichnet.\par
+\begin{figure}[ht]
+	%\includegraphics[scale=0.5]{Bild/...}?
+	\centering
+	\caption{text}
+	\label{MagnetfeldAbbildung}
+\end{figure}
+\subsection{Berechnung der Lebenszeit bei $0^\circ$ und $90^\circ$}
+Zur Bestimmung der Lebenszeit wurden Lorentzkurven an die Messpunkte mit der neuen x-Achse angepasst. Hierfür wurde wie zuvor \verb|curve_fit| verwendet. Die Fehler der Umrechnung des Magnetfeldes wurden nicht mitgenommen da \verb|curve_fit| keine Fehler in x-Achse zulässt. Der Fit ist diesmal in der Form:
+\begin{equation}
+	f(x)=??
+	\label{Lorenzfit}
+\end{equation}
+Der Parameter $\gamma$ ist hierbei $\frac{B_{FW}}{2}$ also die halbe Halbwertsbreite. Damit ergibt sich aus Gleichung \ref{tau}:
+\begin{equation}
+	\tau=\frac{\hbar}{g_J\mu_B2\gamma}
+\end{equation} 
+Der Fehler $\sigma_\tau$ ergibt sich durch Gaußsche Fehlerfortpflanzung mit Gleichung \ref{Fehlertau}
+\begin{equation}
+	\sigma_\tau=\frac{\hbar}{g_J\mu_B2\gamma^2}\sigma_\gamma
+	\label{Fehlertau}
+\end{equation}
+Für die zwei Winkel sind Abbildung \ref{0} und \ref{90} Beispielhaft dargestellt.\par
+Zur Bestimmung des Fehlers wurde die Messung bei $0^\circ$ $15$ mal bei gleicher Temperatur von $?^\circ$ wiederholt um eine bessere Einschätzung des Fehlers auf die Lebenszeit zu bekommen. Hierzu wurden die einzelnen Lebensdauern bestimmt und mit ihnen die Streuung der Messwerte bestimmt. Hierfür wurde die folgende Gleichung verwendet:
+\begin{equation}
+	\sigma_{\tau Streuung}=\sqrt{\left(\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2\right)}
+\end{equation}
+Der hierdurch erhaltene Fehler  von $\sigma_{\tau Streuung}=?$ wird von nun zu den Fehler der Lebensdauern quadratisch addiert.
 \subsection{Extrapolation zur Ausschließung des Coherence Narrowing Effektes}
 Die für verschiedene Temperaturen kann nun mit der Gleichung \ref{Coherence} der Druck bestimmt werden. Der Fehler des Drucks $\sigma_p$ wird mittels Gaußscher Fehlerfortpflanzung bestimmt:
 \begin{equation}
 \sigma_p = \frac{\partial p}{\partial T} \sigma_T
 \end{equation}
-Der Fehler für die Temperatur wurde auf $0.5\,$K geschätzt.
+Der Fehler für die Temperatur wurde auf $0.5\,$K geschätzt.\par
+Um Coherence Narrowing auszuschließen werden nun der aus der Temperatur bestimmte Druck gegen die Lebensdauer gezeichnet. Hierbei wurde wieder ein linearer Fit der Form $f(x)=mx+b$ gewählt und mit \verb|Curve_fit| erstellt. Hierbei wurde der Fehler der Lebensdauer mit berücksichtigt. Die Extrapolation kann man die Lebensdauer am Punkt $p=0\,$Pa bestimmen. Diese ist dann die echte Lebenszeit ohne Coherence Narrowing. 
+\subsubsection{Lebensdauern der Abkühlungsmessung 1}
+\subsubsection{Lebensdauern der Aufwärmmessung 1}
+\subsubsection{Lebensdauern der Abkühlmessung 2}
