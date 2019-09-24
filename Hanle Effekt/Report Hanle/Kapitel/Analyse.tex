@@ -23,18 +23,18 @@ Der Fehler $\sigma_\tau$ ergibt sich durch Gaußsche Fehlerfortpflanzung mit Gle
 	\label{Fehlertau}
 \end{equation}
 Für die zwei Winkel sind Abbildung \ref{0} und \ref{90} Beispielhaft dargestellt.\par
-Zur Bestimmung des Fehlers wurde die Messung bei $0^\circ$ $15$ mal bei gleicher Temperatur von $?^\circ$ wiederholt um eine bessere Einschätzung des Fehlers auf die Lebenszeit zu bekommen. Hierzu wurden die einzelnen Lebensdauern bestimmt und mit ihnen die Streuung der Messwerte bestimmt. Hierfür wurde die folgende Gleichung verwendet:
+Zur Bestimmung des Fehlers wurde die Messung bei $0^\circ$ $15$ mal bei gleicher Temperatur von $20^\circ$ wiederholt um eine bessere Einschätzung des Fehlers auf die Lebenszeit zu bekommen. Als erstes wurde versucht ein Histogramm mit diesen Werten zu erstellen und darüber eine Gaußkurve zu fitten um den Fehler zu bestimmen. Hierbei ergab sich die Grafik in Abbildung \ref{Fail}. Da sich hier keine schöne Gaußkurve ergab wurde alternativ die Streuung der einzelnen Lebensdauern bestimmt. Hierfür wurde die folgende Gleichung verwendet:
 \begin{equation}
 	\sigma_{\tau Streuung}=\sqrt{\left(\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2\right)}
 \end{equation}
-Der hierdurch erhaltene Fehler  von $\sigma_{\tau Streuung}=?$ wird von nun zu den Fehler der Lebensdauern quadratisch addiert.
+Der hierdurch erhaltene Fehler  von $\sigma_{\tau Streuung}=6,1\cdot10^{-7}\,$s wird von nun zu den Fehler der Lebensdauern quadratisch addiert.
 \subsection{Extrapolation zur Ausschließung des Coherence Narrowing Effektes}
 Die für verschiedene Temperaturen kann nun mit der Gleichung \ref{Coherence} der Druck bestimmt werden. Der Fehler des Drucks $\sigma_p$ wird mittels Gaußscher Fehlerfortpflanzung bestimmt:
 \begin{equation}
 \sigma_p = \frac{\partial p}{\partial T} \sigma_T
 \end{equation}
 Der Fehler für die Temperatur wurde auf $0.5\,$K geschätzt.\par
-Um Coherence Narrowing auszuschließen werden nun der aus der Temperatur bestimmte Druck gegen die Lebensdauer gezeichnet. Hierbei wurde wieder ein linearer Fit der Form $f(x)=mx+b$ gewählt und mit \verb|Curve_fit| erstellt. Hierbei wurde der Fehler der Lebensdauer mit berücksichtigt. Die Extrapolation kann man die Lebensdauer am Punkt $p=0\,$Pa bestimmen. Diese ist dann die echte Lebenszeit ohne Coherence Narrowing. 
+Um Coherence Narrowing auszuschließen werden nun der aus der Temperatur bestimmte Druck gegen die Lebensdauer gezeichnet. Hierbei wurde wieder ein linearer Fit der Form $f(x)=mx+b$ gewählt und mit \verb|Curve_fit| erstellt. Der Fehler der Lebensdauer wurde mit berücksichtigt. Mit einer Extrapolation kann man die Lebensdauer am Punkt $p=0\,$Pa also dem Parameter $b$ bestimmen. Diese ist dann die echte Lebenszeit ohne Coherence Narrowing. 
 \subsubsection{Lebensdauern der Abkühlungsmessung 1}
 \subsubsection{Lebensdauern der Aufwärmmessung 1}
 \subsubsection{Lebensdauern der Abkühlmessung 2}
