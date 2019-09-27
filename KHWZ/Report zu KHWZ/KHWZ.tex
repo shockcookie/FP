@@ -45,7 +45,7 @@
 % Fügt eine Reihe von Symbolen wie Männlich Weiblich dazu
 \usepackage{url}
 % Füge Problemlos urls ein
-
+\usepackage{pdfpages}
 
 
 \hbadness=99999 
@@ -69,7 +69,7 @@
 	\maketitle
 	\vspace{2cm}
 	\begin{abstract}
-	In the short half life experiment, the half life of $^{57}$Fe in the $14.4$\,keV state is measured with the delayed coincidence method. As the source, the Cobalt Isotope $^{57}$Co is used. The energy spectra of $^{57}$Co and ${^141}$Am were also measured during the experiment. The half life were obtained from the fit on an exponential curve to the collected data on a linear scale and a linear fit to the data on an exponential scale. The computed half lives were $T_\frac{1}{2}=(83\pm10)$\,ns for the exponential fit and$T_{\frac{1}{2} \textrm{log}} = (142\pm116)\,ns$ for the linear fit. Both values are compatible with the literature value of $98\,$ns within $2\,\sigma$.
+	In the short half life experiment, the half life of $^{57}$Fe in the $14.4$\,keV state is measured with the delayed coincidence method. As the source, the Cobalt Isotope $^{57}$Co is used. The energy spectra of $^{57}$Co and ${^141}$Am were also measured during the experiment. The half life were obtained from the fit on an exponential curve to the collected data on a linear scale and a linear fit to the data on an exponential scale. The computed half lives were $T_\frac{1}{2}=(83\pm10)$\,ns for the exponential fit and$T_{\frac{1}{2} \textrm{log}} = (139.2\pm2.8)\,ns$ for the linear fit. The exponentially fitted value  is compatible with the literature value of $98\,$ns within $2\,\sigma$, the linear fitted value on the differs greatly from it.
 	\end{abstract}
 	\end{titlepage}
 	\newpage
@@ -370,7 +370,12 @@
  	\end{equation*}
  	$$c = (92 \pm 7)$$
  	
- 	
+ 	\begin{figure}[h]
+ 		\includegraphics{Bilder/lin_bkgnd}
+ 		\centering
+ 		\caption[Background with Fit]{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
+ 		\label{bckgnd_fit}
+ 	\end{figure}
  
  	
  	\FloatBarrier
@@ -391,23 +396,56 @@
  	\end{equation}
  	With that the half life is $T_\frac{1}{2}=(83\pm10)$\,ns.
 	\subsubsection{Analysis on logarithmic scale}
-	For the analysis on the logarithmic scale, the $\ln$ of every count value and their
-	respective error was computed. This data and its errors are illustrated in figure 
-	\ref{data_log}. Following this, almost the same steps as in the analysis on the linear scale
-	were carried out. Starting with a linear fit in the background data range (fig. \ref{log_bkg}), the background was subtracted from the original logarithmic data (fig. \ref{log_clean}). The main difference of this part was the linear fit 
+	For the analysis on the logarithmic scale, the $\ln$ of every count value was computed. The error was propagated with the Gaussian error propagation as seen in \ref{err_log}.
+	\begin{equation}
+		\Delta y = \Delta x \cdot \frac{\partial}{\partial x} y = \frac{\partial}{\partial x} \ln(x) = \frac{\Delta x}{x}
+		\label{err_log}
+	\end{equation}
+	
+	This data and its errors are illustrated in figure 
+	\ref{data_log}.	
+	
+	\begin{figure}[h]
+		\includegraphics[scale=0.6]{Bilder/data_log_corrected}
+		\centering
+		\caption[Data with on logarithmic scale]{\small Logarithmic scaled plot all data points.}
+		\label{data_log}
+	\end{figure} Following this, almost the same steps as in the analysis on the linear scale
+	were carried out.
+	Starting with a linear fit in the background data range, the background was compensated. The due to the high uncertainty of the slope from this fit(vgl. parameters shown in \ref{log_bkg}), only the offset of the fitted line was used for compensation.
+	(fig. \ref{log_bkg}), the background was subtracted from the original logarithmic data (fig. \ref{log_clean}). 
+	\begin{figure}[h]
+		\includegraphics[scale=0.6]{Bilder/lin_bkgnd_corrected}
+		\centering
+		\caption[Logarithmic scaled Background]{\small Logarithmic scaled plot of the background data with the fitted
+			line. The Parameters of the linear regression used to compute the parameter line and the fitted parameters are noted in the lower left corner of the figure.}
+		\label{log_bkg}
+	\end{figure}
+		\begin{figure}[h]
+		\includegraphics[scale=0.6]{Bilder/log_nobkg_corrected}
+		\centering
+		\caption[Data without Background]{\small Logarithmic scaled plot of all data with subtracted background.}
+		\label{log_clean}
+	\end{figure}
+
+	
+	The main difference of this part was the linear fit 
 	in the region of interest (fig. \ref{log_relevant_fit}).\\
 	Utilizing the slope of the fitted curve to the region of interrest, an other value for the half life of the $14.4$\,keV state of $^{57}$Fe was computed.
 	$$b_{\textrm{log}} = (0.005\pm0.004)$$
 	Utilizing formulas \ref{Lifetime} and \ref{HalbwertszeitError}, the half life was
-	determined:	$T_{\frac{1}{2} \textrm{log}} = (142\pm 116)\,ns$
-	
+	determined:	$T_{\frac{1}{2} \textrm{log}} = (139.2\pm2.8)\,ns$
+		
 	\begin{figure}[h]
-		\includegraphics{Bilder/data_log}
+		\includegraphics[scale=0.6]{Bilder/log_end_corrected}
 		\centering
-		\caption[Data with on logarithmic scale]{\small Logarithmic scaled plot all data points.
-			 Notable are the abnormally big errors.}
-		\label{data_log}
+		\caption[Logarithmic Plot]{\small Logarithmic scaled plot of the region of interest and the fitted curve. The parameters of the fitted curve are noted in the upper left corner of the figure.}
+		\label{log_relevant_fit}
 	\end{figure}
+
+	
+
+
 	
  	\FloatBarrier
  	\section{Discussion}
@@ -435,9 +473,7 @@
  	To decrease the difference between literature value and the computed one, the most effective method would be to increase the right bound of the data used for the exponential fit. This, viewed in the context of physics, can be	explained with the signal processing. The bipolar signal from the main amplifier can slightly shift, causing the single canal analyzer to trigger on inaccureate times. This results in a shifted position of the datapoint, smearing the theoretically 	sharp edges of the decay curve.\\
  	
  	
- 	With logarithmic scaled fit has multiple problems. The most obvious one is 	the incorrect error computations resulting in, by comparison, large and symmetric errors. Symmetric errors should not occur in a logarithmic scaled plot. 
- 	Unfortunately, due to  time management issues, this could not be fixed on time.
- 	There is an other issue with the alomost 1.5 times too great computed half life of the logarithmic plot. Some of it can be explained by choosing the wrong range of values to fit, but this can not be the only explanation. The error on this value is still comparatively large. This is due to the incorrect error calculation in the logarithmic plot. The large error results in a very good compatibility of $0.38\,\sigma$. 
+  	The main issue of the log scaled calculation is the alomost 1.5 times too great computed half life of the logarithmic plot. Some of it can be explained by choosing the wrong range of values to fit, but this can not be the only explanation. The error on this value is reasonable for the given data. The computed half life is still far from the literature value, resulting in a compatibility of  $15\,\sigma$. 
  	\section{List of tables}
  	\listoftables
  	\section{List of Figures}
@@ -448,35 +484,30 @@
  		\addcontentsline{toc}{section}{Literatur}
  	\section{Appendix}
  	
- 	\begin{figure}[h]
- 		\includegraphics{Bilder/lin_bkgnd}
- 		\centering
- 		\caption[Background with Fit]{\small Plot of the datapoints with corrected time. The ranges of the data used for each different regression are marked in the graphic. The start and endpoints for each range are also given.}
- 		\label{bckgnd_fit}
- 	\end{figure}
+
   
-  	\begin{figure}[h]
- 	\includegraphics{Bilder/log_bkg}
- 	\centering
- 	\caption[Logarithmic scaled Background]{\small Logarithmic scaled plot of the background data with the fitted
- 	curve. Notable are the abnormally big errors.}
- 	\label{log_bkg}
-	\end{figure}
-
- 	\begin{figure}[h]
- 	\includegraphics{Bilder/log_clean}
- 	\centering
- 	\caption[Data without Background]{\small Logarithmic scaled plot of all data with subtracted background curve. Due to the choice of the axis labels, some of the unused data is not visible. Notable are the abnormally big errors.}
- 	\label{log_clean}
-	\end{figure}
-
- 	\begin{figure}[h]
- 	\includegraphics{Bilder/log_relevant_fit}
- 	\centering
- 	\caption[Logarithmic Plot]{\small Logarithmic scaled plot of the region of interest and the fitted 
- 	curve. Notable are the abnormally big errors.}
- 	\label{log_relevant_fit}
-	\end{figure}
+%  	\begin{figure}[h]
+% 	\includegraphics{Bilder/log_bkg}
+% 	\centering
+% 	\caption[Logarithmic scaled Background]{\small Logarithmic scaled plot of the background data with the fitted
+% 	curve. Notable are the abnormally big errors.}
+% 	\label{log_bkg}
+%	\end{figure}
+%
+% 	\begin{figure}[h]
+% 	\includegraphics{Bilder/log_clean}
+% 	\centering
+% 	\caption[Data without Background]{\small Logarithmic scaled plot of all data with subtracted background curve. Due to the choice of the axis labels, some of the unused data is not visible. Notable are the abnormally big errors.}
+% 	\label{log_clean}
+%	\end{figure}
+%
+% 	\begin{figure}[h]
+% 	\includegraphics{Bilder/log_relevant_fit}
+% 	\centering
+% 	\caption[Logarithmic Plot]{\small Logarithmic scaled plot of the region of interest and the fitted 
+% 	curve. Notable are the abnormally big errors.}
+% 	\label{log_relevant_fit}
+%	\end{figure}
 	%\begin{figure}
 	%	\includegraphics[scale=0.42]{Bilder/OsziPA}
 	%	\centering
@@ -514,9 +545,15 @@
 		\label{low}
 	\end{figure}
 	\begin{figure}
-		\includegraphics[scale=0.5]{Bilder/LowThresh}
+		\includegraphics[scale=0.5]{Bilder/HighThresh}
 		\centering
 		\caption{Higher threshold calibration of the SCA for the $122.1\,$keV}
 		\label{high}
 	\end{figure}
+\FloatBarrier
+\subsection{Lab Notes}
+
+\includepdf[pages=1-,scale=0.9]{Bilder/KHWZ_notes}
+
+\FloatBarrier
 \end{document}
