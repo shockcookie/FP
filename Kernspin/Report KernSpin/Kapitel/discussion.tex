@@ -1,0 +1,84 @@
+\section{Discussion of the results}
+\subsection{Hall Sensor}
+During the first part of the experiment (error and gyromagnetic ratio measurements), a different hall probe was used as during the rest of the experiment. While the first one did not have any obvious temperature dependency, the second one did clearly. Additional magnetic field measurements indicated this. Therefore, a bigger statistical and systematic error should be assumed for all measurements with the second hall probe. Nevertheless the possibility of a temperature dependency of the first hall probe should not be ignored. 
+
+\subsection{Nuclear magnetic momentum of $^{19}$F}
+The nuclear magnetic momentum (nmm) of $^{19}$F was co compared with the literature value $\mu_K =1.328\cdot 10^{-26}\,\left[\frac{J}{T}\right]$ \cite{demtr} utilizing equation \ref{Vergleich}. The results can be seen in table \ref{vlg_f}.
+
+
+\begin{equation}
+t=\frac{x_M-x_Literatur}{\sigma_x}
+\label{Vergleich}
+\end{equation}
+
+\begin{table}
+	\caption{Compatibility of the computed values for Teflon with the literature value}
+	\label{vlg_f}
+	\centering
+	\begin{tabular}{lr}
+		\toprule
+		{} &  compatibility \\
+		\midrule
+		0 &      14.781406 \\
+		1 &      17.031542 \\
+		2 &      12.048958 \\
+		3 &      12.547981 \\
+		4 &       9.317133 \\
+		5 &      16.816672 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+As seen in the figure \ref{teflon_pic}, the difference between the individual measurements of Teflon is big. Although the computed values for the nmm are in the range of the literature value, the errors are far too small, considering the problems with the measurement of the magnetic field with the new hall probe. There is also the issue with the number of points measured for the resonance frequency correction. Sometimes as few as 3 points were recorded per peak, which is very inaccurate. Therefore the measurement should, if repeated, be made with a higher number of samples or a smaller range. The comparison of the nuclear resonance frequency of the measurement ($\approx 31.65\,\frac{MHz}{T}$, fig. \ref{teflon_pic}) with the nuclear resonance frequency recorded in the manual ($40.06\,\frac{MHz}{T}$, \cite{anleitung}), the difference is obvious. Therefore, the error from the measurement of the magnetic field should be dominant.
+
+\FloatBarrier
+\subsection{Gyromagnetic ratio}
+The literature value of the gyromagnetic ratio of the proton in glycol and hydrogen is $\gamma =  2.675\cdot 10^8 \left[\frac{1}{s T}\right]$. With equation \ref{Vergleich}, the exact values for each measurement can be found for glycol in table \ref{vgl_g} and for hydrogen in table \ref{vlg_h}.
+
+\begin{table}
+	\caption{Compatibility of the computed values for glycol with the literature value}
+	\label{vlg_g}
+	\centering
+
+\begin{tabular}{lr}
+	\toprule
+	{} &  compatibility \\
+	\midrule
+	0 &      37.167007 \\
+	1 &      37.160223 \\
+	2 &      36.270509 \\
+	3 &      37.954904 \\
+	4 &      39.361233 \\
+	\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+	
+	\caption{Compatibility of the computed values for hydrogen with the literature value}
+	\label{vlg_h}
+	\centering
+	\begin{tabular}{lr}
+	\toprule
+	{} &  compatibility \\
+	\midrule
+	0 &      40.662869 \\
+	1 &      39.709633 \\
+	2 &      38.022509 \\
+	3 &      41.010242 \\
+	4 &      36.239995 \\
+	5 &      36.936181 \\
+	\bottomrule
+\end{tabular}
+
+
+\end{table}
+
+Although the hall probe of these two measurements was more reliable, a temperature dependant error can not be excluded. When comparing the nuclear resonance frequencies of the measurements (glycol $\approx 46.07\,\frac{MHz}{T}$, fig. \ref{glycol_pic}; hydrogen $\approx 45.45\,\frac{MHz}{T}$, fig.\ref{hydrogen_pic}) with the nuclear resonance frequency in the manual ($42.58\,\frac{MHz}{T}$ \cite{anleitung}), they appear quite close together. This means, the dominant error should be in the error calculation. Another source of errors is the low number of measurements as explained above.
+
+\subsection{Lock-in measurement}
+The lock-in measurement resulted in more accurate nuclear resonance frequency as the traditional methods. To compare this result with the literature value and the values of the other method, the ratio of the frequency over the magnetic field for the resonance was computed.
+\begin{equation}
+	\frac{f_{LockIn}}{B_{LockIn}} = \frac{(19.1\pm0.6)\,{MHz}}{(463.0\pm0.7)\,{mT}} = (41.3\pm1.3)ß,\frac{MHz}{T}
+\end{equation}
+This is much closer to the reference value of $42.58\,\frac{MHz}{T}$ \cite{anleitung}. The compatibility value of both is 1.02, so they are compatible with each other.

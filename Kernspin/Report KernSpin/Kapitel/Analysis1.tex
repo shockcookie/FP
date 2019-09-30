@@ -23,32 +23,102 @@ After examining the first absorption peak of the first dataset, the parameter to
 	\label{absorbtionpeak}
 \end{figure}
 
-All of these values can be seen in fig. \ref{all_err}. Now, the absolute difference between two neighbouring points was computed, which can be seen in fig. \ref{err_abs}. It is clearly visible, that all the data points in fig. \ref{all_err} and absolute differences in fig. \ref{err_abs} come in discrete levels. The reason behind this is the limited resolution of the analogue digital converter in the oscilloscope, which represents the values as binary numbers of a certain length, allowing only discrete voltage levels to be displayed. \par
+All of these values can be seen in fig. \ref{all_err}. Now, the absolute difference between two neighbouring points was computed, which can be seen in fig. \ref{err_diff}. It is clearly visible, that all the data points in fig. \ref{all_err} and absolute differences in fig. \ref{err_diff} come in discrete levels. The reason behind this is the limited resolution of the analogue digital converter in the oscilloscope, which represents the values as binary numbers of a certain length, allowing only discrete voltage levels to be displayed. 
 These discrete levels result in zeros in the projection of the values to the y axis, which were not included in the fit of the Gaussian curve. 
-The variance of the fitted Gaussian curve then was subtracted from the mean value of the background data, resulting in the lower error threshold.
+The variance of the fitted Gaussian curve of figure \ref{gaussian_errs} then was subtracted from the mean value of the background data, resulting in the lower error threshold seen in figure \ref{err_threshs}.
 
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/all_bkg}
+	\centering
+	\caption[Plot of all background datapoints]{Plot of the measured voltage against the channel of all datapoints used for the error calibration. The discrete voltage levels from the analogue-to-digital converter of the oscilloscope are clearly visible.}
+	\label{all_err}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/abs_diff}
+	\centering
+	\caption[Plot of the absolute errordifference]{Plot of the measured voltage against the channel of the absolute difference between two neighboring errorpoints from fig. \ref{all_err}. he discrete voltage levels from the analogue-to-digital converter of the oscilloscope are clearly visible.}
+	\label{err_diff}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/projection}
+	\centering
+	\caption[Plot of the projection of fig. \ref{err_diff}]{Plot of the projection of the absolute difference between two neighbouring errors to the y axis and the Gaussian curve fitted to them.}
+	\label{gaussian_errs}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/all_dx_discr}
+	\centering
+	\caption[Plot of all data used for discriminator determination and the discriminators]{Plot of the measured voltage against the channel of the data points from all five measurements used for the difference in frequency per difference in channel. Additionally, the upper and lower error discriminator are plotted in the figure.}
+	\label{err_threshs}
+\end{figure}
+
+
+\FloatBarrier
 \subsection{Computation of the relationship between a change in channels and a change in frequency}
-For the coherence between the channels and the frequency, the absorption peaks of the five measurements were fitted to Gaussian curves. For this, the data below the error threshold of the first dip was used, ignoring the others as results of relaxation effects. After this, the first dip was chosen as the reference to compute the absolute difference between this one and all the other ones. 
-The resulting linear relationship between the change in channels for the change of frequency can be seen in figure \ref{dx/df}.
+For the coherence between the channels and the frequency, the absorption peaks of the five measurements were fitted to Gaussian curves. An example for such a fit can be seen in figure \ref{dip} For this, the data below the error threshold of the first dip was used, ignoring the others as results of relaxation effects. After this, the first dip was chosen as the reference to compute the absolute difference between this one and all the other ones. 
+The resulting linear relationship between the change in channels for the change of frequency can be seen in figure \ref{dx/df}. The parameters of the curve were  $a = 0.000442+/-0.000020$ and $b=0.004+/-0.005$ in a function $y = a\cdot x+b$.
 
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/dip_dx}
+	\centering
+	\caption[Plot of one dip for the calibration]{Plot of the data points of one absorption peak (dip) and the fitted Gaussian curve, as well a plot of the guessed starting parameters used for the fitted curve.}
+	\label{dip}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/cali}
+	\centering
+	\caption[Plot of the calibration fit]{Plot of the change of channels per change of frequency data and the linear fit used later to compute the corrected resonance frequencies.}
+	\label{dx/df}
+\end{figure}
+
+
+\FloatBarrier
 \subsection{Computation of the resonance frequencies}
-With the computed error threshold and channel frequency relationship, the resonance frequencies of the different samples can be computed.
-For this, the nullstellen of the magnetic field modifying sine wave were computed, utilizing a sine fit with \verb|curve_fit|. Next, the resonance signal next to the nullstellen was analysed for the absorption maxima. Utilizing the error threshold, all values above were considered background. From the data points left the first dip was recorded to be analysed. Caused by the low sample number in the files, the original plan of fitting a Gaussian curve to each dip was not feasible. As a substitute, the minimum of each dip was chosen to be the recorded channel with the width of the entire dip as the error. This can be seen in figure \ref{dip_points}
+With the computed error threshold and channel frequency relationship, the resonance frequencies of the different samples can be computed. An example of the data to be analysed is seen in figure \ref{data_raw}. 
+For this, the nullstellen of the magnetic field modifying sine wave were computed, utilizing a sine fit with \verb|curve_fit|. This can be seen in the figure \ref{nullstellen} Next, the resonance signal next to the nullstellen was analysed for the absorption maxima. Utilizing the error threshold, all values above were considered background and directly neighbouring points were considered signal. An example of the result of this procedure is seen in figure \ref{discr_points}. From this points the first dip was analysed. Caused by the low sample number in the files, the original plan of fitting a Gaussian curve to each dip was not feasible. As a substitute, the minimum of each dip was chosen to be the recorded channel with the width of the entire dip as the error.
 Now, the distance between the dip and the closest nullstelle of the sine was computed for all dip-nullstellen pairs in the measurement and the mean of all distances was computed. This mean is the correction  for the frequency at which the measurement was recorded. Utilizing the frequency channel relationship, the true resonance frequency of each measurement could be computed as the sum of the recorded frequency and the correction.
 
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/raw_data}
+	\centering
+	\caption[Plot of the raw data]{Example of the data recorded for one data point for one sample.}
+	\label{data_raw}
+\end{figure}
 
-\subsection{Computation of the nuclear magnetic momentum of $^9$F}
-Using the corrected resonance frequencies and measured magnetic fields, the gyromagnetic ratio and nuclear magnetic momentum of $^9$F were computed. Due to time dependent changes of the magnetic field, the error of the measured magnetic field was set to $\Delta B = 1\,\text{mT}$. The resonance frequency has been corrected using the above steps. Utilizing the formular \ref{important_formular}, formulars \ref{formel_gamma} and \ref{formular_mu} could be deduced. $\hbar$ does not have an error, for it is a fundamental constant \cite{hbar}.
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/nullstellen}
+	\centering
+	\caption[Plot of the nullstellen]{Example of the sine curve fitted to the data points of the modulation of the magnetic field. The nullstellen of the fit are marked.}
+	\label{nullstellen}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.9]{Bild/discr}
+	\centering
+	\caption[Plot of a discriminated dip]{Example for the discrimination of the values used in the change of channel per change of frequency and resonance frequency calculation.}
+	\label{discr_points}
+\end{figure}
+
+
+
+
+\FloatBarrier
+\subsection{Computation of the nuclear magnetic momentum of $^{19}$F}
+Using the corrected resonance frequencies and measured magnetic fields, the gyromagnetic ratio and nuclear magnetic momentum of $^{19}$F were computed. Due to time dependent changes of the magnetic field, the error of the measured magnetic field was set to $\Delta B = 1\,\text{mT}$. The resonance frequency has been corrected using the above steps. Utilizing the formular \ref{important_formular}, formulas \ref{formel_gamma} and \ref{formular_mu} could be deduced.
 \begin{equation}
 	\label{formel_gamma}
 	\gamma = 2 \pi \frac{\nu_{res}}{B};\qquad \Delta\gamma = \gamma \sqrt{\left(\frac{\delta\nu_{res}}{\nu_{res}}\right)^2 + \left(\frac{\Delta B}{B}\right)^2}
 \end{equation}
 \begin{equation}
 \label{formular_mu}
-	\mu_K = \gamma\hbar\m_I = \frac{\gamma\hbar}{2}, \qquad \Delta \mu_K = \mu_K \left(\frac{\Delta \gamma}{\gamma}\right)
+	\mu_K = \gamma\hbar m_I = \frac{\gamma\hbar}{2}; \qquad \Delta \mu_K = \mu_K \left(\frac{\Delta \gamma}{\gamma}\right)
 \end{equation}
 \begin{table}[h]
-	\caption{Calculated results of $^9$F}
+	\caption{Calculated results of $^{19}$F}
 	\label{teflon}
 	\begin{tabular}{lllll}
 		\toprule
@@ -64,6 +134,16 @@ Using the corrected resonance frequencies and measured magnetic fields, the gyro
 	\end{tabular}
 
 \end{table}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/flouride}
+	\centering
+	\caption[Plot of the fluoride resonance frequencies per magnetic field strength]{The resonance frequency of all the measurements with the Teflon sample with a linear fit to compute the relationship between the resonance frequency and the magnetic field for the $^{19}$F nucleus. The measured relationship is listed in the figure.}
+	\label{teflon_pic}
+\end{figure}
+
+
+\FloatBarrier
 \subsection{Computation of the gyromagnetic ratio of the proton}
 
 Analogue to the previous calculation, the gyromagnetic ratio of the proton in glycol and hydrogen was computed with formular \ref{formel_gamma}. The results are seen in table \ref{glycol} for the glycol sample and table \ref{hydrogen} for hydrogen. 
@@ -72,7 +152,7 @@ Analogue to the previous calculation, the gyromagnetic ratio of the proton in gl
 	\label{glycol}
 	\begin{tabular}{llll}
 		\toprule
-		{} & Corrected resonance frequencies [Mhz] & Measured magnetic fields [mT] &               \$\textbackslash gamma\$ \\
+		{} & Corrected resonance frequencies [Mhz] & Measured magnetic fields [mT] &               $\gamma$ \\
 		\midrule
 		0 &                        18.577+/-0.006 &                           395 &  (2.9550+/-0.0009)e+08 \\
 		1 &                        18.079+/-0.007 &                           383 &  (2.9660+/-0.0012)e+08 \\
@@ -88,7 +168,7 @@ Analogue to the previous calculation, the gyromagnetic ratio of the proton in gl
 	\label{hydrogen}
 	\begin{tabular}{llll}
 		\toprule
-		{} & Corrected resonance frequencies [Mhz] & Measured magnetic fields [mT] &               \$\textbackslash gamma\$ \\
+		{} & Corrected resonance frequencies [Mhz] & Measured magnetic fields [mT] &               $\gamma$ \\
 		\midrule
 		0 &                        19.560+/-0.006 &                           414 &  (2.9686+/-0.0008)e+08 \\
 		1 &                        19.678+/-0.005 &                           418 &  (2.9579+/-0.0008)e+08 \\
@@ -99,3 +179,19 @@ Analogue to the previous calculation, the gyromagnetic ratio of the proton in gl
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/glycol}
+	\centering
+	\caption[Plot of the glycol resonance frequencies per magnetic field strength]{The resonance frequency of all the measurements with the glycol sample with a linear fit to compute the relationship between the resonance frequency and the magnetic field for the proton. The measured relationship is listed in the figure.}
+	\label{glycol_pic}
+\end{figure}
+
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{Bild/hydrogen}
+	\centering
+	\caption[Plot of the hydrogen resonance frequencies per magnetic field strength]{The resonance frequency of all the measurements with the hydrogen sample with a linear fit to compute the relationship between the resonance frequency and the magnetic field for the proton. The measured relationship is listed in the figure.}
+	\label{hydrogen_pic}
+\end{figure}
