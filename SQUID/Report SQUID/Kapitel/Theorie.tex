@@ -1,1 +1,45 @@
-\section{Theoretische Grundlagen}
+\section{Theoretical Background}
+Disclaimer: The theoretical information is, if not specified otherwise, taken from the manual \cite{anleitung}  or the \" staatsexamen \" by V.Bange \cite{staatsex_squid}.
+\subsection{Superconductors}
+In general, superconductors are materials which, if cooled below a critical temperature $T_c$, show the following properties:
+\begin{itemize}
+
+	\item The resistance of the material drops to an immeasurable level
+	\item The material behaves like a almost perfect diamagnet: Magnetic fields induce a surface current, which compensates external magnetic fields completely (Meissner-Ochsenfeld effect)
+	\item The electrons inside the material form Cooper pairs of two electrons bound together over a distance of hundreds of angstroms.
+	
+\end{itemize}
+There are two types of superconductors: 
+\begin{itemize}
+	\item Low temperature superconductors:\\
+	 The earliest discovered  superconductors were of this type. The highest achievable critical Temperature is very low, usually requiring liquid helium cooling. E.g. $\text{Nb}_3\text{Ge}$ with $T_c=23.2\,$K.
+	Below a critical $H_c$ field strength, magnetic fields do not penetrate the material beyond a
+	few hundred nanometres.
+	\item High temperature superconductors: \\
+	With this type, the critical temperature is higher. The highest temperature is   $T_C=138\,$K with\\
+	$Hg_{12}Tl_{3}Ba_{30}Ca_{30}Cu_{45}O_{125}$.
+	 This has the advantage that liquid nitrogen can be used as a coolant.
+	There exist two critical magnetic field strengths, $H_{c1}$ and $H_{c2}$. Below $H_{c1}$, the magnetic field is completely forced out of the material. Between both temperatures, magnetic flux-strings are forming inside the material which are normal conducting and enclosed by an eddy current.
+\end{itemize}
+\subsection{BCS Theory}
+The BCS theory (Bardeen, Cooper, Schrieffer, 1957) explains many of the superconductor properties. 
+
+The lattice structure deforms in the orbit of an electron, since the nuclei needs a certain time, in the order of the inverse of the Debey frequency $\omega\text{D} (T \approx 10^{-13}\text{s})$, to return to its initial location. This results in a weak positive polarization behind the considered electron, which attracts another electron over long distances, i.e. after an almost complete weakening of the repulsive Coulomb interaction.
+In theoretical solid state physics, the formation of a Cooper pair is described as follows: Electrons are fermions, i.e. each quantum mechanical state is occupied only once, except for two electrons with opposite spin. At low temperatures almost all states are now filled up to the Fermi energy $E_F$, above which the population density drops drastically towards 0. This results in a high probability of two electrons with antiparallel impulses to be found, which favours the formation of a Cooper pair. It is also said that even relatively weak interactions lead to bound states. These combined spin 1/2 systems then have total spin 0 and behave like bosons. According to the Bose statistics, any number of bosons can occupy a state, so there is no limit for the creation of Cooper pairs . And the material is now in a superconducting state. The bosonic behaviour of the Cooper pairs causes the formation of a total wave function which is present in the ground state. This total wave has some consequences, like the flux quantization, resistance-free charge transport and effects at a Josephson contact. The wavelength of the bosonic wave functions is very large compared to the distances of the atomic bodies in the lattice, since the interaction between the electrons is very weak. Therefore, these or lattice oscillations are not obstacles for the Cooper pairs. Thus a resistance-free charge transport is given.
+
+\subsection{Josephson effect}
+The Josephson effect is the underlying principle of a Josephson junction, a core part of the SQUID sensor.
+The quantum mechanical phenomenon of tunnelling also occurs between two superconductors separated by a thin insulating layer. The insulation layer must not be a superconductor. This is essential for the SQUID experiment, since a magnetic field applied from the outside cannot penetrate into the superconductor (Meissner-Ochsenfeld effect), but into the insulating layer. The Cooper pairs can now tunnel into the other superconductors if phase difference $\Delta\phi = n \cdot\pi$. An current flows, without a potential difference. Also the pairs lose no energy while tunnelling, i.e. classically regarded there is no resistance. This seems paradoxical compared to the classical Ohm's law $U = R\cdot I$.
+Since the insulating layer is not a superconductor, magnetic fields can penetrate it. This influences the correlation of the wave functions of the tunnelling Cooper pairs, i.e.  the phase difference $\Delta\phi$, which is a measurable change of the current. The tunnel current through the barrier is given by:
+$$I_S = I_C \sin\left( \Delta\phi\right) $$
+\subsection{Quantisation of magnetic flux}
+The magnetic flux in the circular superconductor is quantised as $$\oint \vec{A} d\vec{l} = \Phi_B \text{ for } \nabla\times\vec{A}=\vec{B}$$ where $\Phi_B$ is the magnetic flux inside the superconducting ring. Because all the Cooper pairs are in the BSC ground state, their wave functions have definite phase relations. This is the reason of the quantization of the magnetic flux in levels of the magnetic flux quantum $\Phi_0$ as in $$\left|\Phi_B\right| = n \frac{h}{2e}= n\Phi_0$$
+\subsection{The SQUID}
+The SQUID (\emph{S}uperconducting \emph{QU}antum \emph{I}nterference \emph{D}evice) is a verry precise sensor to detect changes in magnetic fields in the order of the flux quantum. The one used during the experiment is a RF SQUID, which has one Josephson junction inside the superconducting ring. A RF circuit generates an external magnetic flux $\Phi_{ext}$. This flux induces a current in the superconducting ring to compensate the external field that $\Phi_{int}$ is zero. 
+Since the total wave function of the Cooper pairs carrying the current must be constant inside the superconductor, the total flux $\Phi_{tot}$ can only be changed as multiples of the flux quantum. The Josephson contact shifts the phase of the total wave function. The phasse difference can be calculated as: $$ \theta_2 - \theta_1 = 2 \pi n -2\pi \frac{\Phi_{tot}}{\Phi_0}$$
+A change of the external flux can not change the flux inside the superconducting ring, if the difference is smaller then $\Phi_0$. These differences are compensated by a surface current which results in a surface flux $\Phi_S = L I_S$ that $\Phi_{tot} = \Phi_{ext}-\Phi_S$. The inductance $L$ is dependant on the shape and material. 
+If the change of flux is bigger then $\Phi_0$, the superconductivity is interrupted while $\Phi_{int}$ is increasing. When the superconducting state is established again, the remaining flux difference smaller then $\Phi_0$ is compensated as above.\\
+
+For superconductors with a Josephson junction this is also true, although here the external magnetic field necessitates the flux quantization inside the superconductor. This results in a more complex behaviour, when $I_S = I_{S,max} \sin\left( \theta_2-\theta_1\right) $:
+$$ \Phi_{tot}=\Phi_{ext} + L I_{S,max}\sin\left( 2\pi \frac{\Phi_{tot}}{\Phi_0}\right)$$
+
