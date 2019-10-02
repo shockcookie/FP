@@ -67,7 +67,7 @@ The with that calculated value $B_z$ is also in table \ref{Messwerte1}.
 	\label{Messwerte1}
 \end{table} 
 \newpage
-The other way to calculate the dipole moment and magnetic field was by using the measured signals of the SQUID. Here the signal shapes were fitted with the help of Pythons package  \verb|scipy.optimize| with the method \verb|curve_fit|. Here the form given in equation \ref{Sinusfit} was used. With that the offset $a$, the frequency $\omega=c$ as well as the amplitude $b=\Delta V$ can be calculated. 
+The other way to calculate the dipole moment and magnetic field was by using the measured signals of the SQUID. Here the signal shapes were fitted with the help of Pythons package  \verb|scipy.optimize|\cite{SciPy_Opti} with the method \verb|curve_fit|. Here the form given in equation \ref{Sinusfit} was used. With that the offset $a$, the frequency $\omega=c$ as well as the amplitude $b=\Delta V$ can be calculated. 
 \begin{equation}
 	f(x)=a+b\sin(cx+d)
 	\label{Sinusfit}
@@ -116,7 +116,7 @@ The value of $F$ the field flux coefficient is $9.3\,\frac{\text{nT}}{\Phi_0}$ a
 \end{figure}
 \FloatBarrier
 \subsection{Other Samples}
-During the measurement other samples were tested with the SQUID. The SQUID signals were analysed in a similar way to the conductor Loops before. The sinus of the form \ref{Sinusfit} was fitted on the signal. The mean of amplitude which is parameter $b$ was computed for the different samples and with this the magnetic field $B_z$ and dipole moment could be calculated and can be found in table \ref{Messwerte3} in the table below.\par
+During the measurement other samples were tested with the SQUID. The SQUID signals were analysed in a similar way to the conductor Loops before. The sinus of the form \ref{Sinusfit} was fitted on the signal. The mean of amplitude which is parameter $b$ was computed for the different samples and with this the magnetic field $B_z$ and dipole moment could be calculated and can be found in table \ref{Messwerte3} in the table below. It is also important to note that for the calculation of the Magnet another value for $s_i$ had to be used since the FB-R value was changed to $1$\,k$\Omega$. The here used value for $s_i$ was $21$\,$\frac{\text{mV}}{\Phi_0}$\par
 \begin{table}[ht]
 	\begin{Dtabular}[1.1]{|c|c|c|c|}
 		\hline
@@ -137,6 +137,7 @@ During the measurement other samples were tested with the SQUID. The SQUID signa
 	\caption[Values of the Samples with the Fit Method]{Measured and calculated values for different materials and forms of samples.}
 	\label{Messwerte3}
 \end{table}
+\newpage
 \subsection{Polar Representation}
 For the samples and conductor loops the polar representation should be plotted. For this one period of the data points was taken. With the help of the coordinate transformation of the manual\cite{anleitung}:
 \begin{equation}
@@ -145,7 +146,12 @@ For the samples and conductor loops the polar representation should be plotted. 
 \begin{equation}
 	y_i=|B_z|\cdot \sin(\alpha)
 \end{equation}
-Here $\alpha$ is the rotation angle. For the stone the polar representation can be seen in figure \ref{Stone}, the rest is in the appendix.
+The values for $\alpha$ and $B_z$ are computed using the measured values for time and voltage of the data point as well as the parameter of the fits.
+
+\begin{equation}
+	\alpha_i=c_it_i+d_i \qquad \qquad |U_i-a_i|\cdot\frac{F}{s_i}
+\end{equation}
+For the stone the polar representation can be seen in figure \ref{Stone}, the rest is in the appendix.
 \begin{figure}[ht]
 	\includegraphics[scale=0.5]{Bild/R3}
 	\centering
