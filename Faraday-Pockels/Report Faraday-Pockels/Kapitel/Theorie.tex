@@ -61,3 +61,26 @@ r_{41} = \frac{\lambda d}{4 l U_{\lambda/2}} \sqrt{\frac{1}{2}\left(\frac{1}{n_1
 	\caption[Aufbau der Pockels Zelle]{\small Das Bild zeigt den Aufbau der verwendeten Pockels Zelle. Die Elektroden für den Aufbau der elektrischen Felder sowie die Strahlenverläufe sind auch eingezeichnet.}
 	\label{kristalle}
 \end{figure}
+
+
+\subsection{Faraday Effekt}
+Der Faraday Effekt ist eine Magnetfeldinduzierte Doppelbrechung, auch Magnetooptischer Effekt genannt. Er erfolgt in isotropen Medien bei Anlegung eines Magnetfeldes parallel zur Ausbreitungsrichtung des Lichts. Das linear polarisierte eingehende licht kann in zwei entgegengesetzt drehende zirkularpolarisierte Wellen aufgespalten werden. Die Links- und Rechtsdrehenden zirkularpolarisierten Teilwellen können das Medium bei angelegtem Magnetfeld nicht gleich schnell durchqueren. Dies führt bei verlassen des Mediums zu einer Phasenverschiebung der linear polarisierten Kombination der beiden zirkularpolarisierten Wellen. Dieser Drehwinkel $\alpha$ kann über die Nachfolgende Formel aus der Magnetischen Feldstärke $H$, der Länge des Mediums $l$ und der Verdetkonstante $V$, welche materialabhängig ist, bestimmt werden. 
+\begin{equation}\label{faraday_unfertig}
+\alpha = V \cdot l \cdot H
+\end{equation}
+\subsection{Magnetfeld einer realen Spule}
+Für die Berechnung des Magnetfeldes einer realen Spule wird das Biot-Savart'sche Gesetz verwendet. Es ist definiert als 
+\begin{equation}
+\label{biot-savart}
+d B = \frac{\mu_0}{4 \pi} I d \vec{l} \times \frac{\vec{r}-\vec{r^\prime}}{\left|\vec{r}-\vec{r^\prime}\right|^3}
+\end{equation}
+Nach der Herleitung im Staatsexamen von B.Herrmann \cite{staatsex_farpock}, erhält man für das Magnetfeld der realen Spule nach Integration über Länge und Dicke den nachfolgenden Ausdruck:
+\begin{equation}\label{magnetfeld_real}
+H(z) = \frac{N I}{2L(x_2-x_1)}\left[
+(L-z) \ln\left(\frac{x_2 + \sqrt{(L-z)^2+x_2^2}}{x_1 + \sqrt{(L-z)^2+x_1^2}}\right) + z \ln \left(\sqrt{\frac{x_2 + \sqrt{z^2 +x_2^2}}{x_1 + \sqrt{z^2 +x_1^2}}}\right) 
+\right]
+\end{equation}
+Hierbei sind $x_1$ der innerer Spulenradius, $x_2$ der äußere und $L$ die Länge der Spule. Bei einsetzen der Parameter folgt nach \cite{staatsex_farpock} für die Gleichung \ref{faraday_unfertig}: 
+\begin{equation}\label{faraday}
+\alpha = V \cdot 2556 \cdot I 
+\end{equation}
