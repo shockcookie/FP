@@ -1,0 +1,51 @@
+\section{Diskussion}
+\subsection{Pockelseffekt}
+Im Versuchsteil wurde über zwei Methoden die Elektrooptischen Koeffizienten bestimmt indem die Halbwellenspannung gemessen wurde. Hierbei erhielt wurden folgende Werte errechnet:
+$$r_{41_1}=(26.489\pm0.030)\,\frac{\text{pm}}{V}$$
+$$r_{41_2}=(22.051\pm 0.026)\times\,\frac{\text{pm}}{\text{V}}$$
+Der Literaturwert welcher in der Versuchsanleitung gegeben wurde beträgt $23.4\,\frac{\text{pm}}{V}$ bei einer Temperatur von $21^\circ C$.
+Wenn man die Werte mit der Gleichung \ref{vgl} mit dem Literaturwert vergleicht (siehe Tabelle \ref{VGL}), stellt man fest, dass die Werte beide nicht mi dem Literaturwert kompatibel sind.  Trotzdem ist die Messung mit der zweiten Gleichspannungsmethode etwas näher am echten Wert als die erste Methode, auch ist der Fehler bei dieser kleiner.\par 
+\begin{table}[ht]
+	\begin{Dtabular}[1.1]{|c|c|c|c|c|}
+		\hline
+		&$r_{41_1}$&$r_{41_2}$&$r_{41_{F1}}$&$r_{41_{F2}}$\\
+		\hline
+		$t$ in [$\sigma$]&$102.97$&$51.88$&$2.82$&$1.44$\\
+		\hline
+	\end{Dtabular}
+	\centering
+	\caption{\small Vergleich der bestimmten Werte des Elektrooptischen Koeffizienten mit dem Literaturwert.}
+	\label{VGL}
+\end{table}
+Es gibt eine Reihe an möglichen Gründen für die großen Diskrepanzen. Als erstes haben wir natürlich einen möglichen systematischen Fehler durch die Temperatur welche von der beim Literaturwert angegebenen Temperatur von $21^\circ C$ abweichen könnte. Auch könnte der Piezoeffekt einen Systematischen Fehler verursacht haben, aber dieser sollte laut Versuchsanleitung bei ADP Kristallen vernachlässigbar sein.\par
+Wenn man die relativen Fehler bestimmt fällt auf, dass diese mit $0.11\%$ recht klein sind. Da bei der Berechnung der Halbwellenspannung keine geschätzten Fehler verwendet wurden, ist es möglich dass Fehler, neben dem auf $U_{\frac{\lambda}{2}}$, bei der Berechnung der Koeffizienten berücksichtigt hätten werden sollen. Aus diesem Grund wurde wie im Staatsexamen beschrieben ein Fehler auf die Dicke und Länge des Kristalls von $0.1\,mm$ geschätzt. Die Hierdurch bestimmten Werte sind:
+$$r_{41_{F1}}=(26.5\pm1.1)\,\frac{\text{pm}}{V}$$
+$$r_{41_{F2}}=(22.1\pm 0.9)\,\frac{\text{pm}}{\text{V}}$$
+Diese sind wenn man sich die Vergleichswerte in Tabelle \ref{VGL} anschaut schon um einiges besser. Trotzdem ist der Wert für die erste Messmethode immer noch unverträglich mit dem Literaturwert.\par 
+Der große Unterschied der beiden Messmethoden ist möglicherweise dadurch zu erklären, dass die Dämpfung die erste Methode stärker gedämpft hat als angenommen oder zumindest ein Fehler bei dieser zu berücksichtigen wäre.\par 
+Allgemein kann man jedoch sagen, dass obwohl die beiden Methoden wegen mangelnder Eichung des Oszillographen und Sägezahngenerators, als ungenügend für eine exakte Bestimmung sind\cite{staatsex_farpock}, die Werte relativ gut am Literaturwert liegen.
+\begin{equation}
+	t=\frac{|x_{Value}-x_{Literatur}|}{\sigma_{x_{Value}}}
+	\label{vgl}
+\end{equation}
+\subsection{Faradayeffekt}
+Für die Auswertung des Faradayeffekts wurde die Verdetkonstante bestimmt. Hierzu wurde einmal eine reale Spule angenommen und einmal eine ideale. Die dabei erhaltenen Werte für die Material abhängig Verdetkonstante sind:
+$$V_{real}=(0.0494 \pm 0.0004)\,\frac{\text{min}}{\text{Oe cm}}$$
+$$V_{ideal}=(0.04088 \pm 0.00032)\,\frac{\text{min}}{\text{Oe cm}}$$
+Diese können nun mit Gleichung \ref{vgl} mit den Herstellerangaben von $V=0.05\,\frac{\text{min}}{\text{Oe cm}}$ verglichen werden und sind in Tabelle \ref{WerteF} notiert.
+\begin{table}[ht]
+	\begin{Dtabular}[1.1]{|c|c|c|}
+		\hline
+		&$V_{ideal}$&$V_{real}$\\
+		\hline
+		$t$ in [$\sigma$]&28.50&1.50\\
+		\hline
+	\end{Dtabular}
+	\centering
+	\caption{Vergleichswerte der bestimmten Verdetkonstanten mit der Herstellerangabe.}
+	\label{WerteF}
+\end{table}
+Es fällt als erstes auf, dass die reale Spule mit der Herstellerangabe kompatibel ist, jedoch die der idealisierten Spule nicht. Dies entspricht natürlich auch den Erwartungen.\par
+Am Ende wurde noch der $2\epsilon$-Winkel bestimmt. Bei diesem wurde ein Wert von:
+$$2\epsilon=14.50\pm0.07\,^\circ$$
+bestimmt.

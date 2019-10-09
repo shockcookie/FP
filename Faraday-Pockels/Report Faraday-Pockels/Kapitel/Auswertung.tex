@@ -1,5 +1,6 @@
 \section{Auswertung}
 \subsection{Pockelseffekt}
+\subsubsection{Methode Sägezahnspannung}
 Zur Auswertung des Pockelseffekt werden die Elektrooptischen Konstanten auf zwei Arten bestimmt. \par
 Für die Auswertung der Methode bei der eine Sägezahnspannung an den Pockelszellen angelegt wurde werden als erstes die $15$ Datensätze geplottet und mit dem Python Packet \verb|scipy.optimize| über \verb|curve_fit| angepasst. Hierbei wurde für den anstieg der Sägezahnspannung die Form einer Geraden gewählt. Für die Spannung der Photodiode wurde als erstes die Form eines Sinus verwendet. Hier ließ sich jedoch die Kurve mit diesem nicht gut anpassen (siehe Abbildung \ref{ProbelmSinus}). Aus diesem Grund wurde ein Polynom neunten Grades (siehe Gleichung \ref{Poli}) an die Kurve gefittet. Dieser ist zusammen mit dem Linearen Fit in Abbildung \ref{PoliBild} zu finden.
 \begin{equation}
@@ -35,7 +36,15 @@ Da $15$ Messreihen erstellt wurde wird nun der Gewichtete Mittelwert dieser Wert
 \sigma_{\bar{x}_g}=\frac{1}{\sqrt{\sum_i\nicefrac{1}{\sigma_i^2}}}
 \label{Er_WMean}
 \end{equation}
-Als Wert ergibt sich für die Spannung dadurch $$U_{\frac{\lambda}{2}}=2.1278\pm0.0024\,\text{V}$$. Um nun die Elektrooptische Konstante $r_{41}$ zu bestimmen wird Gleichung \ref{r41} verwendet. Die Spannung muss davor jedoch noch um den Faktor $100$ vergrößert werden, da sie im Versuch um diesen Faktor gedämpft wurde. Die Werte für die Rechnung sind in der Versuchsanleitung \cite{anleitung} zu finden und wurden als fehlerfrei betrachtet. Damit ergab sich über die 1.Methode ein Wert von $$r_{41}=(26.489\pm0.030)\,\frac{\text{pm}}{V}$$\par
+Als Wert ergibt sich für die Spannung dadurch $$U_{\frac{\lambda}{2}}=2.1278\pm0.0024\,\text{V}$$
+Um nun die Elektrooptische Konstante $r_{41}$ zu bestimmen wird Gleichung \ref{r41} verwendet. Die Spannung muss davor jedoch noch um den Faktor $100$ vergrößert werden, da sie im Versuch um diesen Faktor gedämpft wurde. Die Werte für die Rechnung sind in der Versuchsanleitung \cite{anleitung} zu finden und wurden als fehlerfrei betrachtet. Damit ergab sich über die 1.Methode ein Wert von $$r_{41_1}=(26.489\pm0.030)\,\frac{\text{pm}}{V}$$
+Die Annahme die Werte als Fehler frei zu betrachten stellte sich als Problematisch heraus, da dadurch der relative Fehler mit $0.11\%$ sehr klein wurde. Deshalb wurden für die Länge und Dicke des Kristalls weitere Fehler wie im Staatsexamen\cite{staatsex_farpock} von $0.1\,$mm abgeschätzt. Der Fehler der neue Fehler auf den Koeffizienten $r_{41}$ wird mit Gleichung \ref{neu} bestimmt. Der Wert mit diesen Fehlern beträgt:
+$$r_{41_{F1}}=(26.5\pm1.1)\,\frac{\text{pm}}{\text{V}}$$
+\begin{equation}
+	\sigma_{r_{41}}=\sqrt{\left(\frac{\sigma_da}{lU_{\lambda/2}}\right)^2+\left(\frac{\sigma_lda}{l^2U_{\lambda/2}}\right)^2+\left(\frac{\sigma_{U_{\lambda/2}}a}{lU_{\lambda/2}^2}\right)^2}
+	\label{neu}
+\end{equation}
+\subsubsection{Methode Gleichspannung}
 Die zweite Methode die Konstante zu bestimmen ist über Gleichspannung. Hierbei ist die Spannung die Differenz zwischen den beiden gemessenen Gleichspannungssignalen. Da sich diese sehr schlecht haben einstellen lassen wurden für positive so wie negative Spannung das Signal sechs mal gemessen. Aus diesen wir nun als erstes der Arithmetische Mittelwert bestimmt so wie dessen Fehler. Hierbei werden die Gleichungen \ref{Mean} und \ref{ErrMean} verwendet um den Fehler zu bestimmen.
 \begin{equation}
 \sigma_x = \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2
@@ -49,9 +58,9 @@ Mit dem Mittelwert der beiden Spannungen wird nun der die Differenz der beiden B
 Damit ergibt sich als Wert für die Spannung $$U_{\frac{\lambda}{2}}=(255.60\pm0.30)\,\text{V}$$ 
 Dies kann wie bei der ersten Methode in die Gleichung \ref{r41}
 eingesetzt werden wodurch sich der Wert für die Elektrooptische Konstante von
-$$r_{41}=(22.051\pm 0.026)\times\,\frac{\text{pm}}{\text{V}}$$
-ergibt.
-
+$$r_{41_2}=(22.051\pm 0.026)\,\frac{\text{pm}}{\text{V}}$$
+ergibt. Da bei beiden Werten der Relative Fehler mit $0.11\%$ sehr klein war und sich eine eindeutige Unverträglichkeit zeige, wurde wie bei Methode eins auch hier die Werte nochmal mit einem geschätzten Fehler auf Dicke und Länge des Kristalls von $0.1$\,mm bestimmt. Fehler auch hier mit Gleichung \ref{neu}.
+$$r_{41_{F2}}=(22.1\pm 0.9)\,\frac{\text{pm}}{\text{V}}$$
 \subsection{Faraday Effekt}
 Für die Auswertung des Faraday Effekts soll der Material abhängige Verdetkonstante bestimmt werden. Hierfür wird als erstes die Eingestellte Stromstärke gegen den gemessenen Drehwinkel aufgetragen. Die mit \verb|curve_fit| angepasste Gerade ist in Abbildung \ref{Dreh} zu finden. Die Geradengleichung lautet:
 $$\alpha=(2.642\pm0.021)\,\frac{\circ}{\text{A}}\cdot I + (0.70\pm0.06)^\circ$$
