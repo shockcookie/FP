@@ -75,12 +75,14 @@ Für die Berechnung des Magnetfeldes einer realen Spule wird das Biot-Savart'sch
 d B = \frac{\mu_0}{4 \pi} I d \vec{l} \times \frac{\vec{r}-\vec{r^\prime}}{\left|\vec{r}-\vec{r^\prime}\right|^3}
 \end{equation}
 Nach der Herleitung im Staatsexamen von B.Herrmann \cite{staatsex_farpock}, erhält man für das Magnetfeld der realen Spule nach Integration über Länge und Dicke den nachfolgenden Ausdruck:
-\begin{equation}\label{magnetfeld_real}
+\begin{equation}
 H(z) = \frac{N I}{2L(x_2-x_1)}\left[
 (L-z) \ln\left(\frac{x_2 + \sqrt{(L-z)^2+x_2^2}}{x_1 + \sqrt{(L-z)^2+x_1^2}}\right) + z \ln \left(\sqrt{\frac{x_2 + \sqrt{z^2 +x_2^2}}{x_1 + \sqrt{z^2 +x_1^2}}}\right) 
 \right]
+\label{realFormel}
 \end{equation}
 Hierbei sind $x_1$ der innerer Spulenradius, $x_2$ der äußere und $L$ die Länge der Spule. Bei einsetzen der Parameter folgt nach \cite{staatsex_farpock} für die Gleichung \ref{faraday_unfertig}: 
-\begin{equation}\label{faraday}
+\begin{equation}
 \alpha = V \cdot 2556 \cdot I 
+\label{r41}
 \end{equation}
