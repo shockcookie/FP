@@ -2,7 +2,7 @@
 \subsection{Pockelseffekt}
 \subsubsection{Methode Sägezahnspannung}
 Zur Auswertung des Pockelseffekt werden die Elektrooptischen Konstanten auf zwei Arten bestimmt. \par
-Für die Auswertung der Methode bei der eine Sägezahnspannung an den Pockelszellen angelegt wurde werden als erstes die $15$ Datensätze geplottet und mit dem Python Packet \verb|scipy.optimize| über \verb|curve_fit| angepasst. Hierbei wurde für den anstieg der Sägezahnspannung die Form einer Geraden gewählt. Für die Spannung der Photodiode wurde als erstes die Form eines Sinus verwendet. Hier ließ sich jedoch die Kurve mit diesem nicht gut anpassen (siehe Abbildung \ref{ProbelmSinus}). Aus diesem Grund wurde ein Polynom neunten Grades (siehe Gleichung \ref{Poli}) an die Kurve gefittet. Dieser ist zusammen mit dem Linearen Fit in Abbildung \ref{PoliBild} zu finden.
+Für die Auswertung von Methode eins wurde eine Sägezahnspannung an den Pockelszellen angelegt diese und das Signal an der Photodiode wurden mit einem Oszilloskop in $15$ Datensätze aufgezeichnet und geplottet. Die Anpassungen der Kurven an die Daten erfolgte mit dem Python Packet \verb|scipy.optimize| über \verb|curve_fit|. Hierbei wurde für den Anstieg der Sägezahnspannung die Form einer Geraden gewählt. Für die Spannung der Photodiode wurde als erstes die Form eines Sinus verwendet. Hier ließ sich jedoch die Kurve mit diesem nicht gut anpassen (siehe Abbildung \ref{ProbelmSinus}). Aus diesem Grund wurde ein Polynom neunten Grades (siehe Gleichung \ref{Poli}) an die Kurve gefittet. Dieser ist zusammen mit dem Linearen Fit in Abbildung \ref{PoliBild} zu finden.
 \begin{equation}
 	f(x)=ax^9+bx^8+c x^7+d x^6+ex^5+f x^4+gx^3+hx^2+ix+g
 	\label{Poli}
@@ -22,7 +22,7 @@ Der Fehler auf die Spannung ergibt sich über Gaußsche Fehlerfortpflanzung durc
 	\sigma_{U_\text{Sägezahn}}=\sqrt{\left(mx_{\text{max/min}}\sigma_c\right)^2+\left((c + x_{\text{max/min}})\sigma_m\right)^2}
 	\label{SägeSp}
 \end{equation}
-Nun können die beiden Werte der Spannung voneinander abgezogen werden und man erhält die Spannungsdifferenz $U_{\frac{\lambda}{2}}$. Der Fehler bekommt man durch:
+Nun können die beiden Werte der Spannung voneinander abgezogen werden und man erhält die Spannungsdifferenz $U_{\frac{\lambda}{2}}$. Der Fehler errechnet sich durch:
 \begin{equation}
 	\sigma_{U_{\lambda/2}}=\sqrt{\left(U_\text{max}\sigma_{U_{\text{min}}}\right)^2+\left(U_{\text{min}}\sigma_{U_{\text{max}}}\right)^2}
 	\label{Errdif}
@@ -71,7 +71,7 @@ $$\alpha=(2.642\pm0.021)\,\frac{\circ}{\text{A}}\cdot I + (0.70\pm0.06)^\circ$$
 	\label{Dreh}
 \end{figure}
 Nun wird einmal für eine reale und eine ideale Spule die Verdetkonstante bestimmt.\par
-Für eine reale Spule kann man Gleichung \ref{real} nehmen. Hierbei ist $\frac{\alpha}{I}$ gerade die Steigung der Geraden und der Faktor $2556$ ein Wert der im Staatsexamen\cite{staatsexamen} mit der Gleichung \ref{realFormel} für eine reale Spule berechnet wurde.
+Für eine reale Spule kann man Gleichung \ref{real} nehmen. Hierbei ist $\frac{\alpha}{I}$ gerade die Steigung der Geraden und der Faktor $2556$ ein Wert der im Staatsexamen\cite{staatsex_farpock} mit der Gleichung \ref{realFormel} für eine reale Spule berechnet wurde.
 \begin{equation}
 	V_{real}=\frac{\alpha}{\text{A}\cdot 2556}
 	\label{real}
@@ -82,7 +82,7 @@ Für eine ideale Spule wird die Gleichung \ref{idealH} verwendet.
 	V_{ideal}=\frac{\alpha}{\text{A}}\frac{L}{Nl}\approx \frac{\alpha}{\text{A}\cdot 3086}
 	\label{idealH}
 \end{equation}
-Hierbei ist $L$ die Länge der Spule $l$ die Länge des Materials in der Spule und $N$ die Anzahl der Windungen. Werte sind in der Versuchsanleitung zu finden\cite{anleitung}. Hier ergibt sich für die Verdetkonstante ein Wert von:
+Hierbei ist $L$ die Länge der Spule, $l$ die Länge des Materials in der Spule und $N$ die Anzahl der Windungen. Werte sind in der Versuchsanleitung zu finden\cite{anleitung}. Hier ergibt sich für die Verdetkonstante ein Wert von:
 $$V_{ideal}=(0.000856 \pm 0.000007)\,\frac{\circ}{\text{A}}$$
 Um diese mit der Angabe des Herstellers von $V_{HS}=0.05\,\frac{\text{min}}{\text{Oe cm}}$ zu vergleichen müssen die Werte umgerechnet werden dabei gilt:
 $$1\,\text{A}=\frac{100}{79.59}\,\text{Oe cm}  \qquad \qquad 1\,\text{Grad}=60\,\text{min}$$
