@@ -1,0 +1,98 @@
+\documentclass[30pt,a4paper]{article}
+% Dokumenten Typ, titelseite, Schriftgröße, Seitenformat
+\PassOptionsToPackage{dvipsnames}{xcolor}
+% Füge neue Farben hinzu (standart 5 farben oder so)
+\usepackage[utf8]{inputenc}
+% Kodierung
+\usepackage[T1]{fontenc}
+% Umlaute
+\usepackage[german]{babel}
+% Eingebundene Sprachen
+\usepackage{graphicx}
+% Einbinden von Grafiken
+\usepackage{wrapfig}
+% Text um kleine Grafiken herumsetzen
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+% Mathe Symbole und Commands
+\usepackage{mathtools}
+% Verbessert ams Packete von oben
+\usepackage{nicefrac}
+% Schönere Brüche
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{tikz-cd}
+% Tikz Stuff
+\usepackage{enumerate}
+% Bessere Aufzählungen
+\usepackage{cancel}
+% z.B Durchstreichen von Sachen
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+% Links und Referenzen innerhalb des Dokuments
+\usepackage{tcolorbox}
+% Wunderschöne Farbige Boxen mit Überschriften
+\usepackage{caption}
+% Erstellen von captions innerhalb einer Minipage
+\usepackage[margin=1in]{geometry}
+% Änderung der Gestaltung einer Seite (Überschreibt \documentclass)
+\usepackage{placeins}
+% Mit Hilfe von \FloatBarrier floats einschränken
+\usepackage{booktabs}
+% Bei Tabellen wird kann anstelle von \hline \toprule, \midrule und \bottomrule verwendet werden etc.
+\usepackage{wasysym}
+% Fügt eine Reihe von Symbolen wie Männlich Weiblich dazu
+\usepackage{url}
+% Füge Problemlos urls ein
+\usepackage{pdfpages}
+
+
+
+
+\hbadness=99999 
+% Löst ein Problem mit \hbox
+
+\newenvironment{Dtabular}[2][1] {\def\arraystretch{#1}\tabular{#2}}
+{\endtabular}
+
+\title{
+	\large Fortgeschrittenes Physik Lab	SS19 \\[4mm]
+	\textbf{\LARGE Experiment: Szintillationszähler
+	} \\[4mm]
+	(Durchgeführt am: (07.-08).10.19 bei Patrick Scholer) \\}
+% Titel des Experiments
+\author{Erik Bode, Damian Lanzenstiel \\ (Group 103)}
+% Autoren
+
+\begin{document}
+	
+	\begin{titlepage}
+		\maketitle
+		\vspace{2cm}
+		\begin{abstract}???
+		\end{abstract}
+	\end{titlepage}
+	\newpage
+	\tableofcontents
+	\newpage
+	\include{Kapitel/Theorie}
+	\include{Kapitel/Conduction}
+	\include{Kapitel/Auswertung}	
+	\include{Kapitel/Zusammenfassung}
+	
+	
+	
+	
+	
+	\section{Tabellen}
+	\listoftables
+	\section{Bilder}
+	\listoffigures
+	\section{Bibliograpy}
+	\bibliographystyle{plain}
+	\bibliography{Quellen}
+	\addcontentsline{toc}{section}{Literatur}
+	\section{Anhang}
+	\include{Kapitel/Appendix}
+\end{document}
