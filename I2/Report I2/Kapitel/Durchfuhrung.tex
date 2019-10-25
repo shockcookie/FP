@@ -1,0 +1,90 @@
+\section{Setup and Procedure of the Experiment}
+\subsection{Measuring the Absorption Spectrum}
+First the Absorption Spectrum of $I_2$ is measured. For this the setup in figure \ref{figABS} is used.\par
+A Halogen lamp is used as a source of light and parallelised by a lens and refracted into an iodine tube which contains a iodine gas. After this it is focused into an CCD-Spectrometer where the spectrum is measured. To read the spectrum at the computer the program SpectraSuite is used. For the measurement a integration time of $100$\,ms was chosen. The measurement itself was done six times with only one scan. After this we discovered the ability to take the mean of multiple scans. We chose $30$ scans and did another measurement.
+\begin{figure}[ht]
+	\begin{tikzpicture}
+		\coordinate (a) at (-3,3);
+		\coordinate (b) at (-2.25,1);
+		\coordinate (c) at (1,1);
+		\coordinate (d) at (2,1);
+		\draw ($(a) + (0.5,0.5)$) -- ($(a) + (0.5,1)$) -- ($(a) + (1,1)$) -- ($(a) + (1,0.5)$) -- ($(a) + (0.5,0.5)$);
+		\draw ($(a) + (0.25,-0.5)$) -- ($(a) + (1.25,-0.5)$);
+		\draw[dashed] ($(a) + (0.75,0.5)$) -- (b) -- ($(a) + (1.5,-2)$);
+		\draw ($(b) + (-0.5,0.5)$) -- ($(b) + (0.5,-0.5)$);
+		\draw ($(c) + (0,0.5)$) -- ($(c) + (-2.5,0.5)$) -- ($(c) + (-2.5,-0.5)$) -- ($(c) + (0,-0.5)$) -- ($(c) + (0,0.5)$);
+		\draw[dashed] (c) -- ($(c) + (1,0)$) -- ($(c) + (1,1.5)$);
+		\draw ($(d) + (-0.5,-0.5)$) -- ($(d) + (0.5,0.5)$);
+		\draw ($(d) + (0,1.5)$) -- ($(d) + (0.5,2)$) -- ($(d) + (-0.5,2)$) -- ($(d) + (0,1.5)$);
+		\draw ($(d) + (0.5,1)$) -- ($(d) + (-0.5,1)$);
+		
+		\node at ($(a) + (0,0.75)$)  {$1$};
+		\node at ($(a) + (0,-0.5)$)  {$2$};
+		\node at ($(b) + (-0.25,-0.25)$) {$3$};
+		\node at ($(c) + (-1.25,1)$) {$4$};
+		\node at ($(d) + (0.25,-0.25)$) {$3$};
+		\node at ($(d) + (0.75,1)$) {$5$};
+		\node at ($(d) + (0.75,2)$) {$6$};
+	\end{tikzpicture}
+	\centering
+	\caption[Experimental Setup 1]{Experimental Setup for measuring the absorption spectrum. $1$ Halogen Lamp, $2$ paralleling Lens, $3$ Mirror, $4$ Iodine Tube, $5$ focus lens, $6$ CCD-Spectrometer.}
+	\label{figABS}
+\end{figure}
+\subsection{Calibration of the Monochromator}
+Before measuring the emission spectrum with the monochromator it has to be calibrated. For this a mercury vapour lamp is used instead of the halogen lamp. Also the second mirror is switched with the lens so that it know can be focus into the monochromator. In figure \ref{figCalib} the new setup can be seen. Since the x-Axis of the monochromator can't be trusted the start point as well as the end point were noted. As a step width $1\,\frac{\text{\AA}}{\text{s}}$ were chosen while the entrance slit was set to $50\,\mu$m. With this the first measurement was done. In the first one it was noticed, that that one of the peaks overshot. That's why we changed the settings at the discriminator level. With that the calibration measurement was done.
+\begin{figure}[ht]
+		\begin{tikzpicture}
+	\coordinate (a) at (-3,3);
+	\coordinate (b) at (-2.25,1);
+	\coordinate (c) at (1,1);
+	\coordinate (d) at (2,1);
+	\draw ($(a) + (0.5,0.5)$) -- ($(a) + (0.5,1)$) -- ($(a) + (1,1)$) -- ($(a) + (1,0.5)$) -- ($(a) + (0.5,0.5)$);
+	\draw ($(a) + (0.25,-0.5)$) -- ($(a) + (1.25,-0.5)$);
+	\draw[dashed] ($(a) + (0.75,0.5)$) -- (b) -- ($(a) + (1.5,-2)$);
+	\draw ($(b) + (-0.5,0.5)$) -- ($(b) + (0.5,-0.5)$);
+	\draw ($(c) + (0,0.5)$) -- ($(c) + (-2.5,0.5)$) -- ($(c) + (-2.5,-0.5)$) -- ($(c) + (0,-0.5)$) -- ($(c) + (0,0.5)$);
+	\draw[dashed] (c) -- ($(c) + (1.4,0)$);
+	\draw ($(c) + (1.5,0)$) -- ($(c) + (2,0.5)$) -- ($(c) + (2,-0.5)$) -- ($(c) + (1.5,0)$);
+	\draw ($(c) + (0.75,0.5)$) -- ($(c) + (0.75,-0.5)$);
+	
+	\node at ($(a) + (0,0.75)$)  {$1$};
+	\node at ($(a) + (0,-0.5)$)  {$2$};
+	\node at ($(b) + (-0.25,-0.25)$) {$3$};
+	\node at ($(c) + (-1.25,1)$) {$4$};
+	\node at ($(c) + (0.75,-0.75)$) {$5$};
+	\node at ($(c) + (2.25,0)$) {$6$};
+	\end{tikzpicture}
+	\centering
+	\caption[Experimental Setup 2]{Experimental Setup for calibrating the monochromator via a mercury vapour lamp. $1$ Mercury Vapour Lamp, $2$ paralleling Lens, $3$ Mirror, $4$ Iodine Tube, $5$ focus Lens, $6$ Monochromator.}
+	\label{figCalib}
+\end{figure}
+\newpage
+\subsection{Emission Spectrum}
+For the actually measurement of the Emission Spectrum the setup in figure \ref{figEMS} was used. Here the iodine gas gets excite directly with a laser. First the laser needs to be directed with a mirror into the tube which isn't drawn into the sketch. After the tube the emitted light gets focused with two lenses into the monochromator. Here it is important to note that the red circle that is visible is only a reflection of the lenses and not the real focus point. The real point is not visible but is in the middle of the red circle. \par
+After calibrating the point and heating the tube a bit the resonance laser peak was measured. As start point a wavelength of $6320\,\text{\AA}$ and a step width of $1\,\frac{\text{\AA}}{\text{s}}$ was chosen. The entrance slit was left at $50\,\mu$m.
+After this measurement was taken the fluorescence spectrum from $6400\,\text{\AA}$ to $8000\,\text{\AA}$. Here the slit with was changed to $360\,\mu$m. Since the measurement needed a while the step with was set to $2\,\frac{\text{\AA}}{\text{s}}$ to find a good value for the discriminator. For the later measurements it was set back to $1\,\frac{\text{\AA}}{\text{s}}$.
+\begin{figure}[ht]
+	\begin{tikzpicture}
+	\coordinate (a) at (-0.5,1.5);
+	\coordinate (b) at (-2.25,1);
+	\coordinate (c) at (1,1);
+	\coordinate (d) at (2,1);
+	\draw[dashed] ($(a) + (0.75,0.5)$) -- ($(a) + (0.75,0)$); 
+	\draw ($(a) + (0.5,0.5)$) -- ($(a) + (0.5,1)$) -- ($(a) + (1,1)$) -- ($(a) + (1,0.5)$) -- ($(a) + (0.5,0.5)$);
+	\draw ($(c) + (0,0.5)$) -- ($(c) + (-2.5,0.5)$) -- ($(c) + (-2.5,-0.5)$) -- ($(c) + (0,-0.5)$) -- ($(c) + (0,0.5)$);
+	\draw[dashed] (c) -- ($(c) + (1.4,0)$);
+	\draw ($(c) + (1.5,0)$) -- ($(c) + (2,0.5)$) -- ($(c) + (2,-0.5)$) -- ($(c) + (1.5,0)$);
+	\draw ($(c) + (0.5,0.5)$) -- ($(c) + (0.5,-0.5)$);
+	\draw ($(c) + (1,0.5)$) -- ($(c) + (1,-0.5)$);
+	
+	\node at ($(a) + (0,0.75)$)  {$1$};
+	%\node at ($(a) + (0,-0.5)$)  {$2$};
+	%\node at ($(b) + (-0.25,-0.25)$) {$3$};
+	\node at ($(c) + (-1.25,-1)$) {$2$};
+	\node at ($(c) + (0.75,-0.75)$) {$3$};
+	\node at ($(c) + (2.25,0)$) {$4$};
+	\end{tikzpicture}
+	\centering
+	\caption[Experimental Setup 3]{Experimental Setup for measurement of the emission spectrum with the monochromator via a laser. $1$ Laser, $2$ Iodine Tube, $3$ focus Lenses, $4$ Monochromator.}
+	\label{figEMS}
+\end{figure}
