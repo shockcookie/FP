@@ -1,9 +1,39 @@
 \section{Discussion of the Results}
 \subsection{Absorption Spectrum}
-In the first part of the experiment we measured the absorption spectrum of iodine. First of all the constants $\omega_e$ and $\omega_ex_x$ had to be calculated by using a Birge-Sponer-Plot. The values are compared in table \ref{1} with the literature values. The values are compared with equation \ref{vgl}
+In the first part of the experiment we measured the absorption spectrum of iodine. First of all the constants $\omega_e$ and $\omega_ex_x$ had to be calculated by using a Birge-Sponer-Plot. The values are compared in table \ref{1} with the literature values. The values are compared with equation \ref{vgl}. Looking at these two constants both are not in the $2\sigma$ Interval. For $\omega_e$ our value is still much closer to the literature value than  $\omega_ex_e$. The reason are probably the great errors in y direction we have in figure \ref{figAS3}. Since made an estimation by choosing an relative error of around $1\%$ for the minima in figure \ref{figAS3}, its also possible that these are a bit to small. Another possibility is that our data has a systematic error duo to another vibration transition overlapping with the one we are measuring. We already see that around $550\,$nm another transition is overlapping so its not to far of that our other values are also not free of them.\par
+Looking at the two methods for determine $D_e$ we see that both are inside a $1\sigma$ Interval with the expected value. The main difference between these two measurements is the relative error. For the first Method we got a relative error of almost $10\%$ and for the second method only around $1\%$.\par
+Looking at the values for $T_e$ we see that we are here in a $2\sigma$ Interval with the literature value. Since the values for $D_e2$ are fitting quite well is the main error the position of the measurement of $\lambda_{diss}$ which can be seen in figure \ref{figAS4}.\par
+The Morse potential in figure \ref{figMorse} looks like we expected it to look. Since we didn't found any literature values for $a$ and $R_e$ we can't say anything more specific.\par
+\ \\
+Overall the resulting values are proved to be decent results for the measured spectrum.
 \begin{equation}
 	t=\frac{x_{\text{Measure}}-y_\text{Literature}}{\sigma_x}
+	\label{vgl}
 \end{equation} 
 \begin{table}[ht]
-	Inhalt...
+	\begin{Dtabular}[1.1]{|c|c|c|c|}
+		\hline
+		&Measured Value & Literature Value & $t$ $[\sigma]$\\
+		\hline
+		$\omega_e\,[\text{cm}^{-1}]$&$135\pm 5$&$125$&$2.01$\\
+		\hline
+		$\omega_ex_x\,[\text{cm}^{-1}]$&$1.04\pm 0.07$&$0.7$&$5.13$\\
+		\hline
+		$D_{e1}\,[\text{cm}^{-1}]$&$4300\pm 400$&$4391$&$0.11$\\
+		\hline
+		$D_{e2}\,[\text{cm}^{-1}]$&$4340\pm 60$&$4391$&$0.84$\\
+		\hline
+		$T_e\,[\text{cm}^{-1}]$&$15790\pm 70$&$15711$&$1.21$\\
+		\hline
+	\end{Dtabular}
+	\centering
+	\caption[Values and Literature Values for the Absorption Spectrum]{Values and literature values for the absorption spectrum. With the value for the $\sigma$ Interval.}
+	\label{1}
 \end{table}
+\subsection{Emission Spectrum}
+In the second part of the experiment we did first of all a calibration measurement of the monochromator. Here we calculated the difference between the literature values of the peak with our measured ones. Here a systematic error was found which shifted the peaks by $(0.252\pm0.028)\,$nm. It is also important to note, that the double peak in table \ref{tabAS1} couldn't be resolved and wasn't used for the calibration. Here its possible that a better adjustment of the discriminator could have given a better resolution.\par
+After this the laser peak was measured around the expected value of $6330\,\text{\AA}$. Here the plateau in figure \ref{figLaser} was found. The area of the peak could be minimized to an interval from $6317.5\,\text{\AA}$ to $6333.5\,\text{\AA}$. The expected value is inside this interval. It is still only a very rough estimation. It's possible that the reason that no real peak is visible, is an overshoot of the intensity.\par
+In the end the emission spectrum from $6400$\AA to $8000$\AA was measured and can be seen in figure \ref{figEMISSION}. Here the transition $\nu'=6\rightarrow \nu''$ was found. The values and the comparison to the literature values are in table \ref{LASTVALUE}. Looking at them we see that the first values are beside two outlier most of them are inside a $2\sigma$ Interval. For the later ones we see a definite tendency to larger differences between the measured and the literature value. The main reason for this is the huge noise. The transition after $\nu''=14$ aren't visible anymore. Here a more better calibration of the discriminator could have given better results especially for the higher wavelength. Looking at the transition $\nu'=6\rightarrow \nu''=13$ it is important to note that this is only an estimation of the position of a peak, since here was a huge gab between two transition peaks. The literature values also notes a peak between $12$ and $14$ which fits the wavelength of the gap. The peak itself is very likely hidden in the noise.\par
+Overall the measurements with the monochromator we have a further systematic error of the duo to the inaccuracy of start and end value given on the monochromator. Other sources for errors are the noise coming from the photomultiplier and other electronic parts. Thermal noise or electronic noise could have been amplified by the photomultiplier causing the signal to deteriorate. We also have the fact problem of background light which influences the measurement. Since the setup is quite old its also possible that the iodine tube is polluted.\par
+\ \\
+All in all the obtained fluorescence spectrum proved to be an adequate result of the measurement.
