@@ -7,7 +7,7 @@ First we analyse the measurement of the absorption spectrum with the CCD-Spectro
 	\caption[Complete Absorption Spectrum]{\small Here is the complete absorption spectrum from $400$nm to $720$\,nm. Measured with the CCD-Spectrometer.}
 	\label{figAS1}
 \end{figure}
-The spectrum goes from $400\,$nm to $720$\,nm. In the spectrum we are interested in the vibration transitions, which can be seen as dips in the spectrum. In the manual\cite{?} the transition $\nu''=0\rightarrow \nu'=25$ at a wavelength of $545.8\,$nm is given as reference. That's why the area of $505\,$nm to $570\,$nm was picked to find further transitions, which can be seen in figure \ref{figAS2}.\par
+The spectrum goes from $400\,$nm to $720$\,nm. In the spectrum we are interested in the vibration transitions, which can be seen as dips in the spectrum. In the manual\cite{Anleitung} the transition $\nu''=0\rightarrow \nu'=25$ at a wavelength of $545.8\,$nm is given as reference. That's why the area of $505\,$nm to $570\,$nm was picked to find further transitions, which can be seen in figure \ref{figAS2}.\par
 To find the peaks the spectrum was inverted and the Python package \verb|PeakUtils| was used to find the peaks. In figure \ref{figAS2} the furthest to the right marked peak is the reference peak of the $\nu''=0\rightarrow \nu'=25$ transition. Further to the right are also peaks visible, but they are starting to mix with other peaks which indicates that here another transition superimposes on the first one. That's the reason these peaks were left out. Overall the transitions from $\nu''=0\rightarrow \nu'=25$ to $\nu''=0\rightarrow \nu'=47$ were likely found. The positions are noted inside the table \ref{tabAS1}. Here an error of $0.5\,$nm was estimated since \verb|PeakUtils|\cite{Peak} doesn't give errors on the positions. \par
 \begin{figure}[ht]
 	\includegraphics[scale=0.5]{Bild/AS_2}
@@ -171,7 +171,7 @@ The since the resolution wasn't high enough, the double peak couldn't be split u
 \begin{equation}
 	\sigma_{\Delta \lambda}=\lambda_{\text{Measured}} - \lambda_{\text{Literatur}}
 \end{equation}
-With that we get a systematic shift which will be substracted? from all further values. $$\Delta \lambda=(0.252\pm 0.028\,\text{nm})$$
+With that we get a systematic shift which will be subtracted from all further values. $$\Delta \lambda=(0.252\pm 0.028\,\text{nm})$$
 \begin{figure}[ht]
 	\includegraphics[scale=0.5]{Bild/QS.png}
 	\centering
@@ -219,4 +219,5 @@ To find out which transition we are looking at we calculate the energy of the wa
 	\end{Dtabular}
 	\centering
 	\caption[Values of the Emission Spectrum]{Values of the Emission Spectrum. With the likely transition and literature values. In the last column is the comparison between the calculated energy and the likely literature values. The values are compared using equation \ref{vgl} and are in the units of the standard deviation.}
+	\label{LASTVALUE}
 \end{table}
