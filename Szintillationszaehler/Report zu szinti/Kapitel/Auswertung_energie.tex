@@ -19,7 +19,7 @@ Für die resultierende Datenreihe wurden wie oben beschrieben die statistischen 
 	\label{untergrund}
 \end{figure}
 \subsection{Energiekalibrierung}
-Um den aktuellen Zusammenhang zwischen Kanälen des MCA und Energie der Detektierten $\gamma$ Photonen zu bestimmen, wurden die bekannten Peaks der Spektren von Natrium, Cobalt und Europium verwendet. Die so gewonnenen Zusammenhänge wurden auf den gesamten Bereich extrapoliert. Es wurden immer die statistischen Fehler in den Fits berücksichtigt.
+Um den aktuellen Zusammenhang zwischen Kanälen des MCA und Energie der Detektierten $\gamma$ Photonen zu bestimmen, wurden die bekannten Peaks der Spektren von Natrium, Cobalt und Europium verwendet. Die so gewonnenen Zusammenhänge wurden auf den gesamten Bereich extrapoliert. Es wurden immer die statistischen Fehler in den Fits berücksichtigt. 
 \subsubsection{Natrium}
 Für das Spektrum der $^{22}Na$ Probe wurden zwei Peaks erwartet, die Intensität des mit niedrigerer Energie einen deutlich größer als die des höher energetischen Peaks. Genau dies wurde beobachtet, somit konnten erfolgreich die Kanal-Energie Zusammenhänge für den 511 und 1275 keV Peak bestimmt werden. Hierzu wurden zunächst Analog zur Hintergrundmessung die statistischen Fehler bestimmt und die Counts in die Zählrate umgerechnet. 
 Anschließend wurde eine Gaußkurve (nach Gleichung \ref{gaussian}) mittels Python \cite{SciPy_Opti} gefittet. Die Mittelpunkte der Peaks ($\mu$), welche für die Kalibrierung verwendet wurden sind der Abbildung \ref{natrium} zu entnehmen. 
@@ -69,8 +69,13 @@ Das $^{228}Th$ Spektrum ist viel komplexer als die vorherigen. Es wurden 9 Peaks
 	 B
 	 \label{doppelgaus}
 \end{equation}
-In Abbildung \ref{thorium} ist das gesamte Thorium Spektrum in Logarithmischer Skala aufgetragen. Anschließend wurden kleinere Ausschnitte aufgetragen, dass die einzelnen Peaks besser erkennbar sind. Im Spektrum bis 500 keV (Abb. \ref{th_500}) wurden alle 5 Peaks gefittet. Im Spektrum von 500 bis 1000 keV (Abb. \ref{th_1000}) wurden alle 3 gut sichtbaren Peaks gefittet. Am Ende wurde noch der gut sichtbare Peak bei $\approx 3700$ keV gefittet. Die Energien der gefitteten Peaks sind auf den Abbildungen der jeweiligen Peaks in der Zuordnung zu finden
-Die Mittelpunkte ($\mu$) der gefitteten Kurven wurden in der Tabelle \ref{ergebnisse_thorium} eingetragen. 
+In Abbildung \ref{thorium} ist das gesamte Thorium Spektrum in Logarithmischer Skala aufgetragen. Anschließend wurden kleinere Ausschnitte aufgetragen, dass die einzelnen Peaks besser erkennbar sind. Im Spektrum bis 500 keV (Abb. \ref{th_500}) wurden alle 5 Peaks gefittet. Im Spektrum von 500 bis 1000 keV (Abb. \ref{th_1000}) wurden alle 3 gut sichtbaren Peaks gefittet. Am Ende wurde noch der gut sichtbare Peak bei $\approx 3700$ keV gefittet. Die Energien der gefitteten Peaks sind auf den Abbildungen der jeweiligen Peaks in der Zuordnung zu finden.
+Die Energie der Kanäle wurde mittels der Gleichung \ref{energie-kanal} bestimmt. Die Parameter $a$ und $b$ hier stammen aus der Energieeichung (Abb. \ref{energiekali}).
+\begin{equation}
+	E\left(Chn\right) = a \cdot Chn + b ; \qquad \Delta_E = \frac{\partial E}{\partial a} \Delta a + \frac{\partial E}{\partial Chn} \Delta Chn \frac{\partial E}{\partial b} \Delta b
+	\label{energie-kanal}
+\end{equation}
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{Bilder/Th_ganz}
